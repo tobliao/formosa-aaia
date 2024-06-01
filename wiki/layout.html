@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+    <title>{% block title %}{% endblock %} | GEMS-Taiwan - iGEM 2024</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/Dark-footer-with-social-media-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/Inter.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/Responsive-UI-Card.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/Tabs-Cards-with-Navs.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'fonts/fontawesome-all.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+</head>
+<body>
+  <div id="progressbar-wrap">
+    <div id="progressbar"></div>
+  </div>
+  <!-- Navigation -->
+  {% include 'menu.html' %}
+
+  <!-- Header -->
+
+
+  <!-- Page Content -->
+  
+  {% block page_content %}{% endblock %}
+ 
+
+  <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="{{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/bs-init.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/bold-and-dark.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/app.js') }}"></script>
+</body>
+</html>
