@@ -20,13 +20,14 @@ p {
 }
 
 #header {
-    margin-top: 4rem;
     height: 30vw;
     width: 100vw;
     background-image: url("https://static.igem.wiki/teams/4701/wiki/bkg-education.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 40%;
+    opacity: 50%;
+    box-shadow:0 0 80px 80px #2d2c38 inset;
 }
 
 .page-content-wrap {
