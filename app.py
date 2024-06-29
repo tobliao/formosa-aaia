@@ -25,6 +25,7 @@ def serve():
 
 @app.route('/')
 def home():
+    print("hola")
     return render_template('pages/index.html')
 
 @app.route('/<page>')
