@@ -14,6 +14,7 @@ app.config['FREEZER_RELATIVE_URLS'] = True
 app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 freezer = Freezer(app)
 
+
 @app.cli.command()
 def freeze():
     freezer.freeze()
