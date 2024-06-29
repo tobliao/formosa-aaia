@@ -8,12 +8,12 @@ p {
     top: 0;
     z-index: 10000000;
     width: 100%;
-    height: 5px;
+    height: 8px;
     left: 0;
 }
 
 #progressbar {
-    height: 5px;
+    height: 8px;
     width: 0;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#aafda2), color-stop(100%,rgb(248, 255, 192)));
     /* background-color: #fff; */
