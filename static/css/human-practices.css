@@ -1,0 +1,119 @@
+#human-practices-header {
+    height: 30vw;
+    width: 100vw;
+    background-image: url("https://static.igem.wiki/teams/4701/wiki/bkg-education.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    opacity: 50%;
+    box-shadow:0 0 80px 80px #2d2c38 inset;
+}
+.greydropdown {
+    background-color: #253B41;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-align: justify;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 10px/10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.lightgreendropdown {
+    background-color: #98CC9B;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-align: justify;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 10px/10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow-circle-lightgreen {
+    width: 30px;
+    height: 30px;
+    background-color: #98CC9B;
+    border-radius: 50%;
+    text-align: center;
+}
+.active .arrow-circle-lightgreen:after {
+    content: ""; /* Unicode character for "minus" sign (-) */
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+.arrow-circle-lightgreen:after {
+    content: "";
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.greendropdown {
+    background-color: #139B69;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-align: justify;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 10px/10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow-circle-green {
+    width: 30px;
+    height: 30px;
+    background-color: #139B69;
+    border-radius: 50%;
+    text-align: center;
+}
+.active .arrow-circle-green:after {
+    content: ""; /* Unicode character for "minus" sign (-) */
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}  
+.arrow-circle-green:after {
+    content: "";
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.panelblue,
+.body {
+    padding: 0 18px;
+    background-color: #253B41;
+    color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+    border-left: 4px solid var(--yellow);
+    margin-bottom: 10px;
+}
