@@ -15,7 +15,7 @@ p {
 #progressbar {
     height: 8px;
     width: 0;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#aafda2), color-stop(100%,rgb(248, 255, 192)));
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#aafda2), color-stop(100%,rgb(206, 32, 32)));
     /* background-color: #fff; */
 }
 
@@ -78,7 +78,7 @@ p {
 }
 
 .toc-side:hover {
-    color: rgba(22, 217, 243, 0.837);
+    color: rgba(239, 28, 28, 0.837);
 }
 
 .toc-side {
