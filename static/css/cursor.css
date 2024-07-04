@@ -35,10 +35,10 @@
 .cursor2{
 }
 .cursor2.hover{
-	background: rgba(255,255,255,0.1);
+	background: rgba(86,84,25,0.1);
 }
 .cursor2.hover .progress-wrap {
-	box-shadow: inset  0 0 0 2px rgba(255,255,255,0);
+	box-shadow: inset  0 0 0 2px rgba(86,84,25,0);
 }
 .cursor2.hover .progress-wrap svg.progress-circle path {
 	opacity: 0.4;

@@ -16,7 +16,7 @@ p {
     height: 8px;
     width: 0;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a2fdd1), color-stop(100%,rgb(214, 255, 139)));
-    /* background-color: #fff; */
+    /* background-color: #61824F; */
 }
 
 .page-content-wrap {
