@@ -20,10 +20,9 @@
                     <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project</div>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Contribution</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Safety and Security</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('pages', page='safety-and-security') }}">Safety and Security</a></li>
                         <!-- <li><hr class="dropdown-divider"></li> -->
-                        <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Coral Alliance Map</a></li>
                     </ul>
                 </div>
                 
@@ -32,10 +31,10 @@
                     <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wetlab</div>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}">Experiments</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Engineering</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Proof of Concept</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Parts</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Notebook</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
                     </ul>
                 </div>
             
@@ -44,8 +43,8 @@
                     <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Drylab</div>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='drylab') }}">Drylab</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Model</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Hardware</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='drylab-model') }}">Model</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
                     </ul>
                 </div>
             
@@ -54,8 +53,8 @@
                     <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Human Practices</div>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Education</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Entrepreneurship</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
                     </ul>
                 </div>
         
@@ -64,7 +63,7 @@
                     <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Team</div>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Members</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='404') }}">Attributions</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
                     </ul>
                 </div>
             </ul>
