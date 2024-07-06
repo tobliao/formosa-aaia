@@ -1,14 +1,17 @@
 {% extends "layout.html" %}
   
-{% block title %}Projects{% endblock %}
+{% block title %}Engineering{% endblock %}
 {% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
 
 {% block page_content %}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
-
+    <link href="{{ url_for('static', filename = '../../../../static/css/engineering.css')}}" rel="stylesheet">
 <body>
 <p>yo yo yo</p>
+
+<script src="{{ url_for('static', filename = '../../../../static/js/engineering.js')}}"></script>
+
 </body>
 </html>
 
