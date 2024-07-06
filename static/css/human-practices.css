@@ -436,6 +436,12 @@
     font-size: 16px;
     color: #FFF;
   }
+
+  .toc-section {
+    margin-top: 3rem;
+    margin-bottom: 0
+}
+
   @media only screen and (max-width: 979px) {
     .ag-timeline_line {
       left: 30px;
