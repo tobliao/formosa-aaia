@@ -78,13 +78,13 @@ p {
 }
 
 .toc-side:hover {
-    color: rgba(69, 246, 34, 0.837);
+    color: rgba(186, 214, 113, 0.837);
 }
 
 .toc-side {
     border-left: 2px solid #97A23C;
     background-color: transparent;
-    color: white;
+    color: #767e2d;
     background: linear-gradient(to right, #D1DC4F 50%, transparent 50%) right;
     background-size: 200% 100%;
     transition: .5s ease-out;
