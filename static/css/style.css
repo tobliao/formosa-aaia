@@ -44,7 +44,7 @@ p {
     position: absolute;
     top: -50vh;
     width: 70vw;
-    left: -20%
+    left: 12vw;
     
   }
 
@@ -309,6 +309,11 @@ p {
         width: 100vw;
         height: 30vh!important;
     }
+    #problem-title-wrap {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+    }
 }
 
 .to-fade-in {
@@ -367,5 +372,33 @@ p {
     
     width: 100vw;
     height: 90vh;
-    left: -25.5vw !important;
+    left: 0vw !important;
+}
+
+#bg-green-wrap {
+    color: rgb(0, 0, 0);
+    padding-top: 7rem;
+    padding: 5rem;
+    background-color: rgb(195, 230, 80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+#problem-title-wrap {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    padding: 2rem;
+    border: 0.3rem solid rgb(71, 245, 77);
+    border-radius: 1rem;
+    margin-bottom: 7rem;
+}
+
+#problem-title-wrap span {
+    color: rgba(213, 59, 72, 1);
 }
