@@ -42,10 +42,12 @@ p {
 }
 .centered {
     position: absolute;
-    top: -250px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -50vh;
+    width: 70vw;
+    left: -20%
+    
   }
+
 
 .fig-wrap {
     padding-top: 1.5rem;
@@ -312,7 +314,7 @@ p {
 .to-fade-in {
     opacity: 0;
     /* transform: translateY(3rem); */
-    transition: opacity 3s;
+    transition: opacity 2s;
 }
 
 .to-fade-in-fast {
@@ -356,4 +358,14 @@ p {
     50% {
         opacity: 0;
     }
+}
+
+
+
+.home-img-pos {
+    position: relative; 
+    
+    width: 100vw;
+    height: 90vh;
+    left: -25.5vw !important;
 }
