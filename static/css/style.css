@@ -438,9 +438,11 @@ p {
   }
 
   .opaque-words {
-    opacity: 1;
-    color: white;
+    opacity: 1 !important;
+    color: rgb(255, 255, 255) !important;
   }
+
+  
   
   
   
