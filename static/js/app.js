@@ -88,7 +88,7 @@ const progressBar = () => {
 };
 document.addEventListener("scroll", progressBar);
 
-
+// Fade animation
 const observerFadeIn = new IntersectionObserver(
   (items) => {
     items.forEach((i) => {

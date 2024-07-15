@@ -14,10 +14,11 @@
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{ url_for('pages', page='index') }}">HOME</a></li>
+    
                 
                 <!---- Project ---->
                 <div class="nav-item dropdown">
-                    <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROJECT</div>
+                    <div class="nav-link menu-tabs words-opaque" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROJECT</div>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>

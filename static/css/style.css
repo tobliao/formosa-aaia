@@ -371,7 +371,7 @@ p {
     position: relative; 
     
     width: 100vw;
-    height: 90vh;
+    height: 91vh;
     left: 0vw !important;
 }
 
@@ -386,8 +386,6 @@ p {
     flex-direction: column;
 }
 
-
-
 #problem-title-wrap {
     font-size: 2.5rem;
     font-weight: bold;
@@ -400,5 +398,9 @@ p {
 }
 
 #problem-title-wrap span {
-    color: rgba(213, 59, 72, 1);
+    color: rgb(30, 245, 88);
+}
+
+.transparent-menu {
+    opacity: 85% !important;
 }
