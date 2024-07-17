@@ -128,3 +128,51 @@ const fadeInFastItems = document.querySelectorAll(".to-fade-in-fast");
 fadeInFastItems.forEach((i) => {
   observerFadeInFast.observe(i);
 });
+
+//rotating taiwan
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+          entry.target.classList.add('rotateshow');
+      } else {
+          entry.target.classList.remove('rotateshow');
+      }
+  });
+});
+
+
+const hiddenElements2 = document.querySelectorAll('.rotatehidden');
+hiddenElements2.forEach((el) => observer2.observe(el));
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+          entry.target.classList.add('showleft');
+      } else {
+          entry.target.classList.remove('showleft');
+      }
+  });
+});
+
+
+const hiddenElements3 = document.querySelectorAll('.hiddenleft');
+hiddenElements3.forEach((el) => observer3.observe(el));
+
+
+const observer4 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+          entry.target.classList.add('showright');
+      }
+      else {
+          entry.target.classList.remove('showright');
+      }
+  });
+});
+
+
+const hiddenElements4 = document.querySelectorAll('.hiddenright');
+hiddenElements4.forEach((el) => observer4.observe(el));

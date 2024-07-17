@@ -314,6 +314,17 @@ p {
         padding: 1rem;
         margin-bottom: 3rem;
     }
+
+    .taiwan {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .inasia {
+        top: 6%;
+        left: 17%;
+        font-size: 2.1rem;
+    }
 }
 
 .to-fade-in {
@@ -442,8 +453,51 @@ p {
     color: rgb(255, 255, 255);
   }
 
+  /* rotating taiwan */
+  .taiwan {
+    position: absolute;
+    right: 1vw;
+    
+}
   
-  
+.rotatehidden {
+    opacity: 0;
+    transform: translateX(100%) rotate(360deg);
+    transition: all 3s;
+}
+
+.rotateshow {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
+.hiddenright {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.showright {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.s3 {
+    text-shadow: 2px 8px 6px rgba(52, 109, 213, 0.2), 0px -3px 20px rgba(255,255,255,0.4);
+}
+
+.inasia {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #0C2C54;
+    right: 60vw;
+    top: 215vh;
+}
+
   
   
   
