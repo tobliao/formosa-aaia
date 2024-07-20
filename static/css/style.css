@@ -478,6 +478,10 @@ name {
         width: 40%;
         margin-right: 3%;
     }
+    .perfume-spray {
+        width: 40%;
+        margin-left: 3%;
+    }
 
     .inasia {
         top: 12vh;
@@ -489,7 +493,7 @@ name {
 .to-fade-in {
     opacity: 0;
     /* transform: translateY(3rem); */
-    transition: opacity 2s;
+    transition: opacity 1.3s;
 }
 
 .to-fade-in-fast {
@@ -536,10 +540,8 @@ name {
 }
 
 
-
 .home-img-pos {
     position: relative; 
-    
     width: 100vw;
     height: 91vh;
     left: 0vw !important;
@@ -549,7 +551,7 @@ name {
     color: rgb(0, 0, 0);
     padding-top: 7rem;
     padding: 5rem;
-    background-color: rgb(195, 230, 80);
+    background-color: #CCD656;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -571,8 +573,11 @@ name {
     color: rgb(30, 245, 88);
 }
 
-.gradbluetowhite1 {
-    background: linear-gradient(180deg, #ffffff 12.19%, #ddfe92 74.66%, #C3E650 100%);
+.gradbrowntogreen1 {
+    background: linear-gradient(180deg, #F6F1DA 12.19%, #dfe96b 74.66%, #CCD656 100%);
+}
+.gradgreentobrown1 {
+    background: linear-gradient(180deg, #CCD656 12.19%, #dfe96b 74.66%, #F6F1DA 100%);
 }
 
 .pageshort {
@@ -657,7 +662,12 @@ name {
     top: 215vh;
 }
 
- 
+ .perfume-spray{
+    position: relative;
+    left: 1vw;
+    width: 50vw;
+    height: 70vh;
+ }
   
   
   
