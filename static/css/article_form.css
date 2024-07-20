@@ -45,8 +45,9 @@
     color: #AD7319;
 }
 
-.content_text {
+.content_text p{
     text-indent: 2em;  /*文章首行縮兩格*/
+    color: #3e3322;
 }
 
 .form_title{
