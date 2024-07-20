@@ -1,0 +1,54 @@
+.fig-wrap {
+    padding-top: 1.5rem;             /* 图片上方的内边距 */
+    padding-bottom: 2rem;            /* 图片下方的内边距 */
+    padding-left: 2rem;              /* 图片左方的内边距 */
+    padding-right: 2rem;             /* 图片右方的内边距 */
+    background-color: #f5f0d5;       /* 淡黄色背景颜色 */
+    border-radius: 10px;             /* 圆角边缘 */
+    width: fit-content;              /* 根据内容自适应宽度 */
+    display: flex;                   /* 使用 Flexbox */
+    justify-content: center;         /* 水平居中 */
+    flex-direction: column;          /* 排列方向：列 */
+    align-items: center;             /* 垂直居中 */
+    align-self: center;              /* 自身居中 */
+    margin: 2rem auto;               /* 上下各有 2rem 的外边距，让外层容器居中 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* 添加轻微的阴影来增加视觉效果 */
+}
+
+
+.fig {
+    width: 80%;
+    height: auto;
+}
+
+/* 統一文字格式 ---------------------------------------------*/
+.title_name p {       /*大標題字體大小與顏色*/
+    font-size: 36px; /* 設置文字大小 */
+    color: #AD7319; /* 設置文字顏色 */
+}
+
+.subtitle_text{
+    text-indent: 1em;
+}
+
+.subtitle_text p{
+    font-size: 28px;
+    color: #AD7319;
+}
+
+.subsubtitle_text{
+    text-indent: 1em;
+}
+
+.subsubtitle_text p{
+    font-size: 22px;
+    color: #AD7319;
+}
+
+.content_text {
+    text-indent: 2em;  /*文章首行縮兩格*/
+}
+
+.form_title{
+    text-align: center;  /*圖片名稱介紹*/
+}
