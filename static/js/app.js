@@ -1,3 +1,50 @@
+//typing header
+var i1 = 0;
+var i2 = 0;
+var i3 = 0;
+var txt1 = "WHAT IS BOROMA? BOROMA IS BOROMA   ";
+var txt2 = "GOOD";
+var speed = 150;
+const delete_len = 9;
+const type = () => {
+  const type_elem = document.getElementById("reflect-text");
+  const head_img = document.getElementById("head-img");
+  if (type_elem && head_img) {
+    function typeWriter() {
+      if (i1 < txt1.length) {
+        type_elem.innerHTML += txt1.charAt(i1);
+        i1++;
+      }
+      if (i1 == txt1.length && i2 < delete_len) {
+        type_elem.innerHTML = type_elem.innerHTML.slice(0, -1);
+        i2++;
+      }
+      if (i2 == delete_len && i3 < txt2.length) {
+        type_elem.innerHTML += txt2.charAt(i3);
+        i3++;
+      }
+      setTimeout(typeWriter, speed);
+    }
+    typeWriter();
+  }
+};
+
+var head_img = document.querySelector("#head-img");
+if (head_img) {
+  var navbar = document.querySelector(".navbar");
+  navbar.style.backgroundColor = "#D8C891";
+  if (head_img.complete) {
+    type();
+  } else {
+    // head_img.addEventListener("canplay", type, false);
+    head_img.addEventListener("load", type, false);
+  }
+  var dropdowns = document.querySelectorAll(".dropdown-menu");
+  dropdowns.forEach((i) => {
+    i.style.backgroundColor = "#D8C891";
+  });
+}
+
 // Table of content and scroll to section
 
 const scrollHeight = document.documentElement.scrollHeight;
@@ -40,3 +87,92 @@ const progressBar = () => {
   progressbar.style.width = percentage + "%";
 };
 document.addEventListener("scroll", progressBar);
+
+// Fade animation
+const observerFadeIn = new IntersectionObserver(
+  (items) => {
+    items.forEach((i) => {
+      if (i.isIntersecting) {
+        i.target.classList.add("fade-in");
+      } else {
+        i.target.classList.remove("fade-in");
+      }
+    });
+  },
+  {
+    threshold: 1,
+  }
+);
+
+const fadeInItems = document.querySelectorAll(".to-fade-in");
+fadeInItems.forEach((i) => {
+  observerFadeIn.observe(i);
+});
+
+const observerFadeInFast = new IntersectionObserver(
+  (items) => {
+    items.forEach((i) => {
+      if (i.isIntersecting) {
+        i.target.classList.add("fade-in");
+      } else {
+        i.target.classList.remove("fade-in");
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const fadeInFastItems = document.querySelectorAll(".to-fade-in-fast");
+fadeInFastItems.forEach((i) => {
+  observerFadeInFast.observe(i);
+});
+
+//rotating taiwan
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+          entry.target.classList.add('rotateshow');
+      } else {
+          entry.target.classList.remove('rotateshow');
+      }
+  });
+});
+
+
+const hiddenElements2 = document.querySelectorAll('.rotatehidden');
+hiddenElements2.forEach((el) => observer2.observe(el));
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+          entry.target.classList.add('showleft');
+      } else {
+          entry.target.classList.remove('showleft');
+      }
+  });
+});
+
+
+const hiddenElements3 = document.querySelectorAll('.hiddenleft');
+hiddenElements3.forEach((el) => observer3.observe(el));
+
+
+const observer4 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+          entry.target.classList.add('showright');
+      }
+      else {
+          entry.target.classList.remove('showright');
+      }
+  });
+});
+
+
+const hiddenElements4 = document.querySelectorAll('.hiddenright');
+hiddenElements4.forEach((el) => observer4.observe(el));

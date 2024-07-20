@@ -199,6 +199,14 @@ name {
     margin-top: 3rem;
     margin-bottom: 0
 }
+.centered {
+    position: absolute;
+    top: -50vh;
+    width: 75vw;
+    left: 12vw;
+    
+  }
+
 
 .fig-wrap {
     padding-top: 1.5rem;
@@ -262,6 +270,7 @@ name {
     section {
         margin-bottom: 5rem;
     }
+    
     #reflect-text-wrap {
         width: 90%;
         font-size: 2.3rem;
@@ -459,4 +468,200 @@ name {
         width: 100vw;
         height: 30vh!important;
     }
+    #problem-title-wrap {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .taiwan {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .inasia {
+        top: 6%;
+        left: 17%;
+        font-size: 2.1rem;
+    }
 }
+
+.to-fade-in {
+    opacity: 0;
+    /* transform: translateY(3rem); */
+    transition: opacity 2s;
+}
+
+.to-fade-in-fast {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.fade-in {
+    opacity: 1;
+    /* transform: translateY(0); */
+}
+
+#reflect-text::after {
+    content: '|';
+    height: 0.5rem;
+    animation: cursor-blink 0.4s step-end infinite alternate;
+}
+
+#reflect-text-wrap {
+    width: 50%;
+    position: absolute;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+#home-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+@keyframes cursor-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+.home-img-pos {
+    position: relative; 
+    
+    width: 100vw;
+    height: 91vh;
+    left: 0vw !important;
+}
+
+#bg-green-wrap {
+    color: rgb(0, 0, 0);
+    padding-top: 7rem;
+    padding: 5rem;
+    background-color: rgb(195, 230, 80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#problem-title-wrap {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    padding: 2rem;
+    border: 0.3rem solid rgb(71, 245, 77);
+    border-radius: 1rem;
+    margin-bottom: 7rem;
+}
+
+#problem-title-wrap span {
+    color: rgb(30, 245, 88);
+}
+
+.gradbluetowhite1 {
+    background: linear-gradient(180deg, #ffffff 12.19%, #ddfe92 74.66%, #C3E650 100%);
+}
+
+.pageshort {
+    width: 100%;
+    height: 30vh;
+    padding-top: 50px;
+}
+
+/* navbar */
+.navbar button.navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  
+  .navbar a.dropdown-toggle::after {
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .navbar a.show.dropdown-toggle::after {
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+  
+    
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+
+  .opaque-words {
+    opacity: 1 !important;
+    color: rgb(255, 255, 255);
+  }
+
+  /* rotating taiwan */
+  .taiwan {
+    position: absolute;
+    right: 1vw;
+    
+}
+  
+.rotatehidden {
+    opacity: 0;
+    transform: translateX(100%) rotate(360deg);
+    transition: all 3s;
+}
+
+.rotateshow {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
+.hiddenright {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.showright {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.s3 {
+    text-shadow: 2px 8px 6px rgba(52, 109, 213, 0.2), 0px -3px 20px rgba(255,255,255,0.4);
+}
+
+.inasia {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #0C2C54;
+    right: 60vw;
+    top: 215vh;
+}
+
+  
+  
+  
+  
+ 
+  
+
+  

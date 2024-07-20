@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark" id="mainNav">
+<nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark " id="mainNav">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="/">
         <span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
@@ -14,10 +14,18 @@
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{ url_for('pages', page='index') }}">HOME</a></li>
+    
                 
                 <!---- Project ---->
                 <div class="nav-item dropdown">
-                    <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROJECT</div>
+                    <a
+                    class="nav-link dropdown-toggle opaque-words"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >
+                    PROJECT
+                    </a>
+                    <!--<div class="nav-link menu-tabs words-opaque" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROJECT</div> -->
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
@@ -28,7 +36,14 @@
                 
                 <!---- Wetlab ---->
                 <div class="nav-item dropdown">
-                    <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">WETLAB</div>
+                    <a
+                    class="nav-link dropdown-toggle opaque-words"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >
+                    WETLAB
+                    </a>
+                    
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}">Experiments</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
@@ -40,7 +55,13 @@
             
                 <!---- Drylab ---->
                 <div class="nav-item dropdown">
-                    <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">DRYLAB</div>
+                    <a
+                    class="nav-link dropdown-toggle opaque-words"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >
+                    DRYLAB
+                    </a>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='drylab') }}">Drylab</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='drylab-model') }}">Model</a></li>
@@ -50,7 +71,13 @@
             
                 <!---- Human Practice ---->
                 <div class="nav-item dropdown">
-                    <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">HUMAN PRACTICES</div>
+                    <a
+                    class="nav-link dropdown-toggle opaque-words"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >
+                    HUMAN PRACTICES
+                    </a>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
@@ -60,7 +87,13 @@
         
                 <!---- Team ---->
                 <div class="nav-item dropdown">
-                    <div class="nav-link menu-tabs" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEAM</div>
+                    <a
+                    class="nav-link dropdown-toggle opaque-words"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >
+                    TEAM
+                    </a>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down">
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Members</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
