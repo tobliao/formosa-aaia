@@ -2,10 +2,10 @@
 var i1 = 0;
 var i2 = 0;
 var i3 = 0;
-var txt1 = "WHAT IS BOROMA? BOROMA IS BOROMA   ";
+var txt1 = "WHAT IS BOROHMA? BOROHMA IS BOROHMA   ";
 var txt2 = "GOOD";
 var speed = 150;
-const delete_len = 9;
+const delete_len = 10;
 const type = () => {
   const type_elem = document.getElementById("reflect-text");
   const head_img = document.getElementById("head-img");

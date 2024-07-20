@@ -321,8 +321,8 @@ p {
     }
 
     .inasia {
-        top: 6%;
-        left: 17%;
+        top: 12vh;
+        left: 17vw;
         font-size: 2.1rem;
     }
 }
@@ -498,7 +498,7 @@ p {
     top: 215vh;
 }
 
-  
+ 
   
   
   
