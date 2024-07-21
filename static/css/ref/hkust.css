@@ -1,0 +1,3165 @@
+/* body { padding-top: 56px; }
+html, body {width: auto!important; overflow-x: hidden!important}  */
+.left-aligned { margin-left: auto; }
+/* .bg-dark { background-color: #343a40 !important; } */
+/* .bg-hero { background: linear-gradient(180deg, #182540 0%, #5A8DE1 35.73%, #95C4E4 66.98%, rgba(211, 255, 231, 0.8) 100%) } */
+
+/* CALLOUT */
+/* .bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
+.bd-callout h4 { margin-bottom:.25rem }
+.bd-callout p:last-child { margin-bottom:0 }
+.bd-callout code { border-radius:.25rem }
+.bd-callout+.bd-callout { margin-top:-.25rem }
+.bd-callout-info { border-left-color:#678BD6 }
+.bd-callout-warning { border-left-color:#f0ad4e }
+.bd-callout-danger { border-left-color:#d9534f } */
+
+.w-40 { width: 40%; }
+.w-60 { width: 60%; }
+.w-80 { width: 80%; }
+.w-90 { width: 90% }
+.h-80 { height: 80%; }
+.h-90 { height: 90%;}
+
+/* footer */
+/* footer a { color: black; font-weight: bold; text-decoration: none; }
+footer a:hover { color: black; text-decoration: underline; }
+
+footer {
+    align-items: center;
+    background-image: linear-gradient(to right, #678BD6, #DEF8F1, #678BD6, #4569A4, #101A30);
+    background-size: 500%;
+    background-position: 0 0;
+    box-shadow: inset 0 0 5em rgba(0, 0, 0, 0.5);
+    display: flex;
+    font-family: "Quicksand";
+    height: 100%;
+    justify-content: center;
+    
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-name: gradients;
+} */
+
+@keyframes gradients {
+    0% {
+    background-position: 0 0;
+    }
+    25% {
+    background-position: 50% 0;
+    }
+    50% {
+    background-position: 90% 0;
+    }
+    60% {
+    background-position: 60%;
+    }
+    75% {
+    background-position: 40%;
+    }
+    100% {
+    background-position: 0 0;
+    }
+}
+
+.s3 {
+    text-shadow: 2px 8px 6px rgba(52, 109, 213, 0.2), 0px -3px 20px rgba(255,255,255,0.4);
+}
+
+.bg-white-t {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* content header */
+.header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(
+        60deg,
+        #182540 0%, 
+        #5A8DE1 35.73%, 
+        #95C4E4 66.98%, 
+        rgba(211, 255, 231, 0.8) 100%
+    );
+    color: white;
+    box-shadow: inset 0 0 5em rgba(0, 0, 0, 0.5);
+    border: 30px;
+}
+
+.inner-header {
+    height: 52vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-header {
+    /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wavesh {
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    margin-bottom: -7px; /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+}
+
+/* Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 11s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 14s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 17s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 24s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/*header Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
+
+:root {
+    --primary: #051627;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 8px 8px -6px rgba(0,0,0,.5);
+}
+
+@font-face {
+    font-family: "Archivo Black";
+    src: url('https://static.igem.wiki/teams/4225/wiki/archivoblack-regular.ttf');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('https://static.igem.wiki/teams/4225/wiki/quicksand-variablefont-wght.ttf');
+}
+
+@font-face {
+    font-family: 'Postno';
+    src: url('https://static.igem.wiki/teams/4225/wiki/londrinashadow-regular.ttf');
+}
+
+.postno {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    color: #678BD6;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('https://static.igem.wiki/teams/4225/wiki/nunito-regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('https://static.igem.wiki/teams/4225/wiki/nunito-italic.ttf') format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('https://static.igem.wiki/teams/4225/wiki/nunito-bold.ttf') format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+.mp-content {
+    font-family: 'Nunito';
+}
+
+.headertitle {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+.footertitle {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.headerlead {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+
+.outerheadingunder {
+    width: 60%;
+    height: 13px;
+    background: linear-gradient(90deg, #D5E3FB 19.42%, #DDFBEF 100%);
+    border-radius: 30px;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 50px;
+}
+
+.back {
+    background-color: #678BD6;
+}
+
+.wave1 {
+    position: absolute;
+    top: 57vh;
+    width: 250vw;
+    z-index: 0;
+    animation: wave1 5s linear infinite alternate;
+}
+
+.wave2 {
+    position: absolute;
+    top: 63vh;
+    width: 250vw;
+    z-index: 0;
+    animation: wave2 5s linear infinite alternate;
+}
+
+.wave3 {
+    position: absolute;
+    top: 66vh;
+    width: 250vw;
+    z-index: 2;
+    animation: wave1 5s linear infinite alternate;
+}
+
+.wave4 {
+    position: absolute;
+    top: 84vh;
+    width: 250vw;
+    z-index: 2;
+    animation: wave2 5s linear infinite alternate;
+}
+
+.ship {
+    position: absolute;
+    top: 50vh;
+    right: 2vw;
+    animation: floating 5s infinite ease-in-out;
+}
+
+@keyframes floating2 {
+    0% {
+      transform: translate(0, 0px);
+    }
+  
+    50% {
+      transform: translate(0, 25px);
+    }
+  
+    100% {
+      transform: translate(0, -0px);
+    }
+}
+
+.didyouknow {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+    color: #678BD6;
+}
+
+.inasia {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #0C2C54;
+}
+
+.hongkongconsumptions {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #0C2C54;
+}
+
+.largestseafood {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #0C2C54;
+}
+
+.number1 {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    align-items: center;
+    text-align: center;
+    color: #678BD6;
+}
+
+.number2 {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    align-items: center;
+    text-align: center;
+    color: #678BD6;
+}
+
+.under {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    color: #678BD6;
+}
+
+.in2021 {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #0C2C54;
+}
+
+.however {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    color: #0C2C54;
+}
+
+.onjune {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.therewere {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.seafood {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.sowhat {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+    color: #678BD6;
+}
+
+.thereare {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.people {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.andis {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.also {
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.annually {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+}
+
+.without {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+    color: #678BD6;
+}
+
+.fromnowon {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+    color: #678BD6;
+}
+
+.withthis {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.interested {
+    font-family: 'Postno';
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+    color: #678BD6;
+}
+
+.earth {
+    position: absolute;
+    right: 1vw;
+}
+
+.truck {
+    position: absolute;
+    left: 50%;
+}
+
+.thereare {
+    transform: translateY(-40%);
+}
+
+.flex-container.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-container.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-container.center {
+    justify-content: center;
+}
+
+.flex-container.space-around {
+    justify-content: space-around;
+}
+
+.flex-container.space-between {
+    justify-content: space-between;
+}
+
+.flex-container.space-evenly {
+    justify-content: space-evenly;
+}
+
+.gradbluetoblack {
+    background: linear-gradient(180deg, #FFFFFF 12.19%, #678BD6 47.22%, #3A5181 69.17%, #101A30 96.62%);
+}
+
+.gradbluetowhite1 {
+    background: linear-gradient(180deg, #678bd6 12.19%, #DEF8F1 74.66%, #FFFFFF 100%);
+}
+
+.gradbluetowhite2 {
+    background: linear-gradient(180deg, #101A30 12.19%, #678BD6 55%, #FFFFFF 100%);
+}
+
+.backgroundblack {
+    background: #101A30;
+}
+
+.space {
+    height: 15vh;
+}
+
+.spacesmall {
+    height: 10vh;
+}
+
+.full-width {
+    width: 100%;
+    height: auto;
+}
+
+.pagelong {
+    width: 100%;
+    height: 130vh;
+    padding-top: 50px;
+}
+
+.pageshort {
+    width: 100%;
+    height: 50vh;
+    padding-top: 50px;
+}
+
+.pageshortshort {
+    width: 100%;
+    height: 30vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.hiddenhowever {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(160%);
+    transition: all 1s;
+}
+
+.showhowever {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.hiddenup {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-100%);
+    transition: all 1s;
+}
+
+.showup {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.hiddenleft {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.showleft {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hiddenright {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.showright {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hiddenright2 {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(90%);
+    transition: all 1s;
+}
+
+.showright2 {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hiddenrighttruck {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(100%);
+    transition: all 0.7s;
+}
+
+.showrighttruck {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition-delay: 800ms;
+}
+
+.rotatehidden {
+    opacity: 0;
+    transform: translateX(100%) rotate(360deg);
+    transition: all 3s;
+}
+
+.rotateshow {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
+.hiddenchemicals {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-100%) scale(.1);
+    transition: all 1s;
+}
+
+.hiddenchemicals:nth-child(1) {
+    transition-delay: 100ms;
+}
+
+.hiddenchemicals:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.hiddenchemicals:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.showchemicals {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+}
+
+.hiddentestkit {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-30%);
+    transition: all 700ms;
+}
+
+.lid {
+    transition-delay: 0.7s;
+}
+
+.testkitbody {
+    transition-delay: 1.4s;
+}
+
+.swap {
+    transition-delay: 2.1s;
+}
+
+.drop {
+    transition-delay: 2.8s;
+}
+
+.bott {
+    transition-delay: 3.5s;
+}
+
+.td-0 {
+    transition-delay: 0ms;
+}
+
+.showtestkit {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.hiddenresult {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 700ms;
+}
+
+.gray {
+    transition-delay: 4.2s;
+}
+
+.green {
+    transition-delay: 4.9s;
+}
+
+.red {
+    transition-delay: 5.6s;
+}
+
+.showresult {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.td-0 {
+    transition-delay: 0ms;
+}
+
+.hiddennews {
+    opacity: 0;
+}
+
+.news1 {
+    transform: translateY(-200%);
+    transition: all 100ms;
+}
+
+.news2 {
+    transform: translateY(-400%);
+    transition: all 200ms;
+    transition-delay: 400ms;
+}
+
+.news3 {
+    transform: translateY(-600%);
+    transition: all 200ms;
+    transition-delay: 700ms;
+}
+
+.news4 {
+    transform: translateY(-800%);
+    transition: all 200ms;
+    transition-delay: 1s;
+}
+
+.news5 {
+    transform: translateY(-1000%);
+    transition: all 200ms;
+    transition-delay: 1.3s;
+}
+
+.shownews {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.axis {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.spoiled {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+    transition-delay: 2s;
+}
+
+.waste {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+    transition-delay: 3s;
+}
+
+.textgraph {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+    transition-delay: 1s;
+}
+
+.consuming {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+    transition-delay: 2s;
+}
+
+.mistakenly {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+    transition-delay: 3s;
+}
+
+.showgraph {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.hongkongmark {
+    opacity: 0;
+    filter: blur(5px);
+    transform: scale(0);
+    transition: all 1s;
+}
+
+.showhongkongmark {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
+
+.hidenav {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 400ms ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+
+    .hidden {
+        transition: none;
+    }
+
+    .hiddenup {
+        transition: none;
+    }
+
+    .hiddenleft {
+        transition: none;
+    }
+
+    .hiddenright {
+        transition: none;
+    }
+
+    .hiddenright2 {
+        transition: none;
+    }
+
+    .hiddenrighttruck {
+        transition: none;
+    }
+
+    .rotatehidden {
+        transition: none;
+    }
+
+    .hiddenchemicals {
+        transition: none;
+    }
+    
+    .hiddentestkit {
+        transition: none;
+    }
+
+    .hiddenresult {
+        transition: none;
+    }
+
+    .news1 {
+        transition: none;
+    }
+
+    .news2 {
+        transition: none;
+    }
+
+    .news3 {
+        transition: none;
+    }
+
+    .news4 {
+        transition: none;
+    }
+
+    .news5 {
+        transition: none;
+    }
+    
+    .axis {
+        transition: none;
+    }
+
+    .spoiled {
+        transition: none;
+    }
+
+    .waste {
+        transition: none;
+    }
+
+    .textgraph {
+        transition: none;
+    }
+
+    .consuming {
+        transition: none;
+    }
+
+    .mistakenly {
+        transition: none;
+    }
+
+    .hongkongmark {
+        transition: none;
+    }
+
+    .hidenav{
+        transition: none;
+    }
+}
+
+.team-dec {
+    font-size: .9rem;
+}
+
+.team-title {
+    margin: 15px 0 7px;
+    font-size: 1.6rem;
+    font-family: 'Postno';
+}
+
+.chemicalsrow {
+    transform: translateY(-30%);
+}
+
+/* engineering cycle */
+
+.ecb {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.ecb:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.popup .ol {
+    position: fixed;
+    top: 5px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .contents {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 75vw;
+    height: 80vh;
+    z-index: 2;
+    text-align: center;
+    padding: 5% 0 ;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+.popup .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active2 .ol {
+    display: block;
+}
+
+.popup.active2 .contents {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* engineering cycle contents placing */
+.sensingc0 {
+    top: 230%;
+}
+
+.sensingc1 {
+    top: 270%;
+}
+
+.processingc0 {
+    top: 290%;
+}
+
+.processingc1b {
+    top: 350%;
+}
+
+.processingc1a {
+    top: 350%;
+}
+
+.processingc1ab {
+    top: 380%;
+}
+
+.finalp {
+    top: 420%;
+}
+/* end */
+
+@media screen and (min-width: 1700px) {
+
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 98%;
+        top: 28%;
+    }
+
+    .wave1 {
+        top: 46%;
+        left: -65vw;
+        width: 165%;
+        height: 15%;
+    }
+
+    .wave2 {
+        top: 47%;
+        width: 165%;
+        height: 20%;
+    }
+
+    .wave3 {
+        top: 58%;
+        left: -65vw;
+        width: 165%;
+        height: 23%;
+    }
+
+    .wave4 {
+        top: 75%;
+        width: 165%;
+        height: 25%;
+    }
+
+    .ship {
+        width: 17%;
+        top: 47%;
+    }
+
+    .didyouknow {
+        font-size: 5.5rem;
+    }
+
+    .earth {
+        width: 40%;
+        margin-right: 5%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 16%;
+        left: 21%;
+        font-size: 3.5rem;
+    }
+
+    .hongkongconsumptions {
+        top: 38%;
+        left: 18%;
+        font-size: 2rem;
+    }
+
+    .largestseafood {
+        font-size: 3.5rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    .number1 {
+        font-size: 5.7rem;
+    }
+
+    .number2 {
+        font-size: 5.7rem;
+    }
+
+    .under {
+        font-size: 2rem;
+    }
+
+    .in2021 {
+        font-size: 2rem;
+    }
+
+    .however {
+        font-size: 6rem;
+    }
+
+    .hongkongnews {
+        width: 70%;
+    }
+
+    .onjune {
+        font-size: 2rem;
+    }
+
+    .hongkongmark {
+        width: 25%;
+    }
+
+    .therewere {
+        font-size: 2rem;
+    }
+
+    .seafood {
+        font-size: 2rem;
+    }
+
+    .sowhat {
+        font-size: 5.5rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 3.5rem;
+        transform: translateY(-87%);
+    }
+
+    .chemicals {
+        width: 80%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 80%;
+        height: auto;
+    }
+
+    .people {
+        font-size: 2rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 40%;
+        left: 8%;
+        font-size: 2rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 3.5rem;
+    }
+
+    .trash {
+        width: 20%;
+    }
+
+    .annually {
+        font-size: 2rem;
+    }
+
+    .without {
+        font-size: 5.5rem;
+    }
+
+    .graph {
+        width: 80%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 5rem;
+    }
+
+    .withthis {
+        font-size: 2rem;
+    }
+
+    .testkit {
+        width: 70%;
+        height: auto;
+    }
+
+    .results {
+        width: 50%;
+    }
+
+    .interested {
+        font-size: 5rem;
+    }
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) and (max-width: 1699px) {
+
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 98%;
+        top: 30%;
+    }
+
+    .wave1 {
+        top: 46%;
+        left: -65vw;
+        width: 165%;
+        height: 15%;
+    }
+
+    .wave2 {
+        top: 47%;
+        width: 165%;
+        height: 20%;
+    }
+
+    .wave3 {
+        top: 58%;
+        left: -65vw;
+        width: 165%;
+        height: 23%;
+    }
+
+    .wave4 {
+        top: 75%;
+        width: 165%;
+        height: 25%;
+    }
+
+    .ship {
+        width: 17%;
+        top: 48%;
+    }
+
+    .didyouknow {
+        font-size: 5.5rem;
+    }
+
+    .earth {
+        width: 37%;
+        margin-right: 5%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 20%;
+        left: 23%;
+        font-size: 3rem;
+    }
+
+    .hongkongconsumptions {
+        top: 36%;
+        left: 22.5%;
+        font-size: 1.5rem;
+    }
+
+    .largestseafood {
+        font-size: 3rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    num1 {
+        transform: translateX(30%);
+    }
+
+    num2 {
+        transform: translateX(-31%);
+    }
+
+    .number1 {
+        font-size: 5.5rem;
+    }
+
+    .number2 {
+        font-size: 5.5rem;
+    }
+
+    .under {
+        font-size: 1.5rem;
+    }
+
+    .in2021 {
+        font-size: 1.5rem;
+    }
+
+    .however {
+        font-size: 5.5rem;
+    }
+
+    .hongkongnews {
+        width: 55%;
+    }
+
+    .onjune {
+        font-size: 2.1rem;
+    }
+
+    .hongkongmark {
+        width: 18%;
+    }
+
+    .therewere {
+        font-size: 2.1rem;
+    }
+
+    .seafood {
+        font-size: 2.1rem;
+    }
+
+    .sowhat {
+        font-size: 5.5rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 3rem;
+        transform: translateY(-82%);
+    }
+
+    .chemicals {
+        width: 70%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 80%;
+        height: auto;
+    }
+
+    .people {
+        font-size: 1.5rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 40%;
+        left: 8%;
+        font-size: 1.5rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 3rem;
+    }
+
+    .trash {
+        width: 20%;
+    }
+
+    .annually {
+        font-size: 1.5rem;
+    }
+
+    .without {
+        font-size: 5.5rem;
+    }
+
+    .graph {
+        width: 80%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 5.5rem;
+    }
+
+    .withthis {
+        font-size: 1.5rem;
+    }
+
+    .testkit {
+        width: 70%;
+        height: auto;
+    }
+
+    .results {
+        width: 50%;
+    }
+
+    .interested {
+        font-size: 5.5rem;
+    }
+
+    .team-details {
+        font-size: .8rem;
+    }
+
+    .team-dec {
+        font-size: .9rem;
+    }
+}
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 100%;
+        top: 36%;
+    }
+
+    .wave1 {
+        top: 50%;
+        left: -65vw;
+        width: 165%;
+        height: 12%;
+    }
+
+    .wave2 {
+        top: 51%;
+        width: 165%;
+        height: 17%;
+    }
+
+    .wave3 {
+        top: 61%;
+        left: -65vw;
+        width: 165%;
+        height: 20%;
+    }
+
+    .wave4 {
+        top: 75%;
+        width: 165%;
+        height: 22%;
+    }
+
+    .ship {
+        width: 19%;
+        top: 52%;
+    }
+
+    .didyouknow {
+        font-size: 4.3rem;
+    }
+
+    .earth {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 21%;
+        left: 18%;
+        font-size: 2.8rem;
+    }
+
+    .hongkongconsumptions {
+        top: 38%;
+        left: 19%;
+        font-size: 1.3rem;
+    }
+
+    .largestseafood {
+        font-size: 2.8rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    num1 {
+        transform: translateX(25%);
+    }
+
+    num2 {
+        transform: translateX(-26%);
+    }
+
+    .number1 {
+        font-size: 4.3rem;
+    }
+
+    .number2 {
+        font-size: 4.3rem;
+    }
+
+    .under {
+        font-size: 1.3rem;
+    }
+
+    .in2021 {
+        font-size: 1.3rem;
+    }
+
+    .however {
+        font-size: 4.8rem;
+    }
+
+    .hongkongnews {
+        width: 70%;
+    }
+
+    .onjune {
+        font-size: 1.3rem;
+    }
+
+    .hongkongmark {
+        width: 25%;
+    }
+
+    .therewere {
+        font-size: 1.3rem;
+        transform: translateY(-37%);
+    }
+
+    .seafood {
+        font-size: 1.3rem;
+    }
+
+    .sowhat {
+        font-size: 4.3rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 2.8rem;
+        transform: translateY(-67%);
+    }
+
+    .chemicals {
+        width: 80%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 80%;
+        height: auto;
+    }
+
+    .people {
+        font-size: 1.3rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 30%;
+        left: 8%;
+        font-size: 1.3rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 2.8rem;
+    }
+
+    .trash {
+        width: 20%;
+    }
+
+    .annually {
+        font-size: 1.3rem;
+    }
+
+    .without {
+        font-size: 4.3rem;
+    }
+
+    .graph {
+        width: 80%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 4.3rem;
+    }
+
+    .testkit {
+        width: 50%;
+        height: auto;
+    }
+
+    .results {
+        width: 50%;
+    }
+
+    .withthis {
+        font-size: 1.3rem;
+    }
+
+    .interested {
+        font-size: 4.3rem;
+    }
+
+    .team-details {
+        font-size: .6rem;
+    }
+
+    .team-title {
+        font-size: 1.1rem;
+    }
+
+    .team-dec {
+        font-size: .7rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 100%;
+        top: 41%;
+    }
+
+    .wave1 {
+        top: 46%;
+        left: -65vw;
+        width: 165%;
+        height: 9%;
+    }
+
+    .wave2 {
+        top: 47%;
+        width: 165%;
+        height: 10%;
+    }
+
+    .wave3 {
+        top: 52%;
+        left: -65vw;
+        width: 165%;
+        height: 11%;
+    }
+
+    .wave4 {
+        top: 63%;
+        width: 165%;
+        height: 12%;
+    }
+
+    .ship {
+        width: 22%;
+        top: 47%;
+    }
+
+    .didyouknow {
+        font-size: 4.1rem;
+    }
+
+    .earth {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 9%;
+        left: 17%;
+        font-size: 2.1rem;
+    }
+
+    .hongkongconsumptions {
+        top: 17%;
+        left: 17.5%;
+        font-size: 1rem;
+    }
+
+    .largestseafood {
+        font-size: 2.6rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    num1 {
+        transform: translateX(25%);
+    }
+
+    num2 {
+        transform: translateX(-26%);
+    }
+
+    .number1 {
+        font-size: 3.1rem;
+    }
+
+    .number2 {
+        font-size: 3.1rem;
+    }
+
+    .under {
+        font-size: 1.1rem;
+    }
+
+    .in2021 {
+        font-size: 1.1rem;
+        transform: translateY(-80%);
+    }
+
+    .however {
+        font-size: 4.4rem;
+    }
+
+    .hongkongnews {
+        width: 70%;
+    }
+
+    .onjune {
+        font-size: 1.1rem;
+    }
+
+    .hongkongmark {
+        width: 25%;
+    }
+
+    .therewere {
+        font-size: 1.1rem;
+        transform: translateY(-35%);
+    }
+
+    .seafood {
+        font-size: 1.3rem;
+        transform: translateY(-120%);
+    }
+
+    .sowhat {
+        font-size: 3rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 2.1rem;
+        transform: translateY(-65%);
+    }
+
+    .chemicals {
+        width: 80%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 80%;
+        height: auto;
+    }
+
+    .people {
+        font-size: 1.1rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 18%;
+        left: 6%;
+        font-size: 1.1rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 2.1rem;
+    }
+
+    .trash {
+        width: 35%;
+    }
+
+    .annually {
+        font-size: 1.9rem;
+    }
+
+    .without {
+        font-size: 3.1rem;
+    }
+
+    .graph {
+        width: 90%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 3.1rem;
+    }
+
+    .testkit {
+        width: 50%;
+        height: auto;
+    }
+
+    .withthis {
+        font-size: 1.1rem;
+    }
+
+    .results {
+        width: 65%;
+    }
+
+    .interested {
+        font-size: 3.1rem;
+        transform: translateY(300%);
+    }
+
+    .team-title {
+        font-size: .7rem;
+    }
+
+    .team-details {
+        font-size: .55rem;
+    }
+
+    .team-dec {
+        font-size: .5rem;
+    }
+
+    /* engineering cycle contents placing */
+    .sensingc0 {
+        top: 0%;
+    }
+
+    .sensingc1 {
+        top: 0%;
+    }
+
+    .processingc0 {
+        top: 0%;
+    }
+
+    .processingc1b {
+        top: 0%;
+    }
+
+    .processingc1a {
+        top: 0%;
+    }
+
+    .processingc1ab {
+        top: 0%;
+    }
+
+    .finalp {
+        top: 0%;
+    }
+    /* end */
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    /* CSS */
+
+}
+
+@media (min-width: 481px) and (max-width: 767px){
+
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 100%;
+        top: 41%;
+    }
+
+    .wave1 {
+        top: 46%;
+        left: -65vw;
+        width: 165%;
+        height: 9%;
+    }
+
+    .wave2 {
+        top: 47%;
+        width: 165%;
+        height: 10%;
+    }
+
+    .wave3 {
+        top: 52%;
+        left: -65vw;
+        width: 165%;
+        height: 11%;
+    }
+
+    .wave4 {
+        top: 63%;
+        width: 165%;
+        height: 12%;
+    }
+
+    .ship {
+        width: 22%;
+        top: 47%;
+    }
+
+    .didyouknow {
+        font-size: 4.1rem;
+    }
+
+    .earth {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 6%;
+        left: 17%;
+        font-size: 2.1rem;
+    }
+
+    .hongkongconsumptions {
+        top: 25%;
+        left: 17.5%;
+        font-size: 1rem;
+    }
+
+    .largestseafood {
+        font-size: 2.6rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    num1 {
+        transform: translateX(25%);
+    }
+
+    num2 {
+        transform: translateX(-26%);
+    }
+
+    .number1 {
+        font-size: 3.1rem;
+    }
+
+    .number2 {
+        font-size: 3.1rem;
+    }
+
+    .under {
+        font-size: 1.1rem;
+    }
+
+    .in2021 {
+        font-size: 1.1rem;
+    }
+
+    .however {
+        font-size: 4.4rem;
+    }
+
+    .hongkongnews {
+        width: 70%;
+    }
+
+    .onjune {
+        font-size: 1.1rem;
+    }
+
+    .hongkongmark {
+        width: 25%;
+    }
+
+    .therewere {
+        font-size: 1.1rem;
+        transform: translateY(-35%);
+    }
+
+    .seafood {
+        font-size: 1.3rem;
+    }
+
+    .sowhat {
+        font-size: 4.1rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 2.1rem;
+        transform: translateY(-65%);
+    }
+
+    .chemicals {
+        width: 80%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 80%;
+        height: auto;
+    }
+
+    .people {
+        font-size: 1.1rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 13%;
+        left: 6%;
+        font-size: 1.1rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 2.25rem;
+    }
+
+    .trash {
+        width: 20%;
+    }
+
+    .annually {
+        font-size: 1.1rem;
+    }
+
+    .without {
+        font-size: 4.1rem;
+    }
+
+    .graph {
+        width: 90%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 4.1rem;
+    }
+
+    .testkit {
+        width: 50%;
+        height: auto;
+    }
+
+    .withthis {
+        font-size: 1.1rem;
+    }
+
+    .results {
+        width: 65%;
+    }
+
+    .interested {
+        font-size: 4.1rem;
+    }
+
+    .team-title {
+        font-size: .7rem;
+    }
+
+    .team-details {
+        font-size: .55rem;
+    }
+
+    .team-dec {
+        font-size: .5rem;
+    }
+
+    /* engineering cycle contents placing */
+    .sensingc0 {
+        top: 0%;
+    }
+
+    .sensingc1 {
+        top: 0%;
+    }
+
+    .processingc0 {
+        top: 0%;
+    }
+
+    .processingc1b {
+        top: 0%;
+    }
+
+    .processingc1a {
+        top: 0%;
+    }
+
+    .processingc1ab {
+        top: 0%;
+    }
+
+    .finalp {
+        top: 0%;
+    }
+    /* end */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 100%;
+        top: 41%;
+    }
+
+    .wave1 {
+        top: 45%;
+        left: -65vw;
+        width: 165%;
+        height: 5%;
+    }
+
+    .wave2 {
+        top: 46%;
+        width: 165%;
+        height: 6%;
+    }
+
+    .wave3 {
+        top: 49%;
+        left: -65vw;
+        width: 165%;
+        height: 7%;
+    }
+
+    .wave4 {
+        top: 58%;
+        width: 165%;
+        height: 8%;
+    }
+
+    .ship {
+        width: 19%;
+        top: 46%;
+    }
+
+    .didyouknow {
+        font-size: 2.7rem;
+    }
+
+    .earth {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 11%;
+        left: 17%;
+        font-size: 1rem;
+    }
+
+    .hongkongconsumptions {
+        top: 17%;
+        left: 17.5%;
+        font-size: .5rem;
+    }
+
+    .largestseafood {
+        font-size: 1.35rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    .number1 {
+        font-size: 1.3rem;
+    }
+
+    .number2 {
+        font-size: 1.3rem;
+    }
+
+    .under {
+        font-size: .5rem;
+    }
+
+    .in2021 {
+        font-size: .7rem;
+        transform: translateY(-169%);
+    }
+
+    .however {
+        font-size: 2.7rem;
+    }
+
+    .hongkongnews {
+        width: 70%;
+    }
+
+    .onjune {
+        font-size: .55rem;
+        transform: translateY(-68%);
+    }
+
+    .hongkongmark {
+        width: 25%;
+    }
+
+    .therewere {
+        font-size: .7rem;
+        transform: translateY(-65%);
+    }
+
+    .seafood {
+        font-size: .7rem;
+        transform: translateY(-620%);
+    }
+
+    .sowhat {
+        font-size: 2rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 1.1rem;
+        transform: translateY(-65%);
+    }
+
+    .chemicals {
+        width: 40%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 100%;
+        height: auto;
+    }
+
+    .people {
+        font-size: .7rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 13%;
+        left: 5%;
+        font-size: .6rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 1rem;
+        transform: translateY(110%);
+    }
+
+    .trash {
+        width: 40%;
+    }
+
+    .annually {
+        font-size: .6rem;
+        transform: translateY(-60%);
+    }
+
+    .without {
+        font-size: 2rem;
+    }
+
+    .graph {
+        width: 90%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 2rem;
+    }
+
+    .testkit {
+        width: 22%;
+        height: auto;
+    }
+
+    .withthis {
+        font-size: .7rem;
+        transform: translateY(40%);
+    }
+
+    .results {
+        width: 65%;
+    }
+
+    .interested {
+        font-size: 1.8rem;
+        transform: translateY(250%);
+    }
+
+    .mp-content {
+        font-size: .5rem;
+    }
+
+    .team-title {
+        font-size: .5rem;
+    }
+
+    .team-details {
+        font-size: .4rem;
+    }
+
+    .team-dec {
+        font-size: .35rem;
+    }
+
+    .chemicalsrow {
+        transform: translateY(0);
+    }
+
+    /* engineering cycle contents placing */
+    .sensingc0 {
+        top: 0%;
+    }
+
+    .sensingc1 {
+        top: 0%;
+    }
+
+    .processingc0 {
+        top: 0%;
+    }
+
+    .processingc1b {
+        top: 0%;
+    }
+
+    .processingc1a {
+        top: 0%;
+    }
+
+    .processingc1ab {
+        top: 0%;
+    }
+
+    .finalp {
+        top: 0%;
+    }
+    /* end */
+}
+
+
+@media (min-device-width: 100px) and (max-device-width: 319px) {
+    .page {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pagelong {
+        width: 100%;
+        height: 130vh;
+    }
+
+    .pageshort {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .background {
+        width: 100%;
+        top: 41%;
+    }
+
+    .wave1 {
+        top: 45%;
+        left: -65vw;
+        width: 165%;
+        height: 5%;
+    }
+
+    .wave2 {
+        top: 46%;
+        width: 165%;
+        height: 6%;
+    }
+
+    .wave3 {
+        top: 49%;
+        left: -65vw;
+        width: 165%;
+        height: 7%;
+    }
+
+    .wave4 {
+        top: 58%;
+        width: 165%;
+        height: 8%;
+    }
+
+    .ship {
+        width: 19%;
+        top: 46%;
+    }
+
+    .didyouknow {
+        font-size: 2.7rem;
+    }
+
+    .earth {
+        width: 40%;
+        margin-right: 3%;
+    }
+
+    .fish1 {
+        width: 27%;
+    }
+
+    .inasia {
+        top: 11%;
+        left: 17%;
+        font-size: 1rem;
+    }
+
+    .hongkongconsumptions {
+        top: 17%;
+        left: 17.5%;
+        font-size: .5rem;
+    }
+
+    .largestseafood {
+        font-size: 1.35rem;
+    }
+
+    .arrow {
+        width: 80%;
+        height: auto;
+    }
+
+    .number1 {
+        font-size: 1.3rem;
+    }
+
+    .number2 {
+        font-size: 1.3rem;
+    }
+
+    .under {
+        font-size: .5rem;
+    }
+
+    .in2021 {
+        font-size: .7rem;
+        transform: translateY(-169%);
+    }
+
+    .however {
+        font-size: 2.7rem;
+    }
+
+    .hongkongnews {
+        width: 70%;
+    }
+
+    .onjune {
+        font-size: .55rem;
+        transform: translateY(-68%);
+    }
+
+    .hongkongmark {
+        width: 25%;
+    }
+
+    .therewere {
+        font-size: .7rem;
+        transform: translateY(-65%);
+    }
+
+    .seafood {
+        font-size: .7rem;
+        transform: translateY(-620%);
+    }
+
+    .sowhat {
+        font-size: 2rem;
+    }
+
+    .devil {
+        width: 52%;
+        height: auto;
+    }
+
+    .thereare {
+        font-size: 1.1rem;
+        transform: translateY(-65%);
+    }
+
+    .chemicals {
+        width: 40%;
+        height: auto;
+    }
+
+    .symptoms {
+        width: 100%;
+        height: auto;
+    }
+
+    .people {
+        font-size: .7rem;
+    }
+
+    .andis {
+        position: absolute;
+        top: 13%;
+        left: 5%;
+        font-size: .6rem;
+    }
+
+    .truck {
+        width: 60%;
+    }
+
+    .also {
+        font-size: 1rem;
+        transform: translateY(110%);
+    }
+
+    .trash {
+        width: 40%;
+    }
+
+    .annually {
+        font-size: .6rem;
+        transform: translateY(-60%);
+    }
+
+    .without {
+        font-size: 2rem;
+    }
+
+    .graph {
+        width: 90%;
+        height: auto;
+    }
+
+    .fromnowon {
+        font-size: 2rem;
+    }
+
+    .testkit {
+        width: 22%;
+        height: auto;
+    }
+
+    .withthis {
+        font-size: .7rem;
+        transform: translateY(40%);
+    }
+
+    .results {
+        width: 65%;
+    }
+
+    .interested {
+        font-size: 1.8rem;
+        transform: translateY(250%);
+    }
+
+    .mp-content {
+        font-size: .4rem;
+    }
+
+    .team-title {
+        font-size: .5rem;
+    }
+
+    .team-details {
+        font-size: .4rem;
+    }
+
+    .team-dec {
+        font-size: .35rem;
+    }
+
+    .chemicalsrow {
+        transform: translateY(0);
+    }
+
+    /* engineering cycle contents placing */
+    .sensingc0 {
+        top: 0%;
+    }
+
+    .sensingc1 {
+        top: 0%;
+    }
+
+    .processingc0 {
+        top: 0%;
+    }
+
+    .processingc1b {
+        top: 0%;
+    }
+
+    .processingc1a {
+        top: 0%;
+    }
+
+    .processingc1ab {
+        top: 0%;
+    }
+
+    .finalp {
+        top: 0%;
+    }
+    /* end */
+
+}
+
+
+@keyframes wave1 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(65vw);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-65vw);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 1vh) rotate(5deg);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+/* Collabsible */
+
+/* .collapsible {
+    background: linear-gradient(to top, #29406A 50%, #5D7BB1 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+} */
+
+.collapsible:hover {
+    transition: all 200ms ease-in-out;
+    background-position: bottom;
+}
+
+/* .active {
+    transition: all 200ms ease-in-out;
+    background-color: #29406A;
+} */
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #EDF2F8;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* button */
+.button {
+    border: 2px solid #6389D6;
+    background: linear-gradient(to top, #6389D6 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    color: Black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-position: bottom;
+    color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.preloader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    overflow: 'hidden';
+    z-index: 9999999999;
+}
+
+.loader {
+    width: 100%;
+    height: auto;
+}
+
+/* Our Team
+-------------------------------------------------------*/
+
+.our-team .team-row {
+    margin-left: -40px;
+    margin-right: -40px;
+}
+
+.our-team .team-wrap {
+    padding: 0 40px;
+}
+
+.our-team .container-fluid {
+    padding: 0 50px;
+}
+
+.team-img img {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+}
+
+.team-member,
+.team-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay2 {
+    background-color: #789DE5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-details {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 5%;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-details p {
+    color: #fff;
+}
+
+.team-img:hover .team-details {
+    opacity: 1;
+    margin-top: -80px;
+}
+
+.team-img:hover .overlay2 {
+    opacity: 0.8;
+}
+
+/* Our Team
+-------------------------------------------------------*/
+
+.our-team .team-row {
+    margin-left: -40px;
+    margin-right: -40px;
+}
+
+.our-team .team-wrap {
+    padding: 0 40px;
+}
+
+.our-team .container-fluid {
+    padding: 0 50px;
+}
+
+.team-img img {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+}
+
+.team-member,
+.team-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 2px rgb(0 0 0 / 10%);
+}
+
+.team-details {
+    opacity: 0;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    padding: 5%;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-details p {
+    color: #fff;
+}
+
+.team-img:hover .team-details {
+    opacity: 1;
+    margin-top: -80px;
+}
+
+.team-img:hover .overlay {
+    opacity: 0.8;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.25);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.imageh:hover {
+    opacity: 1;
+}
+
+.imageh {
+    transition: all .2s ease-in-out;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.project {
+    width: 90%;
+    left: 5%;
+}
+
+
+/* navigation bar */
+
+.bnav {
+    position: fixed;
+    bottom: 0;
+    right:  0;
+    width: 100%;
+}
+
+.bnav__link {
+    color: #ffffff;
+}
+
+
+.bnav__link--full-width {
+    display: block;
+    text-decoration: none;
+}
+
+.bnav__menu {
+    position:  absolute;
+    bottom:  calc(100% + 20px);
+    right:  20px;
+    font-family: "Nunito";
+    font-size:  15px;
+    margin:  0;
+    padding:  5px 0;
+    min-width:  150px;
+    background: rgba(52, 105, 192, 0.76);
+    border-radius: 25px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bnav__menu:hover {
+    display: block;
+}
+
+.bnav__menuitem {
+    list-style-type: none;
+    padding:  6px 20px;
+}
+
+
+.bnav__menuitem:hover {
+    text-decoration: underline;
+}

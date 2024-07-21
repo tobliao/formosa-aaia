@@ -178,7 +178,7 @@ const hiddenElements4 = document.querySelectorAll('.hiddenright');
 hiddenElements4.forEach((el) => observer4.observe(el));
 
 // Number increment on homepage
-const totalTime = 2000;
+const totalTime = 3000;
 const num1 = 400;
 const num2 = 8;
 const num3 = 100;
