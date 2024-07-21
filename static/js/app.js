@@ -176,3 +176,82 @@ const observer4 = new IntersectionObserver((entries) => {
 
 const hiddenElements4 = document.querySelectorAll('.hiddenright');
 hiddenElements4.forEach((el) => observer4.observe(el));
+
+// Number increment on homepage
+const totalTime = 2000;
+const num1 = 400;
+const num2 = 8;
+const num3 = 100;
+var called1 = false;
+var called2 = false;
+var called3 = false;
+
+const increment1 = () => {
+  const num = document.querySelector("#num1");
+  if (num) {
+    const i = parseInt(num.innerHTML);
+    if (i < num1) {
+      num.innerHTML = String(i + 4);
+      setTimeout(increment1, totalTime / (num1 / 2));
+    }
+  }
+};
+const increment2 = () => {
+  const num = document.querySelector("#num2");
+  if (num) {
+    const i = parseInt(num.innerHTML);
+    if (i < num2) {
+      num.innerHTML = String(i + 1);
+      setTimeout(increment2, totalTime / (num2 * 1.2));
+    }
+  }
+};
+const increment3 = () => {
+  const num = document.querySelector("#num3");
+  if (num) {
+    const i = parseInt(num.innerHTML);
+    if (i < num3) {
+      num.innerHTML = String(i + 2);
+      setTimeout(increment3, totalTime / (num3 / 1.5));
+    }
+  }
+};
+
+const callback = () => {
+  const num1 = document.querySelector("#num1");
+  const num2 = document.querySelector("#num2");
+  const num3 = document.querySelector("#num3");
+  if (num1 && num1.getBoundingClientRect().bottom < screen_h && !called1) {
+    increment1();
+    called1 = true;
+  }
+  if (num2 && num2.getBoundingClientRect().bottom < screen_h && !called2) {
+    increment2();
+    called2 = true;
+  }
+  if (num3 && num3.getBoundingClientRect().bottom < screen_h && !called3) {
+    increment3();
+    called3 = true;
+  }
+};
+
+document.addEventListener("scroll", callback);
+
+const scale = (entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add("scaleToNormal");
+    } else {
+      e.target.classList.remove("scaleToNormal");
+    }
+  });
+};
+const scaleNormalObserver = new IntersectionObserver(scale);
+const numbers = document.querySelectorAll(".problem-im-text");
+if (numbers) {
+  numbers.forEach((n) => scaleNormalObserver.observe(n));
+}
+
+const screen_h = window.innerHeight;
+const vh = screen_h / 100;
+const vw = window.innerWidth / 100;

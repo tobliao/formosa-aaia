@@ -1,6 +1,168 @@
-h1 {
-    color: #61824f
+
+.home-img-pos {
+    position: relative; 
+    top: -5vh !important;
+    width: 100vw;
+    height: 100vh;
+    left: 0vw !important;
 }
-h3 {
-    color: #9ea73a
+
+.typing-words{
+    
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+    color: #295E07;
+}
+
+#bg-green-wrap {
+    color: rgb(0, 0, 0);
+    padding-top: 7rem;
+    padding: 5rem;
+    background-color: #CCD656;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#problem-title-wrap {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    padding: 2rem;
+    border: 0.3rem solid rgb(71, 245, 77);
+    border-radius: 1rem;
+    margin-bottom: 7rem;
+}
+
+#problem-title-wrap span {
+    color: rgb(30, 245, 88);
+}
+
+.gradbrowntogreen1 {
+    background: linear-gradient(180deg, #F6F1DA 18.19%, #dfe784 50.66%, #d4dd6e 75.66%, #CCD656 100%);
+}
+.gradgreentobrown1 {
+    background: linear-gradient(180deg, #CCD656 12.19%,#d4dd6e 50.66%, #dfe784 75.66%, #F6F1DA 100%);
+}
+
+.spray-text {
+    font-style: normal;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+}
+
+  
+/* rotating taiwan */
+.taiwan {
+    position: absolute;
+    right: 1vw;
+    
+}
+
+.taiwan-text {
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+.perfume-spray{
+    position: relative;
+    left: 1vw;
+    width: 50vw;
+    height: 70vh;
+ }
+
+.s3 {
+    text-shadow: 2px 8px 6px rgba(52, 109, 213, 0.2), 0px -3px 20px rgba(255,255,255,0.4);
+}
+
+
+@media screen and (min-width: 1700px) {
+    .typing-words {
+        font-size: 2.5rem;
+    }
+
+    .taiwan-text {
+        top: 16%;
+        left: 21%;
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1699px) {
+    .typing-words {
+        font-size: 2.5rem;
+    }
+    .taiwan-text {
+        top: 20%;
+        left: 23%;
+        font-size: 1.7rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .typing-words {
+        font-size: 1.7rem;
+    }
+    .taiwan-text {
+        top: 21%;
+        left: 18%;
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .typing-words {
+        font-size: 1.4rem;
+    }
+
+    .taiwan-text {
+        top: 9%;
+        left: 17%;
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px){
+    .typing-words {
+        font-size: 1.4rem;
+    }
+
+    #problem-title-wrap {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .taiwan {
+        width: 40%;
+        margin-right: 3%;
+    }
+    .perfume-spray {
+        width: 40%;
+        margin-left: 3%;
+    }
+
+    .inasia {
+        top: 12vh;
+        left: 17vw;
+        font-size: 2.1rem;
+    }
+
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .typing-words {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-device-width: 100px) and (max-device-width: 319px) {
+    .typing-words {
+        font-size: 1rem;
+    }
 }
