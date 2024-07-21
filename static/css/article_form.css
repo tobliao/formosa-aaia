@@ -33,7 +33,7 @@
 
 .subtitle_text p{
     font-size: 28px;
-    color: #AD7319;
+    color: #1f1e1c;
 }
 
 .subsubtitle_text{
@@ -42,12 +42,12 @@
 
 .subsubtitle_text p{
     font-size: 22px;
-    color: #AD7319;
+    color: #3c2a0f;
 }
 
 .content_text p{
     text-indent: 2em;  /*文章首行縮兩格*/
-    color: #3e3322;
+    color: #503711;
 }
 
 .form_title{
