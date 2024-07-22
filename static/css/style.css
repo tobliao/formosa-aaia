@@ -638,7 +638,25 @@ name {
 @media (min-device-width: 100px) and (max-device-width: 319px) {
 }
 
+/* footer */
+footer a { color: black; font-weight: bold; text-decoration: none; }
+footer a:hover { color: black; text-decoration: underline; }
 
+footer {
+    align-items: center;
+    background-image: linear-gradient(to right, #bcd667, #e0f8de, #99d667, #91a445, #62782a);
+    background-size: 500%;
+    background-position: 0 0;
+    box-shadow: inset 0 0 5em rgba(0, 0, 0, 0.5);
+    display: flex;
+    font-family: "Quicksand";
+    height: 100%;
+    justify-content: center;
+    /* Animation */
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-name: gradients;
+}
   
 
   
