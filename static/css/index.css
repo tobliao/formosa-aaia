@@ -55,6 +55,7 @@
     text-align: center;
 }
 
+
   
 /* rotating taiwan */
 .taiwan {
@@ -70,8 +71,8 @@
 }
 
 .perfume-spray{
-    position: relative;
-    left: 1vw;
+    position: absolute;
+    left: 20vw;
     width: 50vw;
     height: 70vh;
  }

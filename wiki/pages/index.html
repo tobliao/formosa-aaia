@@ -81,19 +81,18 @@
     </div>
 
 <!--perfume spray-->
-    <section>
-        <div class="container">
+
+        <div class="page hiddenleft">
             <img src="https://static.igem.wiki/teams/5437/index/spray-perfume.png" class="perfume-spray">
             <!--<h3 class="img-fluid rotatehidden">Hi</h3>-->
-        </div>
-        <div class="container">
-            <div class="hiddenleft">
+            
+            <p class="position-relative text-center hiddenleft">
                 <div class="col-sm text-center">
-                    <h3> hi </h3>
+                    <h3 class=""> hi </h3>
                 </div>
-            </div>
+        </div>
+       
 
-    </section>
 
    <!-- 
     <section>   
@@ -217,27 +216,45 @@
                     <div class="col mb-4">
                         <div class="card bg-primary-light">
                             <div class="card-body text-center px-4 py-5 px-md-5">
-                                <p class="fw-bold text-primary card-text mb-2">Fully Managed</p>
-                                <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5><button class="btn btn-primary btn-sm" type="button">Learn more</button>
+                                <p class="fw-bold text-primary card-text mb-2">Entrepreneurship</p>
+                                <a href="{{ url_for('pages', page='entrepreneurship') }}">
+                                    <button class="btn btn-primary btn-sm" type="button" >Entrepreneurship</button>
+                                </a>
+                                <br>
+                                <br>
+                                <a href="{{ url_for('pages', page='proof-of-concept') }}">
+                                    <button class="btn btn-primary btn-sm" type="button" >Proof of concept</button>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-4">
                         <div class="card bg-secondary-light">
                             <div class="card-body text-center px-4 py-5 px-md-5">
-                                <p class="fw-bold text-secondary card-text mb-2">Fully Managed</p>
+                                <p class="fw-bold text-secondary card-text mb-2">Science</p>
                                 <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5><button class="btn btn-secondary btn-sm" type="button">Learn more</button>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card bg-info-light">
+                        <div class="card bg-secondary-light">
                             <div class="card-body text-center px-4 py-5 px-md-5">
-                                <p class="fw-bold text-info card-text mb-2">Fully Managed</p>
-                                <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5><button class="btn btn-info btn-sm" type="button">Learn more</button>
+                                <p class="fw-bold text-secondary card-text mb-2">Model</p>
+                                <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5><button class="btn btn-secondary btn-sm" type="button">Learn more</button>
                             </div>
                         </div>
                     </div>
+                    <div class="col mb-4">
+                        <div class="card bg-secondary-light">
+                            <div class="card-body text-center px-4 py-5 px-md-5">
+                                <p class="fw-bold text-secondary card-text mb-2">Human Practives</p>
+                                <h5 class="fw-bold card-title mb-3">Lorem ipsum dolor sit&nbsp;nullam et quis ad cras porttitor</h5><button class="btn btn-secondary btn-sm" type="button">Learn more</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+            
+                    
                 </div>
             </div>
         </div>
