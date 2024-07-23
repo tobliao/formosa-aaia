@@ -10,6 +10,7 @@
 <link href="{{ url_for('static', filename = 'css/index.css') }}" rel="stylesheet">
 <link href="{{ url_for('static', filename = 'css/ref/hkust.css') }}" rel="stylesheet">
 
+
 <!-- <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -18,8 +19,24 @@
 </head> -->
 
 <body>
-    <header class="bg-dark">    
-        <!-- typing animation -->   
+    <header class="bg-dark">   
+        <div class="intro-video">
+            <h2>Welcome to website</h2>
+            <video src="https://svpvodps-vh.akamaized.net/special/spesial/2019/hercules-ulykken/start-1200.mp4"></video>
+          </div>
+          <div class="curtain-panel">
+            <div class="left-curtain curtain" data-title="">
+              <video id="video_player" autoplay muted="muted">
+                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="right-curtain curtain" data-title="">
+              <video id="video_player" autoplay muted="muted">
+                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        <!-- typing animation-->
         <img src="https://static.igem.wiki/teams/5437/index/world-map-taiwan.png" id="head-img" class="home-img-pos"/>
             <div id="reflect-text-wrap">
                 <p id="reflect-text" class="centered typing-words"></p>
@@ -34,7 +51,6 @@
                 <div style="position: relative;flex: 0 0 60%;transform: translate3d(0, 0%, 0);"><img class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.25" src="../../static/img/products/1.jpg"></div>
             </div>
         </div>-->
-            
     </header>
 
     
@@ -63,14 +79,14 @@
         <div class="page">
             <img class="fish1 img-fluid" src="https://static.igem.wiki/teams/4225/wiki/fish1.png">
             <img class="taiwan img-fluid rotatehidden" src="">
-            <h2 class="taiwan-text position-absolute text-center">HELLO</h2>
+            <h2 class="taiwan-desc position-absolute text-center">HELLO</h2>
         </div>
     </section> -->
     <div class="page">
         <img class="earth img-fluid rotatehidden" src="https://static.igem.wiki/teams/5437/index/taiwan-igem-logo.png">
         <img class="fish1 img-fluid" src="https://static.igem.wiki/teams/4225/wiki/fish1.png">
         <h2 class="inasia position-absolute text-center hiddenright s3">2nd in Asia<br>8th in the World</h2>
-        <p class="hongkongconsumptions position-absolute text-center hiddenright">Hong Kong’s consumption of fish is the
+        <p class="taiwan-title position-absolute text-center hiddenright">Hong Kong’s consumption of fish is the
             <br>
             2nd largest in Asia and 8th in the world.
             <br>
@@ -82,7 +98,7 @@
 
 <!--perfume spray-->
 
-        <div class="page hiddenleft">
+        <div class="page ">
             <img src="https://static.igem.wiki/teams/5437/index/spray-perfume.png" class="perfume-spray">
             <!--<h3 class="img-fluid rotatehidden">Hi</h3>-->
             

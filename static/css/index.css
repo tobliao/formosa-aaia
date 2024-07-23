@@ -64,10 +64,18 @@
     
 }
 
-.taiwan-text {
+.taiwan-desc {
     font-style: normal;
     font-weight: 400;
     text-align: center;
+}
+
+.taiwan-title {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #3e540c;
 }
 
 .perfume-spray{
@@ -81,13 +89,21 @@
     text-shadow: 2px 8px 6px rgba(52, 109, 213, 0.2), 0px -3px 20px rgba(255,255,255,0.4);
 }
 
+.tree1 {
+    position: absolute;
+    width: 15vw;
+    height: 50vh;
+    top: 30vh;
+    left: 5vw;
+    z-index: 1;
+}
 
 @media screen and (min-width: 1700px) {
     .typing-words {
         font-size: 2.5rem;
     }
 
-    .taiwan-text {
+    .taiwan-desc {
         top: 16%;
         left: 21%;
         font-size: 2rem;
@@ -98,7 +114,7 @@
     .typing-words {
         font-size: 2.5rem;
     }
-    .taiwan-text {
+    .taiwan-desc {
         top: 20%;
         left: 23%;
         font-size: 1.7rem;
@@ -109,7 +125,7 @@
     .typing-words {
         font-size: 1.7rem;
     }
-    .taiwan-text {
+    .taiwan-desc {
         top: 21%;
         left: 18%;
         font-size: 1.4rem;
@@ -121,7 +137,7 @@
         font-size: 1.4rem;
     }
 
-    .taiwan-text {
+    .taiwan-desc {
         top: 9%;
         left: 17%;
         font-size: 1.2rem;
@@ -167,3 +183,151 @@
         font-size: 1rem;
     }
 }
+
+body.freeze {
+    height: auto;
+    overflow: auto;
+  }
+  
+  #v0 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  
+  #set-height {
+    display: block;
+  }
+  
+  section {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .content {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 33.3%;
+  }
+  .stage {
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+  
+    box-shadow: 1px 4px 11px #aaa, inset 1px 3px 6px #ccc;
+  
+    position: relative;
+  }
+  video {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .stage-content {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  
+  /* .curtain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  } */
+  
+  .curtain-panel {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+  }
+  .freeze .curtain-panel {
+    display: none;
+  }
+  
+  .curtain-panel .curtain {
+    width: 50%;
+    background-color: orange;
+    position: relative;
+    transition: transform 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .curtain-panel .curtain:before {
+    content: attr(data-title);
+    text-align: center;
+    width: 200%;
+    position: absolute;
+    top: 50%;
+    line-height: 0;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 3px #ccc;
+  }
+  
+  .curtain-panel .left-curtain:before {
+    left: 0;
+  }
+  
+  .curtain-panel .right-curtain:before {
+    right: 0;
+  }
+  
+  .curtain-trigger {
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  .curtain-trigger:checked ~ .left-curtain {
+    transform: translateX(calc(-100%));
+  }
+  
+  .curtain-trigger:checked ~ .right-curtain {
+    transform: translateX(calc(100%));
+  }
+  .left-curtain {
+    border-right: 1px solid #fff;
+  }
+  .inside-curtain-container {
+    position: relative;
+    height: 100vh;
+  }
+  .test {
+  }
+  .inside-curtain-container video {
+    width: 100%;
+  }
+  
+  .intro-video {
+    height: 100vh;
+  }
+  .intro-video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .intro-video h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 1px #000000;
+    transform: translate(-50%, -50%);
+  }
+  .content {
+    height: 100vh;
+  }
+  .content h1 {
+    padding-top: 300px;
+    text-align: center;
+    font-size: 80px;
+  }
