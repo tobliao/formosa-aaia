@@ -512,7 +512,18 @@ name {
     overflow: hidden;
 }
 
+    .curtain-image {
+        background-color: transparent; /* Ensure the image background is transparent */
+        display: block; /* Ensure the image behaves like a block element */
+        width: 100%; /* Make the image fill its container */
+        height: auto; /* Maintain the aspect ratio */
+    }
 
+    .curtain {
+        background-color: transparent; /* Ensure the container background is transparent */
+    }
+
+    
 @keyframes cursor-blink {
     50% {
         opacity: 0;
@@ -658,6 +669,7 @@ footer {
     animation-name: gradients;
 }
   
+
 
   
  
