@@ -1,5 +1,6 @@
 .placeholder {
     display: flex;
+    border-radius: 10px;
   }
 .container-home {
     position: relative;
@@ -38,18 +39,7 @@
     transition: top 1.0s;
 }
 
-.dashed-line-left{
-  padding-left:80px;
-  margin-top:80px;
-  width:60%;
-}
 
-.dashed-line-right{
-  margin-top:80px;
-  width:60%;
-  float: right;
-  padding-right:80px;
-}
 
 .body-home {
     background: #173037;
@@ -251,5 +241,10 @@
 
 
   .pdf-adjust{
-    height:200px;
+    height:300px;
+    Width: 800px;
+  }
+
+  .text-left2-home{
+    color: white;
   }
