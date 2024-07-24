@@ -59,32 +59,45 @@ p {
     margin-right: auto;
 }
 
+.membertable .instructor-advisor {
+    border: 0.1rem solid #000000;
+    background-color:#b313df;
+    width: 5rem;
+    height: 5rem;
+    border-radius:10px;
+}
+
 .membertable .wetlabmember {
     border: 0.1rem solid #000000;
-    background-color:#9AAADF;
-    width: 4rem;
-    height: 3.5rem;
+    background-color:#32d7f1;
+    width: 8rem;
+    height: 8rem;
+    border-radius:5px;
+
 }
 
 .membertable .drylabmember {
     border: 0.1rem solid #000000;
     background-color:#aed26e;
-    width: 4rem;
-    height: 3.5rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius:10px;
 }
 
 .membertable .hpmember {
     border: 0.1rem solid #000000;
-    background-color:#d86262;
-    width: 4rem;
-    height: 3.5rem;
+    background-color:#dc2020;
+    width: 8rem;
+    height: 8rem;
+    border-radius:10px;
 }
 
 .membertable .swmember {
     border: 0.1rem solid #000000;
     background-color:#16baba;
-    width: 4rem;
-    height: 3.5rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius:10px;
 }
 
 
@@ -110,57 +123,78 @@ p {
     }
 
 
-.membertable td:not(.blankspace):hover {
-    border: 0.05rem solid #F2F4FC;
-    cursor: default;
-}
 
-.membertable td:not(.blankspace):not(.leads):hover {
-    border: 0.05rem solid #959CA5;
-    cursor: default
-}
+
 
 .card {
     text-align: center;
     background: rgba(0, 0, 0, 0);
     border: rgba(0, 0, 0, 0);
-    margin-top: -0.2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.wetlabmember:hover {
+    cursor:pointer;
+    transform: rotateY(180deg);
+    transition: transform 700ms;
+}
+
+.drylabmember:hover {
+    cursor:pointer;
+    transform: rotateY(180deg);
+    transition: transform 700ms;
+}
+
+.hpmember:hover {
+    cursor:pointer;
+    transform: rotateY(180deg);
+    transition: transform 700ms;
+}
+
+.swmember:hover {
+    cursor:pointer;
+    transform: rotateY(180deg);
+    transition: transform 700ms;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
 }
 
 num {
     color:#000000;
-    font-size: 8px;
+    font-size: 12px;
     padding-left: 5px;
+    padding-top: 15px;
 }
 
 inital {
-    font-size: 25px;
-    font-weight:bolder;
-    color:#000000;
+    font-size: 50px;
+    font-weight:bold;
+    color:#000000 !important;
     line-height: 2rem;
     text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 name {
-    font-size: 10px;
+    font-size: 15px;
     color: #000000;
     line-height: 10%;
+    padding-bottom: 0.75rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
-}
-
-
-.bd-callout-card {
-    padding: 1.5rem 1rem;
-    border-radius: 5px;
-    background-color: #EFF2F9;
-    max-width: 80%;
-    margin: 0.5rem;
-    transform-style: preserve-3d;
-    overflow: hidden;
-    display: flex;
-
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 
