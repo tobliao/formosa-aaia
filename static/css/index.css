@@ -254,7 +254,7 @@ body.freeze {
   
   .curtain-panel .curtain {
     width: 50%;
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0);
     position: relative;
     transition: transform 0.5s ease-out;
     display: flex;
@@ -300,8 +300,7 @@ body.freeze {
     position: relative;
     height: 100vh;
   }
-  .test {
-  }
+
   .inside-curtain-container video {
     width: 100%;
   }

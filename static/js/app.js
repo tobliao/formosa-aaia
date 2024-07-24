@@ -8,8 +8,8 @@ var speed = 150;
 const delete_len = 10;
 const type = () => {
   const type_elem = document.getElementById("reflect-text");
-  const head_img = document.getElementById("head-img");
-  if (type_elem && head_img) {
+  //const head_img = document.getElementById("head-img");
+  if (type_elem) {
     function typeWriter() {
       if (i1 < txt1.length) {
         type_elem.innerHTML += txt1.charAt(i1);

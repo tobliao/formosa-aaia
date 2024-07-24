@@ -92,9 +92,9 @@
 						name: "",
 						indent: 0,
 						parent: undefined,
-						colorStart: "green",
-						colorEnd: "red",
-						colorTrigger: "blue",
+						colorStart: "transparent",
+						colorEnd: "transparent",
+						colorTrigger: "transparent",
 					};
 
 				options = _util.extend({}, DEFAULT_OPTIONS, options);
