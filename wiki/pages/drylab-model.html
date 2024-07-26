@@ -1,472 +1,1018 @@
 {% extends "layout.html" %}
   
-{% block title %}model{% endblock %}
-{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+{% block title %}Model{% endblock %}
+{% block lead %}Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.{% endblock %}
+
+{% block cover_content %}
+<div class="container-fluid p-0 parallax-model">
+  <img alt="completely-blank" class="w-100 mx-auto d-block"
+     src="https://static.igem.wiki/teams/4588/wiki/headers/completely-blank.png">
+</div>
+{% endblock %}
 
 {% block page_content %}
-<!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-    <link href="{{ url_for('static', filename = '../../../../static/css/drylab-model.css')}}" rel="stylesheet">
+<div class="container">
+  <div class="text-center align-middle">
+    <br>
+  <h1>Overview</h1>
+  <hr>
+  <br>
+  </div>
+  <p>We created three modeling projects to support wet lab and software development. The modeling projects focus on the most essential parts of our project, which are hydrogels and cells, and try to answer key questions for the hardware and wet lab team.  </p>
+  <p><br><u>The main goals of our models are: </u>
+    <ol>
+      <li>To aid the hardware team to make the decision of hydrogels that they will print in our parallel culture system.  </li>
+      <li>To ensure and optimize rosmarinic production by verifying cell viability inside the hydrogels and determining the best cell ratios of yeast and bacteria.</li>
+    </ol>
+  <p>The following shows how we implement our model to attain the goals: </p>
+  <br>
+  <br>
 
-<body>
-<p>yo yo yo</p>
+</div>
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"  href ="#b">Diffusion Model</a></li>
+  <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"   href="#c">Economic Model</a></li>
+  <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"  href="#e">Surface Interactions Model</a></li>
+</ul>
+<hr>
+<br>
+<br>
 
-<script> src="{{ url_for('static', filename = '../../../../static/js/drylab-mdoel.js')}}"></script>
-
-</body>
-</html>
-<head>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  </head>
-  <body>
-    <div id="graph"></div>
-  </body>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  #graph {
-    vertical-align: top;
-  }
-</style>
-<script>
-Plotly.plot('graph', {
- data: [{
-   x: [1, 2, 3],
-   y: [2, 1, 3],
-   line: {
-     color: 'red',
-     simplify: false,
-   }
- }],
- layout: {
-   sliders: [{
-     pad: {t: 30},
-     x: 0.05,
-     len: 0.95,
-     currentvalue: {
-       xanchor: 'right',
-       prefix: 'color: ',
-       font: {
-         color: '#888',
-         size: 20
-       }
-     },
-     transition: {duration: 500},
-     // By default, animate commands are bound to the most recently animated frame:
-     steps: [{
-       label: 'red',
-       method: 'animate',
-       args: [['red'], {
-         mode: 'immediate',
-         frame: {redraw: false, duration: 500},
-         transition: {duration: 500}
-       }]
-     }, {
-       label: 'green',
-       method: 'animate',
-       args: [['green'], {
-         mode: 'immediate',
-         frame: {redraw: false, duration: 500},
-         transition: {duration: 500}
-       }]
-     }, {
-       label: 'blue',
-       method: 'animate',
-       args: [['blue'], {
-         mode: 'immediate',
-         frame: {redraw: false, duration: 500},
-         transition: {duration: 500}
-       }]
-     }]
-   }],
-   updatemenus: [{
-     type: 'buttons',
-     showactive: false,
-     x: 0.05,
-     y: 0,
-     xanchor: 'right',
-     yanchor: 'top',
-     direction: 'left',
-     pad: {t: 60, r: 20},
-     buttons: [{
-       label: 'Play',
-       method: 'animate',
-       args: [null, {
-         fromcurrent: true,
-         frame: {redraw: false, duration: 1000},
-         transition: {duration: 500}
-       }]
-     }, {
-       label: 'Pause',
-       method: 'animate',
-       args: [[null], {
-         mode: 'immediate',
-         frame: {redraw: false, duration: 0}
-       }]
-     }]
-   }]
- },
- // The slider itself does not contain any notion of timing, so animating a slider
- // must be accomplished through a sequence of frames. Here we'll change the color
- // and the data of a single trace:
- frames: [{
-   name: 'red',
-   data: [{
-     y: [2, 1, 3],
-     'line.color': 'red'
-   }]
- }, {
-   name: 'green',
-   data: [{
-     y: [3, 2, 1],
-     'line.color': 'green'}]
- }, {
-   name: 'blue',
-   data: [{
-     y: [1, 3, 2],
-     'line.color': 'blue'}]
- }]
-}, {showSendToCloud: true});
-</script>
-<head>
-    <!-- Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  </head>
+<div class="tab-content">
+  <div id="b" class="tab-pane active">
+    <div class="row">
+      <div class="col-lg-3 col-sm-0 mt-5">
+      <div class="sidenav">
+          <h3>CONTENTS</h3>
+          <div class="list-group navlist">
+              <div class="toc-wrap">
+                  <a class="list-group-item toc toc-side" href="#bg">Background</a>
+                  <a class="list-group-item toc toc-side" href="#intmodels">Interactive Models</a>
+                  <a class="list-group-item toc toc-side" href="#assump">Assumptions</a>
+                  <a class="list-group-item toc toc-side" href="#approach">Approach</a>
+                  <a class="list-group-item toc toc-side" href="#modelsim">Model Simulation & Results</a>
+                  <a class="list-group-item toc toc-side" href="#disc">Discussion</a>
+                  <a class="list-group-item toc toc-side" href="#future">Future Directions</a>
+              </div>
+          </div>
+      </div>
+      </div>
   
-  <body>
-    <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-    <script>
-      Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv', function (err, data) {
-    // Create a lookup table to sort and regroup the columns of data,
-    // first by year, then by continent:
-    var lookup = {};
-    function getData(year, continent) {
-      var byYear, trace;
-      if (!(byYear = lookup[year])) {;
-        byYear = lookup[year] = {};
-      }
-     // If a container for this year + continent doesn't exist yet,
-     // then create one:
-      if (!(trace = byYear[continent])) {
-        trace = byYear[continent] = {
-          x: [],
-          y: [],
-          id: [],
-          text: [],
-          marker: {size: []}
-        };
-      }
-      return trace;
-    }
-  
-    // Go through each row, get the right trace, and append the data:
-    for (var i = 0; i < data.length; i++) {
-      var datum = data[i];
-      var trace = getData(datum.year, datum.continent);
-      trace.text.push(datum.country);
-      trace.id.push(datum.country);
-      trace.x.push(datum.lifeExp);
-      trace.y.push(datum.gdpPercap);
-      trace.marker.size.push(datum.pop);
-    }
-  
-    // Get the group names:
-    var years = Object.keys(lookup);
-    // In this case, every year includes every continent, so we
-    // can just infer the continents from the *first* year:
-    var firstYear = lookup[years[0]];
-    var continents = Object.keys(firstYear);
-  
-    // Create the main traces, one for each continent:
-    var traces = [];
-    for (i = 0; i < continents.length; i++) {
-      var data = firstYear[continents[i]];
-     // One small note. We're creating a single trace here, to which
-     // the frames will pass data for the different years. It's
-     // subtle, but to avoid data reference problems, we'll slice 
-     // the arrays to ensure we never write any new data into our
-     // lookup table:
-      traces.push({
-        name: continents[i],
-        x: data.x.slice(),
-        y: data.y.slice(),
-        id: data.id.slice(),
-        text: data.text.slice(),
-        mode: 'markers',
-        marker: {
-          size: data.marker.size.slice(),
-          sizemode: 'area',
-          sizeref: 200000
-        }
-      });
-    }
-  
-    // Create a frame for each year. Frames are effectively just
-    // traces, except they don't need to contain the *full* trace
-    // definition (for example, appearance). The frames just need
-    // the parts the traces that change (here, the data).
-    var frames = [];
-    for (i = 0; i < years.length; i++) {
-      frames.push({
-        name: years[i],
-        data: continents.map(function (continent) {
-          return getData(years[i], continent);
-        })
-      })
-    }
-    
-    // Now create slider steps, one for each frame. The slider
-    // executes a plotly.js API command (here, Plotly.animate).
-    // In this example, we'll animate to one of the named frames
-    // created in the above loop.
-    var sliderSteps = [];
-    for (i = 0; i < years.length; i++) {
-      sliderSteps.push({
-        method: 'animate',
-        label: years[i],
-        args: [[years[i]], {
-          mode: 'immediate',
-          transition: {duration: 300},
-          frame: {duration: 300, redraw: false},
-        }]
-      });
-    }
-    
-    var layout = {
-      xaxis: {
-        title: 'Life Expectancy',
-        range: [30, 85]
-      },
-      yaxis: {
-        title: 'GDP per Capita',
-        type: 'log'
-      },
-      hovermode: 'closest',
-     // We'll use updatemenus (whose functionality includes menus as
-     // well as buttons) to create a play button and a pause button.
-     // The play button works by passing `null`, which indicates that
-     // Plotly should animate all frames. The pause button works by
-     // passing `[null]`, which indicates we'd like to interrupt any
-     // currently running animations with a new list of frames. Here
-     // The new list of frames is empty, so it halts the animation.
-      updatemenus: [{
-        x: 0,
-        y: 0,
-        yanchor: 'top',
-        xanchor: 'left',
-        showactive: false,
-        direction: 'left',
-        type: 'buttons',
-        pad: {t: 87, r: 10},
-        buttons: [{
-          method: 'animate',
-          args: [null, {
-            mode: 'immediate',
-            fromcurrent: true,
-            transition: {duration: 300},
-            frame: {duration: 500, redraw: false}
-          }],
-          label: 'Play'
-        }, {
-          method: 'animate',
-          args: [[null], {
-            mode: 'immediate',
-            transition: {duration: 0},
-            frame: {duration: 0, redraw: false}
-          }],
-          label: 'Pause'
-        }]
-      }],
-     // Finally, add the slider and use `pad` to position it
-     // nicely next to the buttons.
-      sliders: [{
-        pad: {l: 130, t: 55},
-        currentvalue: {
-          visible: true,
-          prefix: 'Year:',
-          xanchor: 'right',
-          font: {size: 20, color: '#666'}
-        },
-        steps: sliderSteps
-      }]
-    };
-    
-    // Create the plot:
-    Plotly.plot('myDiv', {
-      data: traces,
-      layout: layout,
-     config: {showSendToCloud:true},
-      frames: frames,
-    });
-  });
-    </script>
-  </body>
-  <head>
-    <!-- Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  </head>
-  <body>
-  <!-- Plotly chart will be drawn inside this DIV -->
-  <div id="myDiv"></div>
-    <script>
-    Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
-
-function unpack(rows, key) {
-return rows.map(function(row) { return row[key]; });
-}
-
-var frames = []
-var x = unpack(rows, 'Date')
-var y = unpack(rows, 'AAPL.High')
-var x2 = unpack(rows, 'Date')
-var y2 = unpack(rows, 'AAPL.Low')
-
-var n = 100;
-for (var i = 0; i < n; i++) { 
-  frames[i] = {data: [{x: [], y: []}, {x: [], y: []}]}
-  frames[i].data[1].x = x.slice(0, i+1);
-  frames[i].data[1].y = y.slice(0, i+1);
-  frames[i].data[0].x = x2.slice(0, i+1);
-  frames[i].data[0].y = y2.slice(0, i+1);
-}
-
-var trace2 = {
-  type: "scatter",
-  mode: "lines",
-  name: 'AAPL High',
-  fill: 'tonexty',
-  x: frames[5].data[1].x,
-  y: frames[5].data[1].y,
-  line: {color: 'grey'}
-}
-
-var trace1 = {
-  type: "scatter",
-  mode: "lines",
-  name: 'AAPL Low',
-  x: frames[5].data[0].x,
-  y: frames[5].data[0].y,
-  line: {color: 'lightgrey'}
-}
-
-var data = [trace1,trace2]; 
-  
-var layout = {
-  title: 'Multiple Trace Filled-Area Animation',
-  xaxis: {
-    range: [frames[99].data[0].x[0], frames[99].data[0].x[99]],
-    showgrid: false
-  },
-  yaxis: {
-    range: [120, 140],
-    showgrid: false
-  },
-  legend: {
-    orientation: 'h',
-    x: 0.5,
-    y: 1.2,
-    xanchor: 'center'
-  },
-  updatemenus: [{
-    x: 0.5,
-    y: 0,
-    yanchor: "top",
-    xanchor: "center",
-    showactive: false,
-    direction: "left",
-    type: "buttons",
-    pad: {"t": 87, "r": 10},
-    buttons: [{
-      method: "animate",
-      args: [null, {
-        fromcurrent: true,
-        transition: {
-          duration: 0,
-        },
-        frame: {
-          duration: 40,
-          redraw: false
-        }
-      }],
-      label: "Play"
-    }, {
-      method: "animate",
-      args: [
-        [null],
-        {
-          mode: "immediate",
-          transition: {
-            duration: 0
-          },
-          frame: {
-            duration: 0,
-            redraw: false
-          }
-        }
-      ],
-      label: "Pause"
-    }]
-  }]
-};
-
-Plotly.newPlot('myDiv', data, layout).then(function() {
-  Plotly.addFrames('myDiv', frames);
-});
-})
-    </script>
+  <div class="col-lg-9 main-content" style="padding-top: 1rem; padding-right: 3.5rem;" id="main-content">
+    <div class="text-center align-middle">
+   
+  <h1>Diffusion Model</h1></div>
+  <section id="bg">
+    <br>
+    <h4>Background</h4><hr>
+    <p>Given the inherent complexities associated with our non-linear chemical pathways to produce rosmarinic acid, achieving an optimal balance among the various constituents of the pathway posed a formidable challenge (Figure 1) [1]. To address this challenge, Li et al. explored a strategy involving the partitioning of pathway components into distinct subpopulations within a co-culture of <em> E. coli </em>[1], endeavoring to optimize rosmarinic acid production by modulating the subpopulation ratios of cells. </p><br>
+    <p>Building upon the foundation of their chemical pathway, we adapted a similar biosynthetic framework, albeit with a key deviation: we entrusted yeast cells <em> S. cerevisiae </em> with the synthesis of larger molecules, a task for which yeast cells have demonstrated superior efficiency compared to <em> E. coli </em>[2]. Our enzyme kinetics model aimed to simulate rosmarinic acid production by systematically varying enzyme concentrations, thereby identifying the optimal yeast-to-bacteria ratio for this production. Similar to our project goal, Shanthy Sundaram et al. used computational modeling and optimization to investigate the biosynthesis of Rosmarinic acid, employing Genetic Algorithm methodology [3]. While they utilized Gepasi Software with built-in reaction kinetics for simulation, we developed our own model based on information gathered from the literature.  </p><br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/mod-f1.png"><img src="https://static.igem.wiki/teams/4588/wiki/mod-f1.png" width="1000"></a>
+      <figcaption class="figure-caption text-left"><span><b>Figure 1.</b></span> Introduced chemical pathway for rosmarinic acid production. Genes of tyrosine aminotransferase (TyrB), tyrosine ammonia lyase (TAL), 4-hydroxyphenylacetate 3-hydroxylase (HpaBC), 4-coumarate (4CL), and rosmarinic acid synthase (RAS) were designed to be transformed into yeast cells to process the chemical pathway on the top, which involves 4-hydroxy phenylpyruvate, L-tyrosine, p-coumaric acid, Caffeic acid, Caffeoyl CoA and Rosmarinic acid, while genes of HpaBC and L-LDH are incorporated into bacteria to process the pathway at the bottom, which involves 3,4-dihydroxy phenylpyruvate, 4-dihydroxy phenyllactate, and Salvianic acid A. 4-hydroxy phenylpyruvate, which is generated by the inherent L-tyrosine synthesis pathway, serves as the initial substrate to activate the pathway. 
+      </figcaption>
+    </figure>
+  </div>
+  </section>
+    <br>  
+  <section id="intmodels">
+    <br>
+    <h4>Interactive Models</h4><hr>
   </body>
   </html>
-
-<head>
-	<!-- Load plotly.js into the DOM -->
-	<script src='https://cdn.plot.ly/plotly-2.32.0.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
-</head>
-
-<body>
-	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-</body>
-<script>
-d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv', function(err, rows){
-    function unpack(rows, key) {
-        return rows.map(function(row)
-        { return row[key]; });}
+  <head>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+      <div id="graph"></div>
+    </body>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    #graph {
+      vertical-align: top;
+    }
+  </style>
+  <script>
+  Plotly.plot('graph', {
+   data: [{
+     x: [1, 2, 3],
+     y: [2, 1, 3],
+     line: {
+       color: 'red',
+       simplify: false,
+     }
+   }],
+   layout: {
+     sliders: [{
+       pad: {t: 30},
+       x: 0.05,
+       len: 0.95,
+       currentvalue: {
+         xanchor: 'right',
+         prefix: 'color: ',
+         font: {
+           color: '#888',
+           size: 20
+         }
+       },
+       transition: {duration: 500},
+       // By default, animate commands are bound to the most recently animated frame:
+       steps: [{
+         label: 'red',
+         method: 'animate',
+         args: [['red'], {
+           mode: 'immediate',
+           frame: {redraw: false, duration: 500},
+           transition: {duration: 500}
+         }]
+       }, {
+         label: 'green',
+         method: 'animate',
+         args: [['green'], {
+           mode: 'immediate',
+           frame: {redraw: false, duration: 500},
+           transition: {duration: 500}
+         }]
+       }, {
+         label: 'blue',
+         method: 'animate',
+         args: [['blue'], {
+           mode: 'immediate',
+           frame: {redraw: false, duration: 500},
+           transition: {duration: 500}
+         }]
+       }]
+     }],
+     updatemenus: [{
+       type: 'buttons',
+       showactive: false,
+       x: 0.05,
+       y: 0,
+       xanchor: 'right',
+       yanchor: 'top',
+       direction: 'left',
+       pad: {t: 60, r: 20},
+       buttons: [{
+         label: 'Play',
+         method: 'animate',
+         args: [null, {
+           fromcurrent: true,
+           frame: {redraw: false, duration: 1000},
+           transition: {duration: 500}
+         }]
+       }, {
+         label: 'Pause',
+         method: 'animate',
+         args: [[null], {
+           mode: 'immediate',
+           frame: {redraw: false, duration: 0}
+         }]
+       }]
+     }]
+   },
+   // The slider itself does not contain any notion of timing, so animating a slider
+   // must be accomplished through a sequence of frames. Here we'll change the color
+   // and the data of a single trace:
+   frames: [{
+     name: 'red',
+     data: [{
+       y: [2, 1, 3],
+       'line.color': 'red'
+     }]
+   }, {
+     name: 'green',
+     data: [{
+       y: [3, 2, 1],
+       'line.color': 'green'}]
+   }, {
+     name: 'blue',
+     data: [{
+       y: [1, 3, 2],
+       'line.color': 'blue'}]
+   }]
+  }, {showSendToCloud: true});
+  </script>
+  <head>
+      <!-- Plotly.js -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
     
-    var trace1 = {
-        x:unpack(rows, 'x1'), y: unpack(rows, 'y1'), z: unpack(rows, 'z1'),
-        mode: 'markers',
-        marker: {
-            size: 12,
-            line: {
-            color: 'rgba(217, 217, 217, 0.14)',
-            width: 0.5},
-            opacity: 0.8},
-        type: 'scatter3d'
-    };
+    <body>
+      <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+      <script>
+        Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv', function (err, data) {
+      // Create a lookup table to sort and regroup the columns of data,
+      // first by year, then by continent:
+      var lookup = {};
+      function getData(year, continent) {
+        var byYear, trace;
+        if (!(byYear = lookup[year])) {;
+          byYear = lookup[year] = {};
+        }
+       // If a container for this year + continent doesn't exist yet,
+       // then create one:
+        if (!(trace = byYear[continent])) {
+          trace = byYear[continent] = {
+            x: [],
+            y: [],
+            id: [],
+            text: [],
+            marker: {size: []}
+          };
+        }
+        return trace;
+      }
     
-    var trace2 = {
-        x:unpack(rows, 'x2'), y: unpack(rows, 'y2'), z: unpack(rows, 'z2'),
-        mode: 'markers',
-        marker: {
-            color: 'rgb(127, 127, 127)',
-            size: 12,
-            symbol: 'circle',
-            line: {
-            color: 'rgb(204, 204, 204)',
-            width: 1},
-            opacity: 0.8},
-        type: 'scatter3d'};
+      // Go through each row, get the right trace, and append the data:
+      for (var i = 0; i < data.length; i++) {
+        var datum = data[i];
+        var trace = getData(datum.year, datum.continent);
+        trace.text.push(datum.country);
+        trace.id.push(datum.country);
+        trace.x.push(datum.lifeExp);
+        trace.y.push(datum.gdpPercap);
+        trace.marker.size.push(datum.pop);
+      }
     
-    var data = [trace1, trace2];
-    var layout = {margin: {
-        l: 0,
-        r: 0,
-        b: 0,
-        t: 0
-      }};
-    Plotly.newPlot('myDiv', data, layout);
+      // Get the group names:
+      var years = Object.keys(lookup);
+      // In this case, every year includes every continent, so we
+      // can just infer the continents from the *first* year:
+      var firstYear = lookup[years[0]];
+      var continents = Object.keys(firstYear);
+    
+      // Create the main traces, one for each continent:
+      var traces = [];
+      for (i = 0; i < continents.length; i++) {
+        var data = firstYear[continents[i]];
+       // One small note. We're creating a single trace here, to which
+       // the frames will pass data for the different years. It's
+       // subtle, but to avoid data reference problems, we'll slice 
+       // the arrays to ensure we never write any new data into our
+       // lookup table:
+        traces.push({
+          name: continents[i],
+          x: data.x.slice(),
+          y: data.y.slice(),
+          id: data.id.slice(),
+          text: data.text.slice(),
+          mode: 'markers',
+          marker: {
+            size: data.marker.size.slice(),
+            sizemode: 'area',
+            sizeref: 200000
+          }
+        });
+      }
+    
+      // Create a frame for each year. Frames are effectively just
+      // traces, except they don't need to contain the *full* trace
+      // definition (for example, appearance). The frames just need
+      // the parts the traces that change (here, the data).
+      var frames = [];
+      for (i = 0; i < years.length; i++) {
+        frames.push({
+          name: years[i],
+          data: continents.map(function (continent) {
+            return getData(years[i], continent);
+          })
+        })
+      }
+      
+      // Now create slider steps, one for each frame. The slider
+      // executes a plotly.js API command (here, Plotly.animate).
+      // In this example, we'll animate to one of the named frames
+      // created in the above loop.
+      var sliderSteps = [];
+      for (i = 0; i < years.length; i++) {
+        sliderSteps.push({
+          method: 'animate',
+          label: years[i],
+          args: [[years[i]], {
+            mode: 'immediate',
+            transition: {duration: 300},
+            frame: {duration: 300, redraw: false},
+          }]
+        });
+      }
+      
+      var layout = {
+        xaxis: {
+          title: 'Life Expectancy',
+          range: [30, 85]
+        },
+        yaxis: {
+          title: 'GDP per Capita',
+          type: 'log'
+        },
+        hovermode: 'closest',
+       // We'll use updatemenus (whose functionality includes menus as
+       // well as buttons) to create a play button and a pause button.
+       // The play button works by passing `null`, which indicates that
+       // Plotly should animate all frames. The pause button works by
+       // passing `[null]`, which indicates we'd like to interrupt any
+       // currently running animations with a new list of frames. Here
+       // The new list of frames is empty, so it halts the animation.
+        updatemenus: [{
+          x: 0,
+          y: 0,
+          yanchor: 'top',
+          xanchor: 'left',
+          showactive: false,
+          direction: 'left',
+          type: 'buttons',
+          pad: {t: 87, r: 10},
+          buttons: [{
+            method: 'animate',
+            args: [null, {
+              mode: 'immediate',
+              fromcurrent: true,
+              transition: {duration: 300},
+              frame: {duration: 500, redraw: false}
+            }],
+            label: 'Play'
+          }, {
+            method: 'animate',
+            args: [[null], {
+              mode: 'immediate',
+              transition: {duration: 0},
+              frame: {duration: 0, redraw: false}
+            }],
+            label: 'Pause'
+          }]
+        }],
+       // Finally, add the slider and use `pad` to position it
+       // nicely next to the buttons.
+        sliders: [{
+          pad: {l: 130, t: 55},
+          currentvalue: {
+            visible: true,
+            prefix: 'Year:',
+            xanchor: 'right',
+            font: {size: 20, color: '#666'}
+          },
+          steps: sliderSteps
+        }]
+      };
+      
+      // Create the plot:
+      Plotly.plot('myDiv', {
+        data: traces,
+        layout: layout,
+       config: {showSendToCloud:true},
+        frames: frames,
+      });
     });
-</script>
+      </script>
+    </body>
+    <head>
+      <!-- Plotly.js -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+    <!-- Plotly chart will be drawn inside this DIV -->
+    <div id="myDiv"></div>
+      <script>
+      Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+  }
+  
+  var frames = []
+  var x = unpack(rows, 'Date')
+  var y = unpack(rows, 'AAPL.High')
+  var x2 = unpack(rows, 'Date')
+  var y2 = unpack(rows, 'AAPL.Low')
+  
+  var n = 100;
+  for (var i = 0; i < n; i++) { 
+    frames[i] = {data: [{x: [], y: []}, {x: [], y: []}]}
+    frames[i].data[1].x = x.slice(0, i+1);
+    frames[i].data[1].y = y.slice(0, i+1);
+    frames[i].data[0].x = x2.slice(0, i+1);
+    frames[i].data[0].y = y2.slice(0, i+1);
+  }
+  
+  var trace2 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'AAPL High',
+    fill: 'tonexty',
+    x: frames[5].data[1].x,
+    y: frames[5].data[1].y,
+    line: {color: 'grey'}
+  }
+  
+  var trace1 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'AAPL Low',
+    x: frames[5].data[0].x,
+    y: frames[5].data[0].y,
+    line: {color: 'lightgrey'}
+  }
+  
+  var data = [trace1,trace2]; 
+    
+  var layout = {
+    title: 'Multiple Trace Filled-Area Animation',
+    xaxis: {
+      range: [frames[99].data[0].x[0], frames[99].data[0].x[99]],
+      showgrid: false
+    },
+    yaxis: {
+      range: [120, 140],
+      showgrid: false
+    },
+    legend: {
+      orientation: 'h',
+      x: 0.5,
+      y: 1.2,
+      xanchor: 'center'
+    },
+    updatemenus: [{
+      x: 0.5,
+      y: 0,
+      yanchor: "top",
+      xanchor: "center",
+      showactive: false,
+      direction: "left",
+      type: "buttons",
+      pad: {"t": 87, "r": 10},
+      buttons: [{
+        method: "animate",
+        args: [null, {
+          fromcurrent: true,
+          transition: {
+            duration: 0,
+          },
+          frame: {
+            duration: 40,
+            redraw: false
+          }
+        }],
+        label: "Play"
+      }, {
+        method: "animate",
+        args: [
+          [null],
+          {
+            mode: "immediate",
+            transition: {
+              duration: 0
+            },
+            frame: {
+              duration: 0,
+              redraw: false
+            }
+          }
+        ],
+        label: "Pause"
+      }]
+    }]
+  };
+  
+  Plotly.newPlot('myDiv', data, layout).then(function() {
+    Plotly.addFrames('myDiv', frames);
+  });
+  })
+      </script>
+    </body>
+    </html>
+  
+  <head>
+    <!-- Load plotly.js into the DOM -->
+    <script src='https://cdn.plot.ly/plotly-2.32.0.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+  </head>
+  
+  <body>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+  </body>
+  <script>
+  d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv', function(err, rows){
+      function unpack(rows, key) {
+          return rows.map(function(row)
+          { return row[key]; });}
+      
+      var trace1 = {
+          x:unpack(rows, 'x1'), y: unpack(rows, 'y1'), z: unpack(rows, 'z1'),
+          mode: 'markers',
+          marker: {
+              size: 12,
+              line: {
+              color: 'rgba(217, 217, 217, 0.14)',
+              width: 0.5},
+              opacity: 0.8},
+          type: 'scatter3d'
+      };
+      
+      var trace2 = {
+          x:unpack(rows, 'x2'), y: unpack(rows, 'y2'), z: unpack(rows, 'z2'),
+          mode: 'markers',
+          marker: {
+              color: 'rgb(127, 127, 127)',
+              size: 12,
+              symbol: 'circle',
+              line: {
+              color: 'rgb(204, 204, 204)',
+              width: 1},
+              opacity: 0.8},
+          type: 'scatter3d'};
+      
+      var data = [trace1, trace2];
+      var layout = {margin: {
+          l: 0,
+          r: 0,
+          b: 0,
+          t: 0
+        }};
+      Plotly.newPlot('myDiv', data, layout);
+      });
+  </script>
+  </section>
+    <br>
+    <section id="assump">
+    <h4>Assumptions</h4><hr>
+    <p>We made the following assumptions when using this model:</p>
+      <ol>
+        <li>Enzymatic activities exhibit stability under our specific environmental conditions. </li>
+        <li>The reaction strictly proceeds in a unidirectional manner, with products remaining resistant to reverse conversion into substrates.</li>
+        <li>We can extrapolate the Michaelis-Menten constants and V<sub>max</sub> values obtained or derived from the relevant literature to be applicable to our reaction kinetics.</li>
+        <li>The activities of enzymes and promoters in our project closely match those reported in the existing scientific literature.</li>
+      </ol>
+    <br>
+    <p>In the subsequent explanation of our model's creation, we gathered information on promoters and enzymes from the literature. Therefore, we had to assume that they maintain consistent and stable activity in our parallel culture system. Due to the limited information about the reverse reaction, we decided to focus exclusively on the forward reaction, which also helps to simplify our model. </p>
+  </section>
+    <br>
+    <section id="approach">
+    <h4>Approach</h4><hr>
+    <p>By receiving suggestions from a biochemistry professor Dr. Dragony Fu, we chose to utilize the Michaelis-Menten equation to build our model with SimBiology, a tool offered by MathWorks. This choice was informed by SimBiology's unique capacity to interconnect multiple components, such as chemical intermediates, within the model and its ability to elucidate the rate of change of these components based on predefined equations.</p><br>
+    <h5>Set-up for the Model:</h5>
+    <p>We constructed our model using SimBiology Model Builder. In this modeling framework, we defined nine species, represented by blue components, to correspond to the nine intermediates within the chemical pathway. Additionally, we assigned nine reactions, indicated by orange components, to represent the enzymatic reactions catalyzed by each respective enzyme ( Figure 2). Subsequently, we initiated the process of gathering data for each of these chemical components, employing Michaelis-Menten kinetics as the basis for our parameterization.</p>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/mod-f2.png"><img src="https://static.igem.wiki/teams/4588/wiki/mod-f2.png" width="700" height="500"></a>
+      <figcaption class="figure-caption text-left"><span><b>Figure 2.</b></span>  Enzyme kinetics modeling system built in SimBiology Model Builder. Blue components represent intermediates in the chemical pathway. Yellow cycles represent reactions driven by each enzyme. Arrow represents the forward reaction.  
+      </figcaption>
+    </figure>
+    <br>
+    <p>The standard Michaelis-menten equation:</p>
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/vmax.png"><img src="https://static.igem.wiki/teams/4588/wiki/vmax.png" width="200"></a>
+      <figcaption class="figure-caption text-left"><span><b>Equation 1.</b></span>  Equation for reaction rate V
+      </figcaption>
+    </figure>
+  </div>
+    <p>Where V is the reaction rate (velocity) at a substrate concentration [S], V<sub>max </sub>is the maximum rate that can be observed in the reaction when the enzyme is saturated, and Km is the Michaelis constant. </p>
+<div class="text-center align-middle">
+    <p>The following equation can be derived from Michaelis-menten kinetics:</p>
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/michaelis-menten-kinetics.png"><img src="https://static.igem.wiki/teams/4588/wiki/michaelis-menten-kinetics.png" width="200" height="50"></a>
+      <figcaption class="figure-caption text-left"><span><b>Equation 2.</b></span>  Equation for V <sub>max</sub>
+      </figcaption>
+    </figure>
+    </div>
+    <p>In this equation, <em>kcat </em>is the turnover number and <em>[E]t </em>represents given enzyme concentration. By applying the equation, we used the kcat values obtained from Uniprot and Brenda Enzyme Database and calculated V<sub>max </sub>for each enzyme (Table 1) because V<sub>max </sub> values are necessary to build our model and we were not able to search for V<sub>max </sub> values for all enzymes directly from literature.   </p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/table-1.png"><img src="https://static.igem.wiki/teams/4588/wiki/table-1.png" width="600"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 1.</b></span>  Michaelis-menten constants (Km) and V<sub>max </sub>of all the enzymes in the pathway. <em>[E]t </em>represents the enzyme concentration.<em> Km</em> and <em>kcat </em>values are mostly obtained or computed by using the data from BRENDA Enzyme Database and UniProt, while <em>kcat </em> of HpaBC and RAS were obtained from literature [4, 5]. 
+      </figcaption>
+      </figure>
+      </div>
+      <br>
+    <p>Our promoters are GAL1 promoter (BBa_K2637059), which activate TyrB, TAL, HpaBC, 4CL and RAS expression in <em>S. cerevisiae,</em> T7 promoter (BBa_I712074), which activates HpaBC expression in <em>E. coli,</em> and L-rhamnose-inducible promoter (pRha) (BBa_K914003), which activates D-LDH expression in <em>E. coli,</em> from the iGEM registry. We derived estimated enzyme production based on promoter activities based on literature research (Table 2) [6, 7, 8, 9]: </p>
+      <br>
+      <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+        <a href="https://static.igem.wiki/teams/4588/wiki/table-2.png"><img src="https://static.igem.wiki/teams/4588/wiki/table-2.png" width="1000"></a>
+        <figcaption class="figure-caption text-left"><span><b>Table 2.</b></span> Promoter activities based on literature search. Promoter enzyme production is based on volume of cell culture. 
+    </figcaption>
+    </figure>
+    </div>
+    <br>
+    <p>The methods to derive the promoter activities are provided in the supplementary information. Applying these parameters of parameter activities will enable us to model the enzyme production per hour per liter of cells. This provides the flexibility to manipulate enzyme concentrations produced by a certain amount of yeast and bacteria cells, thereby generating diverse outcomes. </p>
+  <ul>
+  <li>Determination of the <em>Vmax</em> values based on literature. </li>
+  <li>Successful simulation of chemical pathways to depict alterations in intermediate over time</li>
+  <li>Successful simulation of rosmarinic acid production using different yeast-to-bacteria ratios and initial substrate concentrations. </li>
+  </ul>
+  </section>
+<br>
+<section id="modelsim">
+    <h4>Model Simulation & Results: </h4><hr>
+  
+    <p>With the built model, we can stimulate our models using SimBiology Model Analyzer by setting the starting concentration of substrates and enzymes. In a 15 hours simulation, the substrate 4-hydroxy phenylpyruvate was consumed after around 2.5 hours, the intermediate L-tyrosine showed a peak in concentration at around 2.5 hours, and the final product rosmarinic acid started being produced around the same time (Figure 3). Concentrations of other intermediates also change over time but they are not shown in Figure 2 because their curves highly overlap with the curve of rosmarinic acid.  </p>
+
+    <p>In our model, the enzyme concentration increases at a constant rate during induction time based on our assumption that promoter activities remain the same, which means <em>V<sub>max</sub></em> would be constantly changing. Applying a varying <em>V<sub>max</sub></em> will make our model too complicated for simulation, so we decided to apply the enzyme concentration at the midpoint of the 15 hours induction time to our model. Assuming a consistent enzyme production rate, the concentration at the midpoint is anticipated to be equivalent to half of the final enzymatic yield. Thus, we can use this information to compute <em>V<sub>max</sub></em> for each enzyme (Table 3).</p>
+   <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+        <a href="https://static.igem.wiki/teams/4588/wiki/table-3.png"><img src="https://static.igem.wiki/teams/4588/wiki/table-3.png" width="700"></a>
+        <figcaption class="figure-caption text-left"><span><b>Table 3.</b></span> <em>V<sub>max</sub></em> values of enzymes after and at midpoint of 15 hrs induction time and their cell types in one liter of cell culture. 
+    </figcaption>
+    </figure>
+    </div>
+<br>
+<p>By assigning all the necessary parameters, we generated the enzyme kinetics modeling system in the Simbiology Model Builder (Figure 2). This allowed us to adjust the parameters such as <em>V<sub>max<</sub></em> and starting substrate concentration to determine the condition for optimal rosmarinic acid production. </p>
+    <br>
+    <div class="text-center align-middle">
+<figure class="gallery rounded mx-auto d-block">
+        <a href="https://static.igem.wiki/teams/4588/wiki/mf3.png"><img src="https://static.igem.wiki/teams/4588/wiki/mf3.png" width="400"></a>
+        <figcaption class="figure-caption text-left"><span><b>Figure 3.</b></span> Simulation of how concentrations of 4-hydroxy phenylpyruvate, L-tyrosine, and rosmarinic acid changed over time under 10:1 yeast-to-bacteria cell ratio and initial concentration of 4-hydroxy phenylpyruvate as 100mM. 
+    </figcaption>
+    </figure>
+    </div>
+<br>
+<p>Once we successfully ran a simulation in the SimBiology Model Analyzer on our system, we began to test the rosmarinic acid production corresponding to different yeast-to-bacteria cell ratio. Since promoter production depends on cell volume, we adjusted the relative yeast-to-bacteria volume to alter the enzyme production from yeast or bacteria by setting the total volume as 1 liter. By changing the volumes of cell culture, enzyme concentrations and <em>V<sub>max</sub></em> for each enzyme will be changed accordingly, which leads to change in rosmarinic acid production (Table 4). Ultimately, after trials with different ratios of yeast and bacteria cells, our findings indicate that a yeast-to-bacteria volume ratio of mid-phase culture of 10:1 yields highest rosmarinic acid production (Table 4, Figure 4).</p>
+   <br>
+   <div class="text-center align-middle">
+<figure class="gallery rounded mx-auto d-block">
+        <a href="https://static.igem.wiki/teams/4588/wiki/mf4.png"><img src="https://static.igem.wiki/teams/4588/wiki/mf4.png" width="400"></a>
+        <figcaption class="figure-caption text-left"><span><b>Figure 4.</b></span> Rosmarinic acid production of the SimBiology model with yeast-to-bacteria ratio in volume as 10:1, induction time of 15 hrs, and initial concentration of 4-hydroxy phenylpyruvate as 100 mM. 
+    </figcaption>
+    </figure>
+    <br>
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/table-4.png"><img src="https://static.igem.wiki/teams/4588/wiki/table-4.png" width="700"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 4.</b></span> Various yeast-to-bacteria ratios and corresponding rosmarinic acid production with 100 mM as the starting concentration of 4-hydroxy phenylpyruvate.
+  </figcaption>
+  </figure>
+  </div>
+  <br>
+  <p>In addition, by changing the concentration of the initial substrate 4-hydroxy phenylpyruvate, we found that an increase in the initial concentration of 4-phenylpyruvate results in a concomitant enhancement in the final yield of rosmarinic acid. However, rosmarinic acid production reaches a plateaus at around 2 mM when the substrate 4-hydroxy phenylpyruvate concentration is 100 mM (Table 5). </p>
+  <br>
+  <div class="text-center align-middle">
+  <figure class="gallery rounded mx-auto d-block">
+    <a href="https://static.igem.wiki/teams/4588/wiki/table-5.png"><img src="https://static.igem.wiki/teams/4588/wiki/table-5.png" width="700"></a>
+    <figcaption class="figure-caption text-left"><span><b>Table 5.</b></span> Rosmarinic acid productions corresponding to different concentrations of initial substrate 4-hydroxy phenylpyruvate. 
+</figcaption>
+</figure>
+</div>
+<br>
+<p>Besides 15 hours induction, we simulated the rosmarinic production for 48 hours because we would like to test if this system can serve our purpose to create enhanced production of rosmarinic acid over a long period of time. In addition, our results demonstrate a much higher production compared to the 15 hours production (Figure 5), indicating that we are able to boost production of rosmarinic acid by simply letting the parallel culture system run for a longer time. </p>
+<br>
+<div class="text-center align-middle">
+<figure class="gallery rounded mx-auto d-block">
+  <a href="https://static.igem.wiki/teams/4588/wiki/mf5.png"><img src="https://static.igem.wiki/teams/4588/wiki/mf5.png" width="400"></a>
+  <figcaption class="figure-caption text-left"><span><b>Figure 5.</b></span> Rosmarinic acid production for 48 hours with yeast-to-bacteria ratio of 10:1 and initial concentration of 4-hydroxy phenylpyruvate being 100 mM. 
+</figcaption>
+</figure>
+</div>
+</section>
+<br>
+<br>
+<section id="disc">
+  <h4>Discussion</h4><hr>
+    <p>Based on our enzyme kinetics modeling, we have determined the optimal yeast-to-bacteria cell ratio to be 10:1 and identified the ideal initial substrate concentration as 100 mM. We chose a concentration of 100 mM because it allows Rosmarinic acid production to reach a plateau. This concentration is also advantageous compared to 150 and 200 mM, which yield nearly identical production levels, as it enables substrate conservation while maintaining efficient production. These critical parameters are essential for guiding the hardware team in the subsequent phases, which include fabricating hydrogels embedded with cells and building the final parallel culture system. Considering the strong activation of the GAL1 promoter in yeast, as evidenced by the literature [4, 5, 6, 7], we hypothesized that a higher proportion of yeast in the culture would enhance production, and our results confirmed this anticipation. Our finding that a 10:1 yeast-to-bacteria ratio yields optimal production is somewhat in line with the co-culture testing results of Trevor G. Johnston et al. [2], which provided valuable insights for determining the cell ratio within our hydrogel system.</p>
+    <p>It is worth acknowledging that our model has certain limitations, including potential variations in promoter activities across different strains or species and during the production of various proteins. Enzyme production is based on the volume of cells rather than the number of cells, indicating that the volume ratios might not accurately represent the biomass ratios. Additionally, manipulating the concentration of 4-hydroxy phenylpyruvate by controlling glucose concentration is challenging, as 4-hydroxy phenylpyruvate is generated from glucose through the L-tyrosine biosynthesis pathway. Moreover, the growth rate of S. cerevisiae is slower than that of E. coli, meaning the system cannot maintain a consistent cell ratio over an extended period. Nonetheless, it currently stands as the one of the most suitable models available for elucidating the intricacies of our complex chemical pathways. </p>
+    <p>Overall, we successfully validated the feasibility of our project using this model, as it demonstrated that the chemically engineered pathways in our parallel culture system could produce a significant amount of rosmarinic acid with the right yeast-to-bacteria ratio. This optimal cell ratio will guide the hardware team in determining the appropriate number of cells to mix with the hydrogels, optimizing rosmarinic acid production. </p><br>
+  </section>
+  <section id="future">
+    <h4>Future Directions</h4><hr>
+    <p>In our future work, we aim to gather data on the concentrations of intermediate metabolites in the metabolic pathway using High-Performance Liquid Chromatography (HPLC). Additionally, we plan to measure enzyme production through Western blot analysis, with a focus on parameters that are relevant to our project. We will further acquire empirical data using our engineered strains under tightly controlled and uniform experimental conditions. We expect that this dataset will significantly enhance the accuracy and reliability of our existing enzyme kinetics model. </p>
+  </section>
+    <br>
+    <div class="accordion my-3" id="accordionwet1">
+      <div class="accordion-item">
+        <h2 class="accordion-header collapsed" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+            <h4>References</h4>
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionwet1">
+          <div class="accordion-body">
+            <p><ol>
+              <li>Li, Z., Wang, X., & Zhang, H. (2019). Balancing the non-linear rosmarinic acid biosynthetic pathway by modular co-culture engineering. <i>Metabolic engineering, 54, </i>1–11. https://doi.org/10.1016/j.ymben.2019.03.002 </li>
+              <li>Johnston, T. G., Yuan, S. F., Wagner, J. M., Yi, X., Saha, A., Smith, P., Nelson, A., & Alper, H. S. (2020). Compartmentalized microbes and co-cultures in hydrogels for on-demand bioproduction and preservation. <i> Nature communications, 11(1),</i>563. https://doi.org/10.1038/s41467-020-14371-4 </li>
+              <li>Sundaram, S., Tripathi, A., & Gupta, D. K. (2010). Metabolic modeling of Rosmarinic acid biosynthetic pathway. <i>Bioinformation,</i> 5(4), 168–172. https://doi.org/10.6026/97320630005168.</li>
+              <li>Raspail, C., Graindorge, M., Moreau, Y., Crouzy, S., Lefèbvre, B., Robin, A. Y., Dumas, R., & Matringe, M. (2011). 4-hydroxyphenylpyruvate dioxygenase catalysis: identification of catalytic residues and production of a hydroxylated intermediate shared with a structurally unrelated enzyme. <i>The Journal of biological chemistry, 286(29),</i>26061–26070. https://doi.org/10.1074/jbc.M111.227595</li>
+              <li>Levsh, O., Pluskal, T., Carballo, V., Mitchell, A. J., & Weng, J. K. (2019). Independent evolution of rosmarinic acid biosynthesis in two sister families under the Lamiids clade of flowering plants.<i>The Journal of biological chemistry, 294(42),</i>  15193–15205. https://doi.org/10.1074/jbc.RA119.010454  </li>
+              <li>Tegel, H., Ottosson, J., & Hober, S. (2011). Enhancing the protein production levels in Escherichia coli with a strong promoter.<i>The FEBS journal, 278(5), </i> 729–739. https://doi.org/10.1111/j.1742-4658.2010.07991.x </li>
+              <li>Ahn, J., Park, K. M., Lee, H., Son, Y. J., & Choi, E. S. (2013). GAL promoter-driven heterologous gene expression in Saccharomyces cerevisiae Δ strain at anaerobic alcoholic fermentation. <i>  FEMS yeast research, 13(1),</i>140–142. https://doi.org/10.1111/1567-1364.12009 </li>
+              <li>Elison, G. L., Xue, Y., Song, R., & Acar, M. (2018). Insights into Bidirectional Gene Expression Control Using the Canonical GAL1/GAL10 Promoter. <i> Cell reports, 25(3),</i> 737–748.e4. https://doi.org/10.1016/j.celrep.2018.09.050 </li>
+              <li>Giacalone, M. J., Gentile, A. M., Lovitt, B. T., Berkley, N. L., Gunderson, C. W., & Surber, M. W. (2006). Toxic protein expression in Escherichia coli using a rhamnose-based tightly regulated and tunable promoter system. <i>BioTechniques, 40(3),</i>355–364. https://doi.org/10.2144/000112112</li>
+             </p></ol>
+
+           </div>
+        </div>
+      </div>
+      
+      </div>
+  </div>
+  </div>
+  </div>
+  <div id="c" class="tab-pane fade">
+    <div class="row">
+      <div class="col-lg-3 col-sm-0 mt-5">
+      <div class="sidenav">
+          <h3>CONTENTS</h3>
+          <div class="list-group navlist">
+              <div class="toc-wrap">
+                  <a class="list-group-item toc toc-side" href="#bg2">Background</a>
+                  <a class="list-group-item toc toc-side" href="#goals">Goals</a>
+                  <a class="list-group-item toc toc-side" href="#approach2">Approach</a>
+                  <a class="list-group-item toc toc-side" href="#assump2">Assumptions</a>
+                  <a class="list-group-item toc toc-side" href="#modelres">Model Results</a>
+                  <a class="list-group-item toc toc-side" href="#disc2">Discussion</a>
+                  <a class="list-group-item toc toc-side" href="#future2">Future Directions</a>
+              </div>
+          </div>
+      </div>
+      </div>
+
+  <div class="col-lg-9 main-content" style="padding-top: 1rem; padding-right: 3.5rem;" id="main-content">
+    <div class="text-center align-middle">
+    <h1>Economic Model</h1></div>
+    <br>
+    <section id="bg2">
+    <h4>Background</h4><hr>
+    <p>Hydrogels are 3D networks of polymers that can hold water. Some common examples of hydrogels in everyday life are jello and tofu. Our bacteria and yeast are cultured in a hydrogel matrix with media to provide them nutrients to grow. Pores in the hydrogel allow intermediate molecules to diffuse between the bacteria and yeast.</p>
+<p>Hydrogels are becoming increasingly popular as biomedical applications due to their unique physical, structural, and mechanical properties [1]. The use of hydrogels as drug delivery systems depends heavily on the diffusion property of hydrogels. Hydrogels can hold the drugs within its porous structure and gradually release the drugs via diffusion.
+</p>
+</section>
+    <br>
+    <section id="goals">
+    <h4>Goals</h4><hr>
+    <p>To maximize the diffusion of intermediates between the bacteria and yeast, we want to understand the diffusion behavior of chemical intermediates within the hydrogel matrix. Diffusion rates determine how quickly molecules move from one area to another. Maximizing diffusion will improve our product yield since intermediates in the synthesis pathway are only exchanged through diffusion in the hydrogels. Our goal is to optimize the design of our printer and determine which hydrogel should be used by identifying the type of hydrogel among alginate, collagen, chitosan, pluronic F-127, and GelMA that has the highest relative diffusion.</p>
+    <br>
+  </section>
+  <section id="approach2">
+    <h4>Approach</h4><hr>
+    <p>Predicting or even modeling absolute diffusion rates in hydrogels is challenging because of the complex structure of the material. Typically, diffusion of solutes in hydrogels is modeled by one of three theories arising from distinct diffusion mechanisms: (1) hydrodynamic, (2) free volume, and (3) obstruction theory [1]. The Multiscale Model for Solute Diffusion (MSDM) model was developed as a comprehensive model combining the three main theories of diffusion [1]. In a hydrogel, solute diffusivity is affected by polymer chains that form a network of open spaces between chains [1]. Another factor impacting solute diffusion is the free volume, formed by empty voids between all the molecules including water, polymer, and water/polymer interfaces [1]. The Multiscale Model for Solute Diffusion model dictates how relative diffusivity (D/D0), a measure of how fast a chemical moves in hydrogel versus how fast it moves in pure water, depends on both mesh size and free volume void. The probability that a solute diffuses through both mechanisms simultaneously is essentially zero and thus mutually exclusive [1]. Therefore, we can sum the probabilities of the solute diffusing via each mechanism to determine the relative diffusivity. Comparing relative diffusivity between the hydrogels will lead us to determine which hydrogel has better diffusivity.
+    </p>
+    <p>Using the Multiscale Model for Solute Diffusion we modeled the relative diffusivity of our hydrogels. The variable D represents the diffusion of the solute through the hydrogel, while D0 represents the diffusion of the solute through pure water. D/D0 thus represents the ratio or relative diffusivity of the solute in the hydrogel compared to water.</p>
+    <p style="color: rgb(60, 60, 166);"> The first term of the equation describes the probability of the chemical intermediate diffusing through free volume voids in the hydrogel.</p><p> Free volume voids are modeled as spherical voids.</p>
+    <p style="color: rgb(63, 142, 63);"> The second term describes the probability of the intermediate diffusing with our aqueous media through the mesh.</p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="figure">
+      <img src="https://static.igem.wiki/teams/4588/wiki/diffusion-pic.png" width="800" class="figure-img img-fluid rounded" alt="Hydrogel Diagram">
+     <figcaption class="figure-caption"><b>Image 1.</b> Diagram of hydrogel, mesh size, and free volume void.</figcaption>
+   </figure>
+<br>
+<figure class="figure">
+      <img src="https://static.igem.wiki/teams/4588/wiki/msdm-equation.png" width="800" class="figure-img img-fluid rounded" alt="MSDM Equation">
+     <figcaption class="figure-caption"><b>Image 2.</b> MSDM Equation</figcaption>
+   </figure>
+   </div>
+    <br>
+    <b>The parameters of this model include:</b>
+    <ul>
+    <li> r<sub>s</sub> : ​​Radius of solute or radius of the molecule we are trying to diffuse</li>
+    <li> r<sub>FV</sub> : Radius of free volume of void/spherical gap between molecules in the hydrogel</li>
+    <li> r<sub>f</sub> : Radius of polymer chain of hydrogels</li>
+    <li> Φ<sub>p</sub> : Volume fraction of polymer; Volume of the polymer divided by the volume of all the constituents to make the polymer prior to mixing</li>
+    <li> &#958; : Mesh size, or distance between two adjacent cross-links of the hydrogel</li>
+    </ul>
+    <p>erf() and erfc() are error functions used in the model. Here, we assume that errors are normally distributed. </p>
+    <br>
+    </section>
+    <section id="assump2">
+    <h4>Assumptions</h4><hr>
+    <p><br><u>We made the following assumptions when using this model:</u>
+      <ol>
+        <li>Solutes can only diffuse through the hydrogel via either free volume voids or through the polymer network alongside the aqueous solution.
+</li>
+        <li>The free volume void is the gap between water molecules that are trapped in the hydrogel.</li>
+        <li>Solute particles behave like rigid spheres in the hydrogel.</li>
+      </ol>
+    <br>
+    <p>All our assumptions are reasonable, as most traditional diffusion models describe the solute as a hard sphere and the hydrogel as an entangled polymer solution of equivalent concentration [1, 2]. The definition of a free volume void is standard as the empty space in a solid or liquid that is not occupied by molecules [3].</p>
+    <p>We found the parameters for the hydrogels we are testing (alginate, collagen, chitosan, pluronic F-127, and GelMA) from the literature (Table 1) and fitted the values in our MSDM model. We calculated relative diffusivity for a range of mesh sizes for each hydrogel. All modeling and graphing were conducted in R. We modeled two different solutes in our synthesis pathway, salvianic acid A and rosmarinic acid. We chose to model the intermediate salvianic acid A, which is released by E. coli and taken up by yeast, since it plays a crucial role in the rosmarinic acid synthesis pathway. To find the radius of the solute, we imagined the intermediate as a sphere and found its molar volume. The molar volume of salvianic acid A is 128.1 cm3 [4]. From the molar volume, we divided by Avogadro’s number to find the volume for one particle and then calculated the radius using the volume of a sphere formula. We found that the radius of salvianic acid A is 0.37 nm. We used a similar approach to calculate the radius of rosmarinic acid, our final product. Using a molar volume of 232.8 cm3 from ChemSpider, we calculated the radius of rosmarinic acid to be 0.45 nm.</p>
+    <div class="text-center align-middle">
+    <br>
+      <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/diffusion-parameters.png"><img src="https://static.igem.wiki/teams/4588/wiki/diffusion-parameters.png" width="700"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 1.</b></span> Parameter Estimates</figcaption>
+    </figure>
+  </div>
+</section>
+    <br>
+    <section id="modelres">
+    <h4>Model Results</h4><hr>
+    <br>
+    <h5><b>Salvianic Acid A</b></h5>
+    <p>Relative diffusivity increases with mesh size for all the hydrogels (Figure 1). The relative diffusivity of alginate leveled off around 0.905. Collagen had larger mesh sizes compared to other gels, with relative diffusivity reaching around 0.967. Within the mesh size range for GelMA, the relative diffusivity seemed to plateau around 0.910. Relative diffusivity for chitosan seems to reach 0.7434 in the mesh size range. Relative diffusivity for pluronic F-127 is lowest among the five gels at around 0.73 and increases similar to a log function as mesh size increases. </p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/sa-graphs.png"><img src="https://static.igem.wiki/teams/4588/wiki/sa-graphs.png" width="700"></a>
+      <figcaption class="figure-caption text-left"><span><b>Figure 1.</b></span> Relative diffusivity of salvianic acid A in different hydrogels as a function of mesh size (alginate, collagen, chitosan, pluronic F-127, GelMA). Relative diffusivity increases with mesh size for all hydrogels.</figcaption>
+    </figure>
+  </div>
+  <br>
+    <p>Our model estimates show that alginate, collagen, and GelMA have high relative diffusivities, which predicts smoother diffusion of the intermediate salvianic acid A (Figure 2). Pluronic F-127 and chitosan are predicted to have lower relative diffusivities, which means slower diffusion of our intermediates. Collagen had the highest predicted relative diffusivity out of the five gels.
+    </p>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/sa-boxplot.png"><img src="https://static.igem.wiki/teams/4588/wiki/sa-boxplot.png" width="700"></a>
+      <figcaption class="figure-caption text-left"><span><b>Figure 2.</b></span> The relative diffusivity of salvianic acid A in different hydrogels (alginate, collagen, chitosan, pluronic F-127, GelMA). Collagen is predicted to have the highest relative diffusivity.</figcaption>
+    </figure>
+  </div>
+    <br>
+    <h5><b>Rosmarinic Acid</b></h5>
+    <p>Similar to the trend for salvianic acid A, relative diffusivity of rosmarinic acid increases with mesh size (Figure 3). Since rosmarinic acid is a larger molecule than salvianic acid A, the predicted relative diffusivities of rosmarinic acid in each hydrogel is lower than for salvianic acid A. The relative diffusivity increased as the mesh size of alginate increased, plateauing around 0.86. Collagen had larger mesh sizes compared to other gels and the highest high relative diffusivity compared to the other four gels of around 0.95.  Relative diffusivity for chitosan seems to be relatively low, reaching around 0.66. Relative diffusivity for pluronic F-127 is still relatively low among the five gels at around 0.65 and increases similar to a log function as mesh size increases. Within the mesh size range for GelMA, the relative diffusivity seems to plateau around 0.86.</p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/ra-graphs.png"><img src="https://static.igem.wiki/teams/4588/wiki/ra-graphs.png" width="700"></a>
+      <figcaption class="figure-caption text-left"><span><b>Figure 3.</b></span> Relative diffusivity of rosmarinic acid in different hydrogels as a function of mesh size (alginate, collagen, chitosan, pluronic F-127, GelMA). Relative diffusivity increases with mesh size for all hydrogels.</figcaption>
+    </figure>
+  </div>
+  <br>
+    <p>Comparing the relative diffusivity of rosmarinic acid among the five hydrogels, our model estimates alginate, GelMA, and collagen have high relative diffusivities (Figure 4), similar to what we predicted for salvianic acid A (Figure 2). The rankings of relative diffusivities of the five hydrogels are very similar for both rosmarinic acid and salvianic acid, though the relative diffusivities are a bit lower for rosmarinic acid.
+    </p>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/ra-boxplot.png"><img src="https://static.igem.wiki/teams/4588/wiki/ra-boxplot.png" width="700"></a>
+      <figcaption class="figure-caption text-left"><span><b>Figure 4.</b></span> The relative diffusivity of rosmarinic acid in different hydrogels (alginate, collagen, chitosan, pluronic F-127, GelMA). Collagen is predicted to have the highest relative diffusivity. </figcaption>
+    </figure>
+  </div>
+  </section>
+    <br>
+    <section id="disc2">
+    <h4>Discussion</h4><hr>
+    <p>From our models, we saw that some hydrogels were predicted to have higher relative diffusivities of salvianic acid A and rosmarinic acid. For salvianic acid A, the gels predicted to have high relative diffusivities were alginate, collagen, and GelMA. Similarly, for rosmarinic acid, we predicted high relative diffusivities for alginate, collagen, and GelMA. ] From the models, we leaned towards using either alginate, collagen, or GelMA as our final hydrogel for the printer. It’s important to keep in mind that diffusivity is one hydrogel property factor that influenced our decision, and there are other factors such as cell viability and shape to consider as well.
+    </p>
+  </section>
+    <br>
+    <br>
+    <section id="future2">
+    <h4>Future Directions</h4><hr>
+    <p>We had to make several assumptions when developing the model. Ideally, we would have used more precise measurements of the hydrogel variables such as mesh size to increase the accuracy of our model. Mesh size is affected by the concentration of the hydrogel. Therefore, while our analysis helped guide our decision on the hydrogel to use, it may not reflect absolute measures of diffusion rates. To further investigate relative diffusivity and the accuracy of our model, we tested the diffusion of our various hydrogels with two different dyes, one similar in size to salvianic acid A, and the other dye larger in size.</p><br>
+  </section>
+    <br>
+    <div class="accordion my-3" id="accordionwet1">
+      <div class="accordion-item">
+        <h2 class="accordion-header collapsed" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+            <h4>References</h4>
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionwet1">
+          <div class="accordion-body">
+            <p><ol>
+              <li>Axpe, E., Chan, D., Offeddu, G. S., Chang, Y., Merida, D., Hernandez, H. L., & Appel, E. A. (2019). A Multiscale Model for Solute Diffusion in Hydrogels.<i>Macromolecules, 52</i>(18), 6889–6897. https://doi.org/10.1021/acs.macromol.9b00753</li>
+              <li>Hadjiev, N. A., & Amsden, B. G. (2015). An assessment of the ability of the obstruction-scaling model to estimate solute diffusion coefficients in hydrogels. <i> Journal of controlled release : official journal of the Controlled Release Society, 199,</i>10–16. https://doi.org/10.1016/j.jconrel.2014.12.010</li>
+              <li>Hoffman, D. J., Fica-Contreras, S. M., & Fayer, M. D. (2020). Amorphous polymer dynamics and free volume element size distributions from ultrafast IR spectroscopy. <i>Proceedings of the National Academy of Sciences of the United States of America, 117(25),</i>13949–13958. https://doi.org/10.1073/pnas.200322511</li>
+              <li>(2S)-3-(3,4-dihydroxyphenyl)-2-hydroxypropanoic acid. ChemSpider. (n.d.). http://www.chemspider.com/Chemical-Structure.156273.html </li>
+              <li>Abrami, M., D’Agostino, I., Milcovich, G., Fiorentino, S., Farra, R., Asaro, F., Lapasin, R., Grassi, G., & Grassi, M. (2014). Physical characterization of alginate–pluronic F-127 gel for endoluminal NABDs delivery. <i>Soft Matter, 10(5),</i> 729–737. https://doi.org/10.1039/C3SM51873F </li>
+              <li>Agles, A. A., & Bourg, I. C. (2023). Structure–Thermodynamic Relationship of a Polysaccharide Gel (Alginate) as a Function of Water Content and Counterion Type (Na vs Ca). <i>The Journal of Physical Chemistry B, 127(8),</i> 1828–1841. https://doi.org/10.1021/acs.jpcb.2c07129</li>
+              <li>Bhattacharyya, A., Janarthanan, G., Kim, T., Taheri, S., Shin, J., Kim, J., Bae, H. C., Han, H.-S., & Noh, I. (2022). Modulation of bioactive calcium phosphate micro/nanoparticle size and shape during in situ synthesis of photo-crosslinkable gelatin methacryloyl based nanocomposite hydrogels for 3D bioprinting and tissue engineering. <i>Biomaterials Research, 26(1)</i>  54. https://doi.org/10.1186/s40824-022-00301-6</li>
+              <li>Bueno, E. M., & Ruberti, J. W. (2008). OPTIMIZING COLLAGEN TRANSPORT THROUGH TRACK-ETCHED NANOPORES.<i>Journal of Membrane Science, 321(2),</i>250–263. https://doi.org/10.1016/j.memsci.2008.04.066</li>
+              <li>Burla, F., Sentjabrskaja, T., Pletikapic, G., van Beugen, J., & Koenderink, G. H. (2020). <i>Particle diffusion in extracellular hydrogels </i>(arXiv:1909.05091). arXiv. http://arxiv.org/abs/1909.05091</li>
+              <li>Campbell, K. T., Wysoczynski, K., Hadley, D. J., & Silva, E. A. (2020). Computational-Based Design of Hydrogels with Predictable Mesh Properties. <i>ACS Biomaterials Science & Engineering, 6(1)</i>, 308–319. https://doi.org/10.1021/acsbiomaterials.9b01520</li>
+              <li>Chandaroy, P., Sen, A., Alexandridis, P., & Hui, S. W. (2002). Utilizing temperature-sensitive association of pluronic F-127 with lipid bilayers to control liposome–cell adhesion. <i>Biochimica et Biophysica Acta (BBA) - Biomembranes, 1559(1),</i>32–42. https://doi.org/10.1016/S0005-2736(01)00431-X</li>
+              <li>Lima, P. S., Brito, R. S. F., Santos, B. F. F., Tavares, A. A., Agrawal, P., Andrade, D. L. A. C. S., Wellen, R. M. R., Canedo, E. L., & Silva, S. M. L. (2017). Rheological properties of HDPE/chitosan composites modified with PE-g-MA. <i>Journal of Materials Research,</i> 32(4), 775–787. https://doi.org/10.1557/jmr.2016.519</li>
+              <li>Lupa, D., Płaziński, W., Michna, A., Wasilewska, M., Pomastowski, P., Gołębiowski, A., Buszewski, B., & Adamczyk, Z. (2022). Chitosan characteristics in electrolyte solutions: Combined molecular dynamics modeling and slender body hydrodynamics. <i>Carbohydrate Polymers, 292,</i> 119676. https://doi.org/10.1016/j.carbpol.2022.119676</li>
+              <li>Moya, M. L., Morley, M., Khanna, O., Opara, E. C., & Brey, E. M. (2012). Stability of alginate microbead properties in vitro. <i>Journal of Materials Science. Materials in Medicine, 23(4)</i>10.1007/s10856-012-4575–4579. https://doi.org/10.1007/s10856-012-4575-9</li>
+              <li>Richbourg, N. R., Wancura, M., Gilchrist, A. E., Toubbeh, S., Harley, B. A. C., Cosgriff-Hernandez, E., & Peppas, N. A. (2021). Precise control of synthetic hydrogel network structure via linear, independent synthesis-swelling relationships. <i>Science Advances, 7(7),</i> eabe3245. https://doi.org/10.1126/sciadv.abe3245</li>
+              <li>Shirani, J., Pick, R., Roberts, W. C., & Maron, B. J. (2000). Morphology and significance of the left ventricular collagen network in young patients with hypertrophic cardiomyopathy and sudden cardiac death. <i>Journal of the American College of Cardiology, 35(1),</i>36–44. https://doi.org/10.1016/S0735-1097(99)00492-1</li>
+              <li>Singla, P., Singh, O., Sharma, S., Betlem, K., Aswal, V. K., Peeters, M., & Mahajan, R. K. (2019). Temperature-Dependent Solubilization of the Hydrophobic Antiepileptic Drug Lamotrigine in Different Pluronic Micelles—A Spectroscopic, Heat Transfer Method, Small-Angle Neutron Scattering, Dynamic Light Scattering, and in Vitro Release Study. <i>ACS Omega, 4(6),</i> 11251–11262. https://doi.org/10.1021/acsomega.9b00939</li>
+              <li>Syamdidi, Sidauruk, H., Munandar, A., & Haryati, S. (2020). The Production of Nanoparticles Chitosan from Crustaceans Shell Using the Top-down Method. <i>E3S Web of Conferences, 147,</i>03025. https://doi.org/10.1051/e3sconf/202014703025  </li>
+              <li>Vigata, M., Meinert, C., Bock, N., Dargaville, B. L., & Hutmacher, D. W. (2021). Deciphering the Molecular Mechanism of Water Interaction with Gelatin Methacryloyl Hydrogels: Role of Ionic Strength, pH, Drug Loading and Hydrogel Network Characteristics.<i>Biomedicines, 9(5),</i> 574. https://doi.org/10.3390/biomedicines9050574  </li>
+             </p></ol>
+           </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+  <div id="e" class="tab-pane fade">
+    <div class="row">
+      <div class="col-lg-3 col-sm-0 mt-5">
+      <div class="sidenav">
+          <h3>CONTENTS</h3>
+          <div class="list-group navlist">
+              <div class="toc-wrap">
+                  <a class="list-group-item toc toc-side" href="#bg3">Background</a>
+                  <a class="list-group-item toc toc-side" href="#goal">Goal</a>
+                  <a class="list-group-item toc toc-side" href="#approach3">Approach</a>
+                  <a class="list-group-item toc toc-side" href="#modelres3">Model Results</a>
+                  <a class="list-group-item toc toc-side" href="#disc3">Discussion & Future Directions</a>
+              </div>
+          </div>
+      </div>
+      </div>
+
+  <div class="col-lg-9 main-content" style="padding-top: 1rem; padding-right: 3.5rem;" id="main-content">
+    <div class="text-center align-middle">
+    <h1>Surface Interactions Model</h1></div>
+    <br>
+    <section id="bg3">
+    <h4>Background</h4><hr>
+    <p>The objective of our project is to utilize a 3D printer to create parallel hydrogels, where both bacteria and yeast are embedded in the same media to facilitate rosmarinic acid production. This section focuses on identifying the optimal hydrogel shapes that maximize the diffusion of intermediates. To achieve this goal, the surface area to volume (SA/V) ratio is our main parameter to consider. A high SA/V ratio means high surface area and low volume; high surface area provides more area for the substances to cross the hydrogel and low volume could create a concentration gradient that assists the chemical intermediates or products  to diffuse out, which combined create a maximum diffusion rate for hydrogels. Better diffusion allows chemical reactions to happen more efficiently, which can boost the rosmarinic acid production.</p>
+  </section>
+    <br>
+    <section id="goal">
+    <h4>Goal</h4><hr>
+    <p>The main goal was to come up with a shape that can maximize the surface area/volume (SA/V) ratios which will maximize diffusion between the bacteria and yeast hydrogels.</p>
+  </section>
+    <br>
+    <section id="approach3">
+    <h4>Approach</h4><hr>
+    <br>
+   <h5><b>The Design of Solid Shapes:</b></h5> 
+    <p>In the first round of design, we first considered simple solid shapes, such as a sphere, tetrahedron, and cube, and we look up the SA/V ratio for different shapes base on (Table 1). In this case, the length a is the same for all the different shapes and use formula of surface area/ formula of volume, the SA/V ratio is calculated as listed in the last column. The results show that the tetrahedron has the highest surface/volume ratio (7.21).</p>
+  </section>
+    <br>
+    <section id="modelres3">
+    <h4>Model Results</h4><hr>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/sava.png"><img src="https://static.igem.wiki/teams/4588/wiki/sava.png" width="500"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 1.</b></span>  SA/V ratios for different solid shapes [1]</figcaption>
+    </figure>
+    <br>
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/st.png"><img src="https://static.igem.wiki/teams/4588/wiki/st.png" width="1000"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 2.</b></span> Solid Triangular Shapes SA/V Ratio</figcaption>
+    </figure>
+  </div>
+    <br>
+    <p>Table 2 is a refinement of solid triangular shapes in addition to the shapes listed in table 1, including cone, square pyramidal and tetrahedral. Here, we set the size of all the shapes for the outer layer as 40mm*40mm*40mm and the inner layer as 20mm*20mm*20mm. We choose these numbers because the petri dish dimension is 50mm*50mm*150mm (radius*radius*height), and the chosen dimension should be smaller than the petri dish size. As results show, the solid tetrahedron has the highest SA/V ratio (3.68) among different solid triangular shapes. </p>
+    <br>
+    <h5><b>Hollow shapes:</b></h5>
+    <p>In the second round of shape design, we considered hollow shapes which should have a higher SA/V ratio compared to the solid objects. The idea behind it is that if volume is extracted from the center of the shape, the surface area can be increased and total volume would decrease. We estimated the SA/V ratio for hollow shapes by summing the inside surface area from the outside surface area; as for volume, outer volume subtracts the inner volume. Because the complex shapes such as octahedron and sphere cannot stand independent and are difficult to print as hydrogel for 3D printers, therefore, only simple shapes (cylinder, capsule, cube, tetrahedron, cone)  that satisfy the requirements and possibly has the highest SA/V ratio are chosen. </p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/3.png"><img src="https://static.igem.wiki/teams/4588/wiki/3.png" width="1000"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 3.</b></span>  SA/V Ratios for Hollow Shapes</figcaption>
+    </figure>
+  </div>
+    <br>
+    <p> The 1st column of table 3 is the diagram of the shapes, the 2nd column is the dimension for the inner hollow shape,  the 3rd column is the dimension for the outside shape, the 4th column is the calculated surface area, and the 5th column is the calculated volume. The 6th column is the equation used for calculation and the last column is SA/V ratio. For hollow shapes results, we found that the tetrahedron in general has a greater SA/V ratio ( 2.7 ) than other shapes. </p>
+    <br>
+    <h5><b>Novel Approach of Tetrahedron: </b></h5>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/4.png"><img src="https://static.igem.wiki/teams/4588/wiki/4.png" width="1000"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 4.</b></span>  Caved four Small Triangular Prism in Tetrahedron </figcaption>
+    </figure>
+  </div>
+    <p>In this novel approach, We tried to further maximize the SA/V ratio of tetrahedron. 4 small triangular prisms are dug out of each side of the tetrahedron to increase the surface area and decrease the volume. This is different from the hollow tetrahedron in Table 3 in which Table 3 is one small hollow tetrahedron dug out of a large tetrahedron whereas in this approach it’s 4 small triangular prisms. As the result shows, this novel shape with hollow triangular prisms does increase the SA/V ratio significantly compared to the hollow tetrahedron in Table 3. It processes the ratio of 5.68 compared to 2.7 for the hollow tetrahedron in Table 3.</p>
+    <br>
+    <h5><b>Feedback from Hardware team: </b></h5>
+    <p>We reported to the hardware team regarding our progress in which the hollow tetrahedron with 4 triangular prisms dug out (table 4) has the highest SA/V ratio and subsequently highest diffusion rate. However, the feedback we received regarding the 3D printer is that since we will use hydrogel bioink, the structure produced will be more malleable compared to the usual 3D printing ink. Thus, it would be very difficult to print a hollow shape because the hydrogel is not strong enough to support the tetrahedron with hollow prisms on each side or  hollow shapes in general. In addition, they suggested that we should focus on the contact area between two hydrogels with yeast or bacteria because if the contact area is high, chemicals can diffuse across the hydrogels with yeast and bacteria more easily, potentially enhancing the chemical reaction efficiency. </p>
+    <br>
+   <h5><b>Novel Practical Design: </b></h5> 
+    <p>After brainstorming based on their requirements, we adjusted our shape designs and new designs were produced. </p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/5.png"><img src="https://static.igem.wiki/teams/4588/wiki/5.png" width="1000"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 5.</b></span> SA/V Ratio Estimates for Stacked Sheets      </figcaption>
+    </figure>
+  </div>
+    <br>
+    <p>The basic approach shown in Table 5 is to let two sheets stack on top of each other and four shapes are in the consideration. The first one is two plain hydrogel with yeast or bacteria sheets stacked on each other. This structure is easy to build and also creates a large hydrogel contact structure, though the contact area between hydrogels is lower because only one side of the sheets is in contact with each other. In order to increase contact area and also anchor the two hydrogels together, the second shape created has many small tetrahedrons or spikes occupying the surface of the sheet. In this case, we can stack the two hydrogel sheets by letting the sides with tetrahedrons facing each other so that these two sides can complement each other. The third shape has a similar concept to the second one, and the difference is that the second is not fully filled with tetrahedra (60 spikes) and the third one is fully filled (80 spikes). The last one has the sheet stacked too, but the spikes are hemispheres and it fills the entire sheet (25 spikes). As the result shows, the second one with 60 tetrahedron spikes has the highest  SA/V ratio (3.45) compared to other shapes.</p>
+    <br>
+    <div class="text-center align-middle">
+    <figure class="gallery rounded mx-auto d-block">
+      <a href="https://static.igem.wiki/teams/4588/wiki/6.png"><img src="https://static.igem.wiki/teams/4588/wiki/6.png" width="1000"></a>
+      <figcaption class="figure-caption text-left"><span><b>Table 6.</b></span> SA/V Ratio Estimates for Weaved Structure   </figcaption>
+    </figure>
+  </div>
+  <br>
+    <p>Another approach we considered as practical is linear shape (Table 6). Because the 3D printer could print a straight line of hydrogel, the idea that perhaps we can program the printer to print thin lines of hydrogels with yeast and bacteria. Thus, the weaved structure can develop to form a fabric shape. In Table 6, all four shapes are the same structure and the difference is in nozzle size. Four different nozzle sizes are taken into the calculation including, 0.05mm, 0.018mm, 0.028mm, and 0.038 mm of inner diameter. The weaved line can stack up with height that’s consistent with other structures. As a result, the SA/V ratios are really high for these types of shapes and the smallest nozzle size (0.05mm) can produce most layers which make it have the highest SA/V ratio. </p>
+    <br>
+    </section>
+    <section id="disc3">
+    <h4>Discussion and Future Directions</h4><hr>
+    <p>From the comparison of solid shapes, we concluded that the tetrahedron has the highest surface area-to-volume ratio. However, as hollow shapes lack sufficient structural strength and may collapse, they were not considered viable for printing. The stacked sheet design, incorporating partially filled tetrahedrons, offers a higher SA/V ratio compared to other stacked sheet configurations. Additionally, the tetrahedron spikes provide adequate support, making this design a viable printing option. Another option is the weaved linear shape. We recommend using the smallest nozzle size of 0.5 mm, which increases the number of layers, thereby enhancing the SA/V ratio. The shape optimization model has provided practical designs for the hardware team and facilitate the printing of the hydrogels. Our team will continue to test the feasibility of printing these optimal shapes identified through modeling.  </p>
+  </section>
+    <br>
+    <div class="accordion my-3" id="accordionwet1">
+      <div class="accordion-item">
+        <h2 class="accordion-header collapsed" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+            <h4>References</h4>
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionwet1">
+          <div class="accordion-body">
+            <ul>
+            <li>Wikipedia contributors. (2023). Surface-area-to-volume ratio. <i>Wikipedia. </i>https://en.wikipedia.org/wiki/Surface-area-to-volume_ratio</li>
+          </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
 {% endblock %}
