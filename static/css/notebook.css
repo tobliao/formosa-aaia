@@ -242,9 +242,13 @@
   }
 
 
-  .pdf-adjust{
+  .box-adjust{
     height:300px;
-    Width: 800px;
+    Width: 100%;
+  }
+  .pdf-adjust{
+    height:245px;
+    Width: 100%;
   }
 
   .text-left2-home{

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-  
+
 {% block title %}Model{% endblock %}
 {% block lead %}Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.{% endblock %}
 
@@ -11,32 +11,46 @@
 {% endblock %}
 
 {% block page_content %}
-<div class="container">
+<div class="custom-container">
   <div class="text-center align-middle">
     <br>
-  <h1>Overview</h1>
-  <hr>
-  <br>
+    <h1>Overview</h1>
+    <hr>
+    <br>
   </div>
-  <p>We created three modeling projects to support wet lab and software development. The modeling projects focus on the most essential parts of our project, which are hydrogels and cells, and try to answer key questions for the hardware and wet lab team.  </p>
-  <p><br><u>The main goals of our models are: </u>
-    <ol>
-      <li>To aid the hardware team to make the decision of hydrogels that they will print in our parallel culture system.  </li>
-      <li>To ensure and optimize rosmarinic production by verifying cell viability inside the hydrogels and determining the best cell ratios of yeast and bacteria.</li>
-    </ol>
-  <p>The following shows how we implement our model to attain the goals: </p>
+  <p>We created three modeling projects to support wet lab and software development. The modeling projects focus on the most essential parts of our project, which are hydrogels and cells, and try to answer key questions for the hardware and wet lab team.</p>
+  <p><br><u>The main goals of our models are:</u></p>
+  <ol>
+    <li>To aid the hardware team to make the decision of hydrogels that they will print in our parallel culture system.</li>
+    <li>To ensure and optimize rosmarinic production by verifying cell viability inside the hydrogels and determining the best cell ratios of yeast and bacteria.</li>
+  </ol>
+  <p>The following shows how we implement our model to attain the goals:</p>
   <br>
   <br>
-
 </div>
-<ul class="nav nav-pills nav-fill">
-  <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"  href ="#b">Diffusion Model</a></li>
-  <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"   href="#c">Surface Interactions Model</a></li>
-  <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"  href="#e">Economic Model</a></li>
-</ul>
+
+<div class="custom-container">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#b">Diffusion Model</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#c">Surface Interactions Model</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#e">Economic Model</a></li>
+  </ul>
+</div>
+
 <hr>
 <br>
 <br>
+
+<style>
+  .custom-container {
+    max-width: 75%; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container */
+  }
+  .nav-pills .nav-link {
+    padding: 2% 5%; /* 2% of the container's width for top/bottom, 5% for left/right */
+    font-size: 1.2rem; /* Adjust font size as needed */
+  }
+</style>
 
 <div class="tab-content">
   <div id="b" class="tab-pane active">
