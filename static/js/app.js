@@ -1,4 +1,5 @@
 //typing header
+/*
 var i1 = 0;
 var i2 = 0;
 var i3 = 0;
@@ -44,7 +45,25 @@ if (head_img) {
     i.style.backgroundColor = "#D8C891";
   });
 }
+*/
+var i1 = 0;
+var txt1 = "BOROHMA";
+var speed = 200;
 
+const type = () => {
+  const type_elem = document.getElementById("reflect-text");
+  if (type_elem) {
+    function typeWriter() {
+      if (i1 < txt1.length) {
+        type_elem.innerHTML += txt1.charAt(i1);
+        i1++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter();
+  }
+};
+window.onload = type;
 // Table of content and scroll to section
 
 const scrollHeight = document.documentElement.scrollHeight;
