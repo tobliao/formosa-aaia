@@ -98,6 +98,14 @@
     z-index: 1;
 }
 
+.solution-statement {
+  position: absolute;
+  left: 30vw;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  
+}
+
 @media screen and (min-width: 1700px) {
     .typing-words {
         font-size: 2.5rem;
