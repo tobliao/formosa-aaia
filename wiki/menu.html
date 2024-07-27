@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse opaque-words" id="navcol-1">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link active" href="{{ url_for('pages', page='index') }}">HOME</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('pages', page='index') }}">HOME</a></li> -->
     
                 
                 <!---- Project ---->
@@ -42,7 +42,7 @@
                     </a>
                     
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}">Experiments</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='experiment') }}">Experiments</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
