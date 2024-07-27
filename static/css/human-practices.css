@@ -110,7 +110,7 @@
 .panelblue,
 .body {
     padding: 0 18px;
-    background-color: #253B41;
+    background-color: #fafafa;
     color: white;
     max-height: 0;
     overflow: hidden;
@@ -154,6 +154,7 @@
   }
   .ag-timeline_line {
     width: 4px;
+
     background-color: #253B41;
   
     position: absolute;
@@ -173,7 +174,7 @@
   .ag-timeline_line-progress {
     width: 100%;
     height: 20%;
-    background-color: #FFFFFF;
+    background-color: #ffff9e;
   }
   
   .ag-timeline-card_box {

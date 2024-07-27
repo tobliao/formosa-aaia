@@ -1,7 +1,9 @@
 .placeholder {
     display: flex;
     border-radius: 10px;
+    opacity: 1;
   }
+
 .container-home {
     position: relative;
     height: 100px;
