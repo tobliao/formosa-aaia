@@ -10,7 +10,8 @@ p {
     overflow: hidden;
     margin: 50px auto;
     border-radius: 40px;
-
+    border-color:#000000;
+    border-width: 5px;
 }
 
 .caption {
@@ -29,6 +30,7 @@ p {
     overflow: hidden;
     transition: all .5s ease;
     position: relative;
+    border-color:#D08BE1;
 }
 
 .tab img {
@@ -61,43 +63,74 @@ p {
 
 .membertable .instructor-advisor {
     border: 0.1rem solid #000000;
-    background-color:#b313df;
+    background-color:#D08BE1;
     width: 5rem;
-    height: 5rem;
-    border-radius:10px;
+    height: 6rem;
+    border-radius:5px;
 }
 
 .membertable .wetlabmember {
     border: 0.1rem solid #000000;
-    background-color:#32d7f1;
-    width: 8rem;
-    height: 8rem;
+    background-color:#78C3FB;
+    width: 5rem;
+    height: 6rem;
     border-radius:5px;
-
 }
 
 .membertable .drylabmember {
     border: 0.1rem solid #000000;
-    background-color:#aed26e;
-    width: 8rem;
-    height: 8rem;
-    border-radius:10px;
+    background-color:#C6EBBE;
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
 }
 
 .membertable .hpmember {
     border: 0.1rem solid #000000;
-    background-color:#dc2020;
-    width: 8rem;
-    height: 8rem;
-    border-radius:10px;
+    background-color:#FF8178;
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
 }
 
 .membertable .swmember {
     border: 0.1rem solid #000000;
-    background-color:#16baba;
-    width: 8rem;
-    height: 8rem;
-    border-radius:10px;
+    background-color:#FFFB8E;
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
+}
+
+.membertable .justin {
+    border: 0.1rem solid #000000;
+    background-image: linear-gradient(to bottom right, #78C3FB, #FF8178);
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
+}
+
+.membertable .youshin {
+    border: 0.1rem solid #000000;
+    background: linear-gradient(to top right, #78C3FB, #C6EBBE);
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
+}
+
+.membertable .timothy {
+    border: 0.1rem solid #000000;
+    background: linear-gradient(to top right, #FFFB8E, #C6EBBE);
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
+}
+
+.membertable .jenson {
+    border: 0.1rem solid #000000;
+    background: linear-gradient(to top right, #FFFB8E, #C6EBBE);
+    width: 5rem;
+    height: 6rem;
+    border-radius:5px;
 }
 
 
@@ -111,7 +144,7 @@ p {
     vertical-align: top;
     line-height: 80%;
     border: 0.05rem solid white;
-    padding: 2px;
+    padding: 3px;
 }
 
 .membertable .blankspace {
@@ -119,8 +152,13 @@ p {
 }
 
 .membertable .leads {
+<<<<<<< Updated upstream
     border: 0.05rem solid #9AAADF
 }
+=======
+      border: 0.05rem solid #9AAADF
+    }
+>>>>>>> Stashed changes
 
 .card {
     text-align: center;
@@ -130,63 +168,37 @@ p {
     padding-bottom: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-}
-
-.wetlabmember:hover {
-    cursor:pointer;
-    transform: rotateY(180deg);
-    transition: transform 700ms;
-}
-
-.drylabmember:hover {
-    cursor:pointer;
-    transform: rotateY(180deg);
-    transition: transform 700ms;
-}
-
-.hpmember:hover {
-    cursor:pointer;
-    transform: rotateY(180deg);
-    transition: transform 700ms;
-}
-
-.swmember:hover {
-    cursor:pointer;
-    transform: rotateY(180deg);
-    transition: transform 700ms;
-}
-
-.front,
-.back {
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
+    position: relative;
 }
 
 num {
-    color:#000000;
+    color: #000000;
     font-size: 12px;
     padding-left: 5px;
     padding-top: 15px;
 }
 
-inital {
+.inital {
     font-size: 50px;
-    font-weight:bold;
-    color:#000000 !important;
+    font-weight:bolder;
     line-height: 2rem;
-    text-align: center;
+    text-align: center; 
+
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.init-color {
+    color: black;
 }
 
 name {
     font-size: 15px;
     color: #000000;
     line-height: 10%;
-    padding-bottom: 0.75rem;
+    
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
