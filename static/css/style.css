@@ -615,6 +615,9 @@ name {
     opacity: 1 !important;
     color: rgb(255, 255, 255);
   }
+  .transparent{
+    opacity: 85%;
+  }
 
 
   
