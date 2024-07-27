@@ -127,7 +127,7 @@ p {
 
 .membertable .jenson {
     border: 0.1rem solid #000000;
-    background: linear-gradient(to top right, #FFFB8E, #C6EBBE);
+    background: linear-gradient(to top right, #FFFB8E 50%, #C6EBBE);
     width: 5rem;
     height: 6rem;
     border-radius:5px;
@@ -152,13 +152,8 @@ p {
 }
 
 .membertable .leads {
-<<<<<<< Updated upstream
-    border: 0.05rem solid #9AAADF
-}
-=======
       border: 0.05rem solid #9AAADF
     }
->>>>>>> Stashed changes
 
 .card {
     text-align: center;
@@ -243,7 +238,7 @@ name {
 }
 .centered {
     position: absolute;
-    top: -95vh;
+    top: -63vh;
     width: 75vw;
     left: 12vw;
     
@@ -515,7 +510,7 @@ name {
 .to-fade-in {
     opacity: 0;
     /* transform: translateY(3rem); */
-    transition: opacity 4s;
+    transition: opacity 1.3s;
 }
 
 .to-fade-in-fast {
@@ -554,16 +549,16 @@ name {
     overflow: hidden;
 }
 
-.curtain-image {
-    background-color: transparent; /* Ensure the image background is transparent */
-    display: block; /* Ensure the image behaves like a block element */
-    width: 100%; /* Make the image fill its container */
-    height: auto; /* Maintain the aspect ratio */
-}
+    .curtain-image {
+        background-color: transparent; /* Ensure the image background is transparent */
+        display: block; /* Ensure the image behaves like a block element */
+        width: 100%; /* Make the image fill its container */
+        height: auto; /* Maintain the aspect ratio */
+    }
 
-.curtain {
-    background-color: transparent; /* Ensure the container background is transparent */
-}
+    .curtain {
+        background-color: transparent; /* Ensure the container background is transparent */
+    }
 
     
 @keyframes cursor-blink {
@@ -627,9 +622,6 @@ name {
     opacity: 1 !important;
     color: rgb(255, 255, 255);
   }
-  .transparent{
-    opacity: 85%;
-  }
 
 
   
@@ -640,17 +632,6 @@ name {
 }
 
 .rotateshow {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
-}
-
-.rotatehidden-left {
-    opacity: 0;
-    transform: translateX(-100%) rotate(-360deg);
-    transition: all 3s;
-}
-
-.rotateshow-left {
     opacity: 1;
     transform: translateX(0) rotate(0deg);
 }
