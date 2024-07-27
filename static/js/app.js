@@ -161,6 +161,19 @@ const hiddenElements3 = document.querySelectorAll('.hiddenleft');
 hiddenElements3.forEach((el) => observer3.observe(el));
 
 
+const observerLeft = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('rotateshow-left');
+    } else {
+      entry.target.classList.remove('rotateshow-left');
+    }
+  });
+});
+
+const hiddenElementsLeft = document.querySelectorAll('.rotatehidden-left');
+hiddenElementsLeft.forEach((el) => observerLeft.observe(el));
+
 const observer4 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
       console.log(entry)

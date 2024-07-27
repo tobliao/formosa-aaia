@@ -672,6 +672,17 @@ footer {
     transition: all 3s;
 }
 
+.rotatehidden-left {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-360deg);
+    transition: all 3s;
+}
+
+.rotateshow-left {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
 .rotateshow {
     opacity: 1;
     transform: translateX(0) rotate(0deg);
@@ -903,7 +914,9 @@ footer {
     .rotatehidden {
         transition: none;
     }
-
+    .rotatehidden-left {
+        transition: none;
+    }
     .hiddenchemicals {
         transition: none;
     }
