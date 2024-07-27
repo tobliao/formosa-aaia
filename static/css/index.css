@@ -302,7 +302,7 @@ body.freeze {
     transform: translateX(calc(100%));
   }
   .left-curtain {
-    border-right: 1px solid #fff;
+   
     /* border: 1px solid #000000; */
     margin: 0;
     padding: 0;

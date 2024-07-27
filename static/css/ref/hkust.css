@@ -495,6 +495,11 @@ footer {
     right: 1vw;
 }
 
+.earth2 {
+    position: absolute;
+    left: 1vw;
+}
+
 .truck {
     position: absolute;
     left: 50%;

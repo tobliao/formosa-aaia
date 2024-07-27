@@ -279,7 +279,7 @@ var fiftyWrapperheight = $(".curtain-panel").height();
       const videoText = introVid.querySelector("h2");
       //  const content = document.querySelector(".content");
       //const heading = content.querySelector("h1");
-      const sceneDuration = 8000;
+      const sceneDuration = 3500;
       const videoLength = video.duration; //Value in second
       //ScrollMagic
       //https://scrollmagic.io/docs/ScrollMagic.Controller.html

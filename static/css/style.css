@@ -503,7 +503,7 @@ name {
 .to-fade-in {
     opacity: 0;
     /* transform: translateY(3rem); */
-    transition: opacity 1.3s;
+    transition: opacity 4s;
 }
 
 .to-fade-in-fast {
