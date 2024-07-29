@@ -38,7 +38,16 @@
   }
   .nav-pills .nav-link {
     padding: 2% 5%; /* 2% of the container's width for top/bottom, 5% for left/right */
-    font-size: 1.2rem; /* Adjust font size as needed */
+    font-size: 1.2rem; /* Increase the font size */
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for animations */
+  }
+  .nav-pills .nav-link:hover {
+    background-color: #d8dc4c; /* Change background color on hover */
+    transform: scale(1.20); /* Slightly increase size on hover */
+  }
+  .nav-pills .nav-link.active {
+    background-color: #587449; /* Active background color */
+    color: #f6f1da; /* Active text color */
   }
 </style>
 
