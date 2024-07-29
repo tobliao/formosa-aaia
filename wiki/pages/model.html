@@ -114,7 +114,9 @@
      }
    }],
    layout: {
-     sliders: [{
+      plot_bgcolor: '#f6f1da',  // Set the background color of the plot area
+      paper_bgcolor: '#f6f1da', // Set the background color of the entire figure
+      sliders: [{
        pad: {t: 30},
        x: 0.05,
        len: 0.95,
@@ -492,56 +494,86 @@
     </body>
     </html>
   
-  <head>
-    <!-- Load plotly.js into the DOM -->
-    <script src='https://cdn.plot.ly/plotly-2.32.0.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <head>
+      <!-- Load plotly.js into the DOM -->
+      <script src='https://cdn.plot.ly/plotly-2.32.0.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
   </head>
-  
   <body>
-    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-  </body>
-  <script>
-  d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv', function(err, rows){
-      function unpack(rows, key) {
-          return rows.map(function(row)
-          { return row[key]; });}
-      
-      var trace1 = {
-          x:unpack(rows, 'x1'), y: unpack(rows, 'y1'), z: unpack(rows, 'z1'),
-          mode: 'markers',
-          marker: {
-              size: 12,
-              line: {
-              color: 'rgba(217, 217, 217, 0.14)',
-              width: 0.5},
-              opacity: 0.8},
-          type: 'scatter3d'
-      };
-      
-      var trace2 = {
-          x:unpack(rows, 'x2'), y: unpack(rows, 'y2'), z: unpack(rows, 'z2'),
-          mode: 'markers',
-          marker: {
-              color: 'rgb(127, 127, 127)',
-              size: 12,
-              symbol: 'circle',
-              line: {
-              color: 'rgb(204, 204, 204)',
-              width: 1},
-              opacity: 0.8},
-          type: 'scatter3d'};
-      
-      var data = [trace1, trace2];
-      var layout = {margin: {
-          l: 0,
-          r: 0,
-          b: 0,
-          t: 0
-        }};
-      Plotly.newPlot('myDiv', data, layout);
+      <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+      <script>
+      d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv', function(err, rows){
+          function unpack(rows, key) {
+              return rows.map(function(row) { return row[key]; });
+          }
+          
+          var trace1 = {
+              x: unpack(rows, 'x1'), 
+              y: unpack(rows, 'y1'), 
+              z: unpack(rows, 'z1'),
+              mode: 'markers',
+              marker: {
+                  size: 12,
+                  line: {
+                      color: 'rgba(217, 217, 217, 0.14)',
+                      width: 0.5
+                  },
+                  opacity: 0.8
+              },
+              type: 'scatter3d',
+              marker: {color: '#999999'} // Example color for the first trace
+          };
+          
+          var trace2 = {
+              x: unpack(rows, 'x2'), 
+              y: unpack(rows, 'y2'), 
+              z: unpack(rows, 'z2'),
+              mode: 'markers',
+              marker: {
+                  color: '#5393c3', // Example color for the second trace
+                  size: 12,
+                  symbol: 'circle',
+                  line: {
+                      color: 'rgb(204, 204, 204)',
+                      width: 1
+                  },
+                  opacity: 0.8
+              },
+              type: 'scatter3d'
+          };
+          
+          var data = [trace1, trace2];
+          
+          var layout = {
+              margin: {
+                  l: 0,
+                  r: 0,
+                  b: 0,
+                  t: 0
+              },
+              scene: {
+                  xaxis: {
+                      title: 'X Axis',
+                      backgroundcolor: '#f6f1da' // Axis background color
+                  },
+                  yaxis: {
+                      title: 'Y Axis',
+                      backgroundcolor: '#f6f1da' // Axis background color
+                  },
+                  zaxis: {
+                      title: 'Z Axis',
+                      backgroundcolor: '#f6f1da' // Axis background color
+                  },
+                  bgcolor: '#f6f1da' // 3D plot area background color
+              },
+              paper_bgcolor: '#f6f1da' // Background color of the entire figure
+          };
+          
+          Plotly.newPlot('myDiv', data, layout);
       });
-  </script></div><br>
+      </script>
+  </body>
+  </html></div><br>
     <div class="toc-section" id="assump">
     <h4>Assumptions</h4><hr>
     <p>We made the following assumptions when using this model:</p>
