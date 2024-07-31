@@ -339,7 +339,7 @@ body.freeze {
     background-image: url(https://static.igem.wiki/teams/5437/index/tmp/cszqsys.jpeg);
   }
   
-  h2 {
+  .fold h2 {
     position: absolute;
     top: 50%;
     left: 0;
