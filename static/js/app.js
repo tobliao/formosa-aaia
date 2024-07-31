@@ -46,24 +46,54 @@ if (head_img) {
   });
 }
 */
+
+//type boroma
 var i1 = 0;
 var txt1 = "BOROHMA";
 var speed = 200;
 
-const type = () => {
-  const type_elem = document.getElementById("reflect-text");
-  if (type_elem) {
-    function typeWriter() {
+const type1 = () => {
+  const type_elem_1 = document.getElementById("reflect-text-1");
+  if (type_elem_1) {
+    function typeWriter1() {
       if (i1 < txt1.length) {
-        type_elem.innerHTML += txt1.charAt(i1);
+        type_elem_1.innerHTML += txt1.charAt(i1);
         i1++;
-        setTimeout(typeWriter, speed);
+        setTimeout(typeWriter1, speed);
       }
     }
-    typeWriter();
+    typeWriter1();
   }
 };
-window.onload = type;
+window.onpageshow = type1;
+
+
+/*type formosa igem 2024*/
+var i2 = 0;
+var txt2 = "Formosa iGEM 2024";
+var speed2 = 200;
+const type2 = () => {
+  const type_elem_2 = document.getElementById("reflect-text-2");
+  if (type_elem_2) {
+    function typeWriter2() {
+      if (i2 < txt2.length) {
+        type_elem_2.innerHTML += txt2.charAt(i2);
+        i2++;
+        setTimeout(typeWriter2, speed2);
+      }
+    }
+    setTimeout(typeWriter2,700);
+  }
+};
+var scrollTop = $(window).scrollTop()
+window.onscroll = function() {
+  if (window.scrollY > 100) {
+    type2();
+    window.onscroll = null;
+  }
+};
+
+
 // Table of content and scroll to section
 
 const scrollHeight = document.documentElement.scrollHeight;
