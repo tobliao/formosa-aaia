@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark" id="mainNav">
+<nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark transparent" id="mainNav">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="/">
         <span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon">
             <img src="https://static.igem.wiki/teams/5437/index/borohma.png" alt="icon" style="width: 2em; height: 2em;">
@@ -8,9 +8,9 @@
             <span class="visually-hidden">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navcol-1">
+        <div class="collapse navbar-collapse opaque-words" id="navcol-1">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link active" href="{{ url_for('pages', page='index') }}">HOME</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('pages', page='index') }}">HOME</a></li> -->
     
                 
                 <!---- Project ---->
@@ -42,7 +42,7 @@
                     </a>
                     
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}">Experiments</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='experiment') }}">Experiments</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
@@ -60,7 +60,7 @@
                     DRYLAB
                     </a>
                     <ul class="dropdown-menu menu-tabs-dropdown fade-down" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{{ url_for('pages', page='drylab-model') }}">Model</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
                     <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
                     </ul>
