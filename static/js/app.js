@@ -82,12 +82,14 @@ const type2 = () => {
         setTimeout(typeWriter2, speed2);
       }
     }
-    setTimeout(typeWriter2,700);
+    setTimeout(typeWriter2);
   }
 };
-var scrollTop = $(window).scrollTop()
+
+//start typing on view
 window.onscroll = function() {
-  if (window.scrollY > 100) {
+  let triggerHeight = window.innerHeight * 0.8;
+  if (window.scrollY > triggerHeight) {
     type2();
     window.onscroll = null;
   }
