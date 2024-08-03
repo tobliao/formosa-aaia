@@ -124,6 +124,20 @@ window.addEventListener('scroll', function() {
   }
 });
 
+window.addEventListener('scroll', function() {
+  let triggerHeight4 = window.innerHeight * 2.4;
+  const type_elem_3 = document.getElementById("reflect-text-3");
+  if (window.scrollY > triggerHeight4) {
+    if (type_elem_3) {
+      type_elem_3.style.display = "none";
+    }
+  } else {
+    if (type_elem_3) {
+      type_elem_3.style.display = "block";
+    }
+  }
+});
+
 
 // Table of content and scroll to section
 
