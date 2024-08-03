@@ -49,8 +49,8 @@ if (head_img) {
 
 //type boroma
 var i1 = 0;
-var txt1 = "BOROHMA";
-var speed = 200;
+var txt1 = "FORMOSA iGEM 2024 PRESENTS:";
+var speed = 100;
 
 const type1 = () => {
   const type_elem_1 = document.getElementById("reflect-text-1");
@@ -70,8 +70,8 @@ window.onpageshow = type1;
 
 /*type formosa igem 2024*/
 var i2 = 0;
-var txt2 = "Formosa iGEM 2024";
-var speed2 = 200;
+var txt2 = "BOROHMA";
+var speed2 = 100;
 const type2 = () => {
   const type_elem_2 = document.getElementById("reflect-text-2");
   if (type_elem_2) {
@@ -98,8 +98,8 @@ window.addEventListener('scroll', function() {
 
 //third typing block
 var i3 = 0;
-var txt3 = "Hello";
-var speed3 = 200;
+var txt3 = "A BORNEOL-BASED INSECT REPELLENT AROMA";
+var speed3 = 100;
 const type3 = () => {
   const type_elem_3 = document.getElementById("reflect-text-3");
   if (type_elem_3) {
@@ -124,32 +124,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-
-//fourth block
-var i4 = 0;
-var txt4 = "Bye";
-var speed4 = 200;
-const type4 = () => {
-  const type_elem_4 = document.getElementById("reflect-text-4");
-  if (type_elem_4) {
-    function typeWriter4() {
-      if (i4 < txt4.length) {
-        type_elem_4.innerHTML += txt4.charAt(i4);
-        i4++;
-        setTimeout(typeWriter4, speed4);
-      }
-    }
-    setTimeout(typeWriter4, 0);
-  }
-};
-
-window.addEventListener('scroll', function() {
-  let triggerHeight4 = window.innerHeight * 2.4;
-  if (window.scrollY > triggerHeight4) {
-    type4();
-    window.removeEventListener('scroll', arguments.callee);
-  }
-});
 
 // Table of content and scroll to section
 
@@ -297,10 +271,10 @@ const hiddenElements4 = document.querySelectorAll('.hiddenright');
 hiddenElements4.forEach((el) => observer4.observe(el));
 
 // Number increment on homepage
-const totalTime = 3000;
-const num1 = 400;
-const num2 = 8;
-const num3 = 100;
+const totalTime = 500;
+const num1 = 60;
+const num2 = 2.8;
+const num3 = 4;
 var called1 = false;
 var called2 = false;
 var called3 = false;
@@ -488,3 +462,5 @@ $('.fold--interior')
 if($('.no-touch').length) {
 	var s = skrollr.init({ forceHeight: false });
 }
+
+

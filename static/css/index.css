@@ -16,9 +16,9 @@
 
 #bg-green-wrap {
     color: rgb(0, 0, 0);
-    padding-top: 7rem;
-    padding: 5rem;
-    background-color: #CCD656;
+    padding-top: 20vh;
+    padding: 5vh;
+    background-color: #C1DB9B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,20 +31,20 @@
     text-align: center;
     display: inline-block;
     padding: 2rem;
-    border: 0.3rem solid rgb(71, 245, 77);
+    border: 0.3rem solid rgba(71, 245, 77, 0);
     border-radius: 1rem;
     margin-bottom: 7rem;
 }
 
 #problem-title-wrap span {
-    color: rgb(30, 245, 88);
+    color: rgba(30, 245, 87, 0);
 }
 
 .gradbrowntogreen1 {
-    background: linear-gradient(180deg, #F6F1DA 18.19%, #dfe784 50.66%, #d4dd6e 75.66%, #CCD656 100%);
+    background: linear-gradient(180deg, #F6F1DA 18.19%, rgb(219, 252, 154) 50.66%, #D2E6B5 75.66%, #C1DB9B 100%);
 }
 .gradgreentobrown1 {
-    background: linear-gradient(180deg, #CCD656 12.19%,#d4dd6e 50.66%, #dfe784 75.66%, #F6F1DA 100%);
+    background: linear-gradient(180deg, #C1DB9B 12.19%,#D2E6B5 50.66%, rgb(230, 251, 181) 75.66%, #F6F1DA 100%);
 }
 
 .spray-text {
@@ -170,8 +170,9 @@
 
     .inasia {
         top: 12vh;
-        left: 17vw;
-        font-size: 2.1rem;
+        left: 14vw;
+        font-size: 15vw;
+        width: 40%;
     }
 
 }
@@ -348,3 +349,5 @@ body.freeze {
     font-weight: normal;
     transform: translate(0, -50%);
   }
+
+  

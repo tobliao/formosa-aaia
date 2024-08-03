@@ -35,19 +35,16 @@ section {
 
 
 #problem-title-wrap {
-    font-size: 2.5rem;
+    font-size: 6vh;
     font-weight: bold;
     text-align: center;
     display: inline-block;
-    padding: 2rem;
-    border: 0.3rem solid rgba(213, 59, 72, 1);
-    border-radius: 1rem;
-    margin-bottom: 7rem;
+    margin-bottom: 5vh;
 }
 
 
 #problem-title-wrap span {
-    color: rgba(213, 59, 72, 1);
+    color: rgb(236, 101, 67);
 }
 
 img {
@@ -85,7 +82,7 @@ p {
 .problem-im-text {
     position: absolute;
     text-align: center;
-    padding: 2rem;
+    padding: 3vh;
     transform: scale3d(0.2, 0.2, 0.2);
     opacity: 0.5;
     transition: 1s all;
@@ -192,7 +189,7 @@ p {
     width: 60%;
     position: absolute;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 40vh !important;
     font-weight: bold;
 }
 
@@ -533,7 +530,7 @@ ul {
     }
     #reflect-text-wrap {
         width: 90%;
-        font-size: 2.3rem;
+        font-size: 30vh;
     }
     #problem-title-wrap {
         font-size: 1.5rem;
