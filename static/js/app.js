@@ -87,14 +87,69 @@ const type2 = () => {
 };
 
 //start typing on view
-window.onscroll = function() {
+window.addEventListener('scroll', function() {
   let triggerHeight = window.innerHeight * 0.8;
   if (window.scrollY > triggerHeight) {
     type2();
-    window.onscroll = null;
+    // Optionally, remove the event listener after it has fired once.
+    window.removeEventListener('scroll', arguments.callee);
+  }
+});
+
+//third typing block
+var i3 = 0;
+var txt3 = "Hello";
+var speed3 = 200;
+const type3 = () => {
+  const type_elem_3 = document.getElementById("reflect-text-3");
+  if (type_elem_3) {
+    function typeWriter3() {
+      if (i3 < txt3.length) {
+        type_elem_3.innerHTML += txt3.charAt(i3);
+        i3++;
+        setTimeout(typeWriter3, speed3);
+      }
+    }
+    setTimeout(typeWriter3);
   }
 };
 
+//start typing on view
+window.addEventListener('scroll', function() {
+  let triggerHeight3 = window.innerHeight * 1.6;
+  if (window.scrollY > triggerHeight3) {
+    type3();
+    // Optionally, remove the event listener after it has fired once.
+    window.removeEventListener('scroll', arguments.callee);
+  }
+});
+
+
+//fourth block
+var i4 = 0;
+var txt4 = "Bye";
+var speed4 = 200;
+const type4 = () => {
+  const type_elem_4 = document.getElementById("reflect-text-4");
+  if (type_elem_4) {
+    function typeWriter4() {
+      if (i4 < txt4.length) {
+        type_elem_4.innerHTML += txt4.charAt(i4);
+        i4++;
+        setTimeout(typeWriter4, speed4);
+      }
+    }
+    setTimeout(typeWriter4, 0);
+  }
+};
+
+window.addEventListener('scroll', function() {
+  let triggerHeight4 = window.innerHeight * 2.4;
+  if (window.scrollY > triggerHeight4) {
+    type4();
+    window.removeEventListener('scroll', arguments.callee);
+  }
+});
 
 // Table of content and scroll to section
 

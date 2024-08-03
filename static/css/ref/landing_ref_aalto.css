@@ -22,6 +22,16 @@ section {
     height: 0.5rem;
     animation: cursor-blink 0.3s step-end infinite alternate;
 }
+#reflect-text-3::after {
+    content: '|';
+    height: 0.5rem;
+    animation: cursor-blink 0.3s step-end infinite alternate;
+}
+#reflect-text-4::after {
+    content: '|';
+    height: 0.5rem;
+    animation: cursor-blink 0.3s step-end infinite alternate;
+}
 
 
 #problem-title-wrap {
