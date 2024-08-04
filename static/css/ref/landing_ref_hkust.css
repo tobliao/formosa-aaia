@@ -188,10 +188,11 @@
 .page {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     overflow-x: hidden;
     overflow-y: hidden;
-    padding-top: 5vh;
+    padding-bottom: 10vh;
+    
 }
 
 .back {
@@ -1052,7 +1053,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
@@ -1267,7 +1268,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
@@ -1497,7 +1498,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
@@ -1729,7 +1730,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
@@ -2004,7 +2005,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
@@ -2264,7 +2265,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
@@ -2532,7 +2533,7 @@
 
     .pageshort {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .background {
