@@ -244,6 +244,7 @@ name {
   }
 
 
+
 .fig-wrap {
     padding-top: 1.5rem;
     padding-bottom: 2rem;
@@ -405,3 +406,5 @@ i {
     border-radius: 50%;
     color: var(--bg);
 }
+
+

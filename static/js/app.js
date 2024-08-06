@@ -477,4 +477,38 @@ if($('.no-touch').length) {
 	var s = skrollr.init({ forceHeight: false });
 }
 
+//chemicals landing page
+
+const hiddenElements5 = document.querySelectorAll('.hiddenup');
+hiddenElements5.forEach((el) => observer5.observe(el));
+
+
+const observer7 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showchemicals');
+        }
+        else {
+            entry.target.classList.remove('showchemicals');
+        }
+    });
+});
+
+
+const hiddenElements7 = document.querySelectorAll('.hiddenchemicals');
+hiddenElements7.forEach((el) => observer7.observe(el));
+
+
+const observer8 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showright2');
+        }
+        else {
+            entry.target.classList.remove('showright2');
+        }
+    });
+});
 
