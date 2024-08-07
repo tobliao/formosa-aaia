@@ -20,12 +20,16 @@
 
 
 /* rotating taiwan */
-.taiwan {
+.earth {
     position: absolute;
     right: 1vw;
     
 }
-
+.taiwan {
+  position: absolute;
+  left: 1vw;
+  
+}
 .taiwan-desc {
     font-style: normal;
     font-weight: 400;
@@ -67,15 +71,25 @@
 }
 
 @media screen and (min-width: 1700px) {
-    .typing-words {
-        font-size: 2.5rem;
-    }
-
     .taiwan-desc {
         top: 16%;
         left: 21%;
         font-size: 2rem;
     }
+    .taiwan {
+      width: 44vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 44vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 16%;
+      left: 24vw;
+      font-size: 10vw;
+      width: 35vw;
+  }
 }
 
 @media (min-width: 1281px) and (max-width: 1699px) {
@@ -87,54 +101,121 @@
         left: 23%;
         font-size: 1.7rem;
     }
+    .taiwan {
+      width: 42vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 4vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 20%;
+      left: 24vw;
+      font-size: 3rem;
+      width: 35vw;
+  }
+
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .typing-words {
-        font-size: 1.7rem;
-    }
+    
     .taiwan-desc {
         top: 21%;
         left: 18%;
         font-size: 1.4rem;
     }
+    .taiwan {
+      width: 40vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 40vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 21%;
+      left: 24vw;
+      font-size: 2.8rem;
+      width: 35vw;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .typing-words {
-        font-size: 1.4rem;
-    }
-
     .taiwan-desc {
         top: 9%;
         left: 17%;
         font-size: 1.2rem;
     }
+    .taiwan {
+      width: 33vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 35vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 9vh;
+      left: 20vw;
+      font-size: 7vh;
+      width: 38vw;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px){
     
 
     .taiwan {
-        width: 40%;
-        margin-right: 3%;
+        width: 34vw;
+        margin-right: 3vw;
     }
+    .earth {
+      width: 34vw;
+      margin-right: 3vw;
+  }
     
-    .inasia {
-        top: 12vh;
-        left: 14vw;
-        font-size: 15vw;
-        width: 40%;
-    }
+  .morethan {
+    top: 6vh;
+    left: 25vw;
+    font-size: 6.3vh;
+    width: 35vw;
+}
 
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    
+  .taiwan {
+    width: 32vw;
+    margin-right: 3vw;
+  } 
+  .earth {
+    width: 32vw;
+    margin-right: 3vw;
+  } 
+  .morethan {
+    top: 11vh;
+    left: 17vw;
+    font-size: 4.5vh;
+    width: 35vw;
+}
 }
 
 @media (min-device-width: 100px) and (max-device-width: 319px) {
-    
+  .taiwan {
+    width: 30vw;
+    margin-right: 3vw;
+  } 
+  .earth {
+    width: 30vw;
+    margin-right: 3vw;
+  } 
+  .morethan {
+    top: 11%;
+    left: 17vw;
+    font-size: 3vh;
+    width: 35vw;
+}
 }
 
 body.freeze {

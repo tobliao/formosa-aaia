@@ -260,13 +260,7 @@
     color: #678BD6;
 }
 
-.inasia {
-    font-family: 'Archivo Black';
-    font-style: normal;
-    font-weight: 400;
-    text-align: right;
-    color: #18540c;
-}
+
 
 .hongkongconsumptions {
     font-family: 'Quicksand';
@@ -1106,12 +1100,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 16%;
-        left: 24vw;
-        font-size: 10vw;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 30vh;
@@ -1322,12 +1310,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 20%;
-        left: 24vw;
-        font-size: 3rem;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 30vh;
@@ -1553,12 +1535,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 21%;
-        left: 24vw;
-        font-size: 2.8rem;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 27vh;
@@ -1786,12 +1762,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 9%;
-        left: 20vw;
-        font-size: 2.1rem;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 27vh;
@@ -2062,12 +2032,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 6%;
-        left: 17vw;
-        font-size: 2.1rem;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 27vh;
@@ -2323,12 +2287,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 11%;
-        left: 17vw;
-        font-size: 1rem;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 26vh;
@@ -2592,12 +2550,6 @@
         height: 70vh;
     }
 
-    .inasia {
-        top: 11%;
-        left: 17vw;
-        font-size: 1rem;
-        width: 35vw;
-    }
 
     .taiwan-title {
         top: 26vh;
