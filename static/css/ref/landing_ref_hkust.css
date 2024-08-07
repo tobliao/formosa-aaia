@@ -3027,12 +3027,13 @@
 }
 
 .imageh:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
+
 
 .imageh {
     transition: all .2s ease-in-out;
-    width: 100%;
+    width: 85%;
     height: auto;
     position: absolute;
     top: 0;
@@ -3041,8 +3042,8 @@
 }
 
 .project {
-    width: 90%;
-    left: 5%;
+    width: 100%;
+   
 }
 
 

@@ -50,7 +50,7 @@ if (head_img) {
 //type boroma
 var i1 = 0;
 var txt1 = "FORMOSA iGEM 2024";
-var speed = 100;
+var speed = 80;
 
 const type1 = () => {
   const type_elem_1 = document.getElementById("reflect-text-1");
@@ -71,7 +71,7 @@ window.onpageshow = type1;
 /*type formosa igem 2024*/
 var i2 = 0;
 var txt2 = "BOROHMA";
-var speed2 = 75;
+var speed2 = 80;
 const type2 = () => {
   const type_elem_2 = document.getElementById("reflect-text-2");
   if (type_elem_2) {
@@ -98,8 +98,8 @@ window.addEventListener('scroll', function() {
 
 //third typing block
 var i3 = 0;
-var txt3 = "A BORNEOL-BASED INSECT REPELLENT AROMA";
-var speed3 = 100;
+var txt3 = "BORNEOL-BASED INSECT REPELLENT AROMA";
+var speed3 = 80;
 const type3 = () => {
   const type_elem_3 = document.getElementById("reflect-text-3");
   if (type_elem_3) {
