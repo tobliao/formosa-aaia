@@ -49,7 +49,7 @@ if (head_img) {
 
 //type boroma
 var i1 = 0;
-var txt1 = "FORMOSA iGEM 2024 PRESENTS:";
+var txt1 = "FORMOSA iGEM 2024";
 var speed = 100;
 
 const type1 = () => {
@@ -71,7 +71,7 @@ window.onpageshow = type1;
 /*type formosa igem 2024*/
 var i2 = 0;
 var txt2 = "BOROHMA";
-var speed2 = 100;
+var speed2 = 75;
 const type2 = () => {
   const type_elem_2 = document.getElementById("reflect-text-2");
   if (type_elem_2) {
