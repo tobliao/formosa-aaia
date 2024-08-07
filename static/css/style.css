@@ -12,6 +12,8 @@ p {
     border-radius: 40px;
     border-color:#000000;
     border-width: 5px;
+    border-color:#000000;
+    border-width: 5px;
 }
 
 .caption {
@@ -30,6 +32,7 @@ p {
     overflow: hidden;
     transition: all .5s ease;
     position: relative;
+    border-color:#D08BE1;
     border-color:#D08BE1;
 }
 
@@ -52,6 +55,11 @@ p {
     opacity: 1;
 }
 
+.wetlabmember:hover .drylabmember {
+    transition: all .5s ease;
+    opacity: 1;
+}
+
 /* --- Periodic Table --- */
 .membertable {
     border-collapse: separate;
@@ -63,74 +71,74 @@ p {
 
 .membertable .instructor-advisor {
     border: 0.1rem solid #000000;
-    background-color:#D08BE1;
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    background-color:#dcade8;
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .wetlabmember {
     border: 0.1rem solid #000000;
     background-color:#78C3FB;
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .drylabmember {
     border: 0.1rem solid #000000;
     background-color:#C6EBBE;
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .hpmember {
     border: 0.1rem solid #000000;
-    background-color:#FF8178;
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    background-color:#f79089;
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .swmember {
     border: 0.1rem solid #000000;
     background-color:#FFFB8E;
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .justin {
     border: 0.1rem solid #000000;
-    background-image: linear-gradient(to bottom right, #78C3FB, #FF8178);
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    background-image: linear-gradient(to top, #78C3FB, #FF8178);
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .youshin {
     border: 0.1rem solid #000000;
-    background: linear-gradient(to top right, #78C3FB, #C6EBBE);
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    background: linear-gradient(to left, #78C3FB, #C6EBBE);
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .timothy {
     border: 0.1rem solid #000000;
-    background: linear-gradient(to top right, #FFFB8E, #C6EBBE);
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    background: linear-gradient(to right, #FFFB8E, #C6EBBE);
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 .membertable .jenson {
     border: 0.1rem solid #000000;
-    background: linear-gradient(to top right, #FFFB8E 50%, #C6EBBE);
-    width: 5rem;
-    height: 6rem;
-    border-radius:5px;
+    background: linear-gradient(to right, #FFFB8E 50%, #C6EBBE);
+    width: 3rem;
+    height: 4rem;
+    border-radius:3px;
 }
 
 
@@ -139,44 +147,44 @@ p {
 }
 
 .membertable td {
-    width: 4rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 4rem;
     vertical-align: top;
     line-height: 80%;
     border: 0.05rem solid white;
     padding: 3px;
+    padding: 3px;
 }
 
 .membertable .blankspace {
-    border: 0
+    border: 0;
+    width: 3rem;
+    height: 4rem;
 }
-
-.membertable .leads {
-      border: 0.05rem solid #9AAADF
-    }
 
 .card {
     text-align: center;
     background: rgba(0, 0, 0, 0);
     border: rgba(0, 0, 0, 0);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     position: relative;
 }
 
 num {
     color: #000000;
+    color: #000000;
     font-size: 12px;
-    padding-left: 5px;
+    padding-left: 0.1rem;
     padding-top: 15px;
 }
 
 .inital {
     font-size: 50px;
     font-weight:bolder;
-    line-height: 2rem;
+    line-height: 3rem;
     text-align: center; 
 
     padding-top: 1rem;
@@ -189,15 +197,74 @@ num {
     color: black;
 }
 
+.init-color {
+    color: black;
+}
+
 name {
     font-size: 15px;
     color: #000000;
     line-height: 10%;
     
+    
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.bd-callout-card {
+    padding: 1.5rem 1rem;
+    border-radius: 5px;
+    background-color: #EFF2F9;
+    max-width: 80%;
+    margin: 0.5rem;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bd-callout-card img {
+    width: 10vw;
+    height: auto;
+    overflow: hidden;
+    min-width: 100px;
+    object-fit: cover;
+    align-content: center;
+}
+
+.infos {
+    margin-left: 1.5rem;
+}
+
+.profiletable {
+    border-collapse: separate;
+    border-spacing: 0.4rem;
+    border-color:#000000;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CALLOUT */
+.bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
+.bd-callout h4 { margin-bottom:.25rem }
+.bd-callout p:last-child { margin-bottom:0 }
+.bd-callout code { border-radius:.25rem }
+.bd-callout+.bd-callout { margin-top:-.25rem }
+.bd-callout-info { border-left-color:#5bc0de }
+.bd-callout-warning { border-left-color:#f0ad4e }
+.bd-callout-danger { border-left-color:#d9534f }
+.bd-callout-card .extra-img img {
+    width: 18vw;
+    height: 18vw;
+    border-radius: 0px;
+    box-shadow: 0 0 0 0px #FFF;
+    float: right;
+    margin-left: 1rem;
+    object-fit: contain;
 }
 
 
@@ -450,5 +517,4 @@ i {
     border-radius: 50%;
     color: var(--bg);
 }
-
 
