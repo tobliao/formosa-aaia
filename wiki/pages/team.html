@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 <link href="../../static/css/team.css" rel="stylesheet">
+<link href="{{ url_for('static', filename = 'css/ref/landing_ref_hkust.css') }}" rel="stylesheet">
     <body>
         <section class="py-5">
             <div class="container py-5">
@@ -385,17 +386,29 @@
                             </td>
                         </tr>
                     </table>
-                    <div style="margin-top: 2rem;" class="bioshere"></div>
-                <!-- <h1>LAURENT</h1>
-                <h2>Fragrance Type: Eau d'Instructor</h2>
-                <p> Top Note: GOAT<br>
-                    Mid Note: Photographer<br>
-                    Base Note: Instructor
-                </p> -->
-
-
                 </body>  
             </div>
+            <div class="page d-flex align-items-center justify-content-center">
+                <div class="row w-90 mx-auto cent">
+                    <div class="col text-center position-relative p-0 m-1">
+                        <img class="image project" src="https://static.igem.wiki/teams/5437/iconone.png">
+                        <a href="{{ url_for('pages', page='description') }}"><img class="imageh project" src="https://static.igem.wiki/teams/5437/iconhover1.png"></a>
+                    </div>
+                    <div class="col position-relative p-0 m-1">
+                        <img class="image" src="https://static.igem.wiki/teams/5437/iconone.png">
+                        <a href="{{ url_for('pages', page='experiment') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/group-1286.png"></a>
+                    </div>
+                    <div class="col position-relative p-0 m-1">
+                        <img class="image" src="https://static.igem.wiki/teams/5437/icon3-removebg-preview.png">
+                        <a href="{{ url_for('pages', page='model') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/drylabhover2.png"></a>
+                    </div>
+                    <div class="col position-relative p-0 m-1">
+                        <img class="image" src="https://static.igem.wiki/teams/5437/icon4-removebg-preview.png"></a>
+                        <a href="{{ url_for('pages', page='human-practices') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/ihphover2.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;" class="bioshere"></div>
         </section>
         <script src="../../static/js/bio.js"></script>
         <script>
