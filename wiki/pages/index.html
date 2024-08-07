@@ -8,20 +8,19 @@
 <html data-bs-theme="light" lang="en">
 
 <link href="{{ url_for('static', filename = 'css/index.css') }}" rel="stylesheet">
-<link href="{{ url_for('static', filename = 'css/ref/hkust.css') }}" rel="stylesheet">
-<link href="{{ url_for('static', filename = 'css/ref/aalto.css')}}" rel="stylesheet" />
+<link href="{{ url_for('static', filename = 'css/ref/landing_ref_hkust.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename = 'css/ref/landing_ref_aalto.css') }}" rel="stylesheet" />
 
 <body>
-    <!-- <header class="bg-dark">   
-        <div class="intro-video">
+    <!-- <header class="bg-dark">
+        <div class="intro-video" style="display: none;">
             <div id="reflect-text-wrap centered">
                 <h2 id="reflect-text"></h2>
             </div>
             <video src="https://svpvodps-vh.akamaized.net/special/spesial/2019/hercules-ulykken/start-1200.mp4"></video>
-          </div>
+        </div>
           
-          <div class="curtain-panel">
-            
+        <div class="curtain-panel"  style="display: none;">
             <img src="https://static.igem.wiki/teams/5437/index/leftcurtain.png" alt="Left Curtain Image" class="curtain-image left-curtain curtain">
             <img src="https://static.igem.wiki/teams/5437/index/rightcurtain.png" alt="Right Curtain Image" class="curtain-image right-curtain curtain">
         </div>
@@ -31,155 +30,158 @@
         <div class="curtain__scrollbar"></div>
         <div class="fold">
             <div class="fold--interior">
-            <h2>Sundome</h2>
+                <div id="reflect-text-wrap centered">
+                    <h2 id="reflect-text-1"></h2>
+                </div>
             </div>
         </div>
         <div class="fold">
             <div class="fold--interior">
-            <h2>Guggure</h2>
+                <div id="reflect-text-wrap centered">
+                    <h2 id="reflect-text-2"></h2>
+                </div>
             </div>
         </div>
         <div class="fold">
             <div class="fold--interior">
-            <h2>Kokkuri</h2>
+                <div id="reflect-text-wrap centered">
+                    <h2 id="reflect-text-3"></h2>
+                </div>
             </div>
         </div>
-        <div class="fold">
-            <div class="fold--interior">
-            <h2>Dogman</h2>
-            </div>
-        </div>
+        
     </section>
+
+<section>
+     <!--rotating taiwan-->
+     <div class="page">
+        <img class="earth img-fluid rotatehidden" src="https://static.igem.wiki/teams/5437/index/taiwan-igem-logo.png">
+        <img class="fish1 img-fluid" src="https://static.igem.wiki/teams/4225/wiki/fish1.png">
+        <h2 class="inasia position-absolute text-center hiddenright s3">More than <b>1,000,000</b> people worldwide die from mosquito-borne diseases every year.<br></h2>
+        
+    </div>
     
-    <!-- second block -->
+
     <section>
-        <!-- gradient -->
-        <div class="pageshort gradbrowntogreen1 d-flex justify-content-center"> 
-        </div>
-        <!-- green bg -->
+        <div class="pageshort gradbrowntogreen1 d-flex justify-content-center"> </div>
          <div id="bg-green-wrap">
             <section>
-                <div id="problem-title-wrap" class="to-fade-in-fast">
-                    Plastic waste is accumulating at an
-                    <span id="alarming">alarming</span> rate
+                
+                <div id="problem-title-wrap" class="to-fade-in">390 million people are infected with dengue</div>
+                <div id="problem-title-wrap" class="to-fade-in">Hundreds of thousands more are affected by Zika, chikungunya and yellow fever.
                 </div>
                 <h1 style="text-align: center; margin-bottom: 5rem" class="to-fade-in">
-                    Every year,
+                    In 2023, Southeast Asia accounted for:
                 </h1>
                 <div id="problem-im-wrapper">
                     <div class="problem-im-wrap">
-                    <img
-                        class="problem-im"
-                        src="https://static.igem.wiki/teams/4701/wiki/im1.jpg"
-                        alt=""
-                    />
-                    <div class="problem-im-text">
-                        <h2><span id="num1">0</span> million tons</h2>
-                        <p>of plastic is generated</p>
-                    </div>
-                    </div>
-                    <div class="problem-im-wrap">
-                    <img
-                        class="problem-im"
-                        src="https://static.igem.wiki/teams/4701/wiki/im2.jpg"
-                        alt=""
-                    />
-                    <div class="problem-im-text">
-                        <h2><span id="num2">0</span> million tons</h2>
-                        <p>of plastic enters the ocean</p>
-                    </div>
+                        <img
+                            class="problem-im"
+                            src="https://static.igem.wiki/teams/4701/wiki/im1.jpg"
+                            alt=""
+                        />
+                        <div class="problem-im-text">
+                            <h2><span id="num1">0</span>%</h2>
+                            <p>of global dengue cases</p>
+                        </div>
                     </div>
                     <div class="problem-im-wrap">
-                    <img
-                        class="problem-im"
-                        src="https://static.igem.wiki/teams/4701/wiki/im3.jpg"
-                        alt=""
-                    />
-                    <div class="problem-im-text">
-                        <h2><span id="num3">0</span>,000 animals</h2>
-                        <p>die from plastic entanglement</p>
+                        <img
+                            class="problem-im"
+                            src="https://static.igem.wiki/teams/4701/wiki/im2.jpg"
+                            alt=""
+                        />
+                        <div class="problem-im-text">
+                            <h2><span id="num2">0</span> million</h2>
+                            <p>cases of dengue fever</p>
+                        </div>
                     </div>
+                    <div class="problem-im-wrap">
+                        <img
+                            class="problem-im"
+                            src="https://static.igem.wiki/teams/4701/wiki/im3.jpg"
+                            alt=""
+                        />
+                        <div class="problem-im-text">
+                            <h2><span id="num3">0</span>,000 deaths</h2>
+                            <p>due to mosquito-borne diseases</p>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <div id="how-title-wrap" class="to-fade-in-fast">
-                  <p style="text-align: center">We must MANAGE our plastic waste</p>
-                  <p style="text-align: center">But HOW?</p>
-                </div>
-                <div id="how-im-wrapper">
-                  <div id="how-im-wrap">
-                    <img
-                      class="how-im"
-                      src="https://static.igem.wiki/teams/4701/wiki/2bottles.png"
-                      alt=""
-                    />
-                    <img
-                      class="how-im to-fade-in"
-                      id="x"
-                      src="https://static.igem.wiki/teams/4701/wiki/x.png"
-                      alt=""
-                    />
-                  </div>
-                  <div id="how-text-wrap" class="to-fade-in-fast">
-                    <h2>Traditional methods</h2>
-                    <p>
-                      involve melting and reshaping the plastic to make new products,
-                      which proves to be a costly and time-consuming process. Recycled
-                      plastic has lower quality and usability as heating degrades its
-                      original chemical structure, making it impossible to compete with
-                      virgin plastic on the market.
-                    </p>
-                  </div>
-                </div>
-              </section>
+            <div class="page">
+                <img class="earth2 img-fluid rotatehidden-left" src="https://static.igem.wiki/teams/5437/index/taiwan-igem-logo.png">
+                <h2 class="inasia position-absolute text-center hiddenleft s3">In our island of Taiwan, </h2>
+                <p class="taiwan-title position-absolute text-center hiddenleft">20,000 cases of dengue fever
+                    <br>
+                    were reported in 2023, marking
+                    <br>
+                    a significant resurgence of the disease.
+                </p>
+            </div>
         </div>
         <div class="pageshort gradgreentobrown1"> </div>
     </section>
+
+    <p class="taiwan-title text-center hiddenleft">Current mosquito repellents are mostly chemically <br>synthesized containing components like:</p>
+
+    <div class="row chemicalsrow">
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">deet
+        </div>
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">picaridin
+        </div>
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">ir3535
+        </div>
+    </div>
+    <p class="taiwan-title text-center hiddenleft"><b>However,</b> drawbacks of these chemicals include:</p>
+    <div class="row chemicalsrow">
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">side effects to humans, including....
+        </div>
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">environmental pollution
+        </div>
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">high cost
+        </div>
+        <div class="hiddenchemicals col-sm text-center">
+            <img class="chemicals img-fluid" src="">not always effective
+        </div>
+    </div>
+
+    <div class="page">
+        <h2 class="to-fade-in interested">Our Solution</h2>
+        
+    </div>
     
-    <!--rotating taiwan-->
     <div class="page">
-        <img class="earth img-fluid rotatehidden" src="https://static.igem.wiki/teams/5437/index/taiwan-igem-logo.png">
-        <img class="fish1 img-fluid" src="https://static.igem.wiki/teams/4225/wiki/fish1.png">
-        <h2 class="inasia position-absolute text-center hiddenright s3">Brief background<br> In Taiwan</h2>
-        <p class="taiwan-title position-absolute text-center hiddenright">Lots of mosquitos
-            <br>
-            Mosquitos carry diseases
-            <br>
-            Mosquitos
-            <br>
-            Mosquitos
-        </p>
-    </div>
+        <img class="" src="" alt=""/>
+        <p class="taiwan-title text-center hiddenleft">Borneol (a bicyclic organic compound found in some plants) has proven to repel female mosquitoes by activating sensory neurons</p>
+   </div>
+   <div class="page">
+    <p class="taiwan-title text-center hiddenleft">However, most borneol is  chemically synthesized, contains other toxic chemicals such as isoborneol, and is more expensive.</p>
+    <p class="taiwan-title text-center hiddenleft">Our project BOROHMA is a L-borneol minicell release system that can be incorporated into customizable fragrances to effectively ward off insects while maintaining good smell</p>
+   </div>
+   
+    
 
-    <div class="page">
-        <h2 class="to-fade-in solution-statement">Our Solution: mosquito repellent perfume</h2>
-        <p class="taiwan-title position-absolute solution-statement hiddenright">some sort of graphic</p>
-    </div>
 
-    <div class="page">
-        <img class="earth2 img-fluid rotatehidden-left" src="https://static.igem.wiki/teams/5437/index/taiwan-igem-logo.png">
-       
-        <h2 class="inasia position-absolute text-center hiddenleft s3">Brief background<br> In Taiwan</h2>
-        <p class="taiwan-title position-absolute text-center hiddenleft">Lots of mosquitos
-            <br>
-            Mosquitos carry diseases
-            <br>
-            Mosquitos
-            <br>
-            Mosquitos
-        </p>
-    </div>
+    
+
+    
 
     <div class="pageshort d-flex align-items-center justify-content-center">
         <h1 class="interested text-center s3">
-            We Love to Share More...
+            Want to find out more?
             <br>
-            Please click the icons for more information!
+            See how our project changes the world!
         </h1>
     </div>
-    <div class="pageshort d-flex align-items-center justify-content-center">
-        <div class="row w-80 mx-auto cent">
+    <div class="page d-flex align-items-center justify-content-center">
+        <div class="row w-90 mx-auto cent">
             <div class="col text-center position-relative p-0 m-1">
                 <img class="image project" src="https://static.igem.wiki/teams/4225/wiki/cc4-2.png">
                 <a href="{{ url_for('pages', page='description') }}"><img class="imageh project" src="https://static.igem.wiki/teams/4225/wiki/group-1288.png"></a>
@@ -190,7 +192,7 @@
             </div>
             <div class="col position-relative p-0 m-1">
                 <img class="image" src="https://static.igem.wiki/teams/4225/wiki/drylab2.png">
-                <a href="{{ url_for('pages', page='drylab-model') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/drylabhover2.png"></a>
+                <a href="{{ url_for('pages', page='model') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/drylabhover2.png"></a>
             </div>
             <div class="col position-relative p-0 m-1">
                 <img class="image" src="https://static.igem.wiki/teams/4225/wiki/ihp2.png"></a>
@@ -202,15 +204,15 @@
             </div>
         </div>
     </div>
+    
 
-
-    <!-- <script src="../../static/js/curtain_animate/TweenMax.min.js"></script>
+    <script src="../../static/js/curtain_animate/TweenMax.min.js"></script>
     <script src="../../static/js/curtain_animate/ScrollMagic.js"></script>
     <script src="../../static/js/curtain_animate/animation.gsap.js"></script>
     <script src="../../static/js/curtain_animate/debug.addIndicators.js"></script>
-    <script src="../../static/js/curtain_animate/jquery.min.js"></script> -->
+    <script src="../../static/js/curtain_animate/jquery.min.js"></script>
     
-    <script src="../../static/js/curtain_slider/jquery.min.js"></script>
+    <!-- <script src="../../static/js/curtain_slider/jquery.min.js"></script> -->
     <script src="../../static/js/curtain_slider/modernizr.min.js"></script>
     <script src="../../static/js/curtain_slider/skrollr.min.js"></script>
     

@@ -46,24 +46,99 @@ if (head_img) {
   });
 }
 */
-var i1 = 0;
-var txt1 = "BOROHMA";
-var speed = 200;
 
-const type = () => {
-  const type_elem = document.getElementById("reflect-text");
-  if (type_elem) {
-    function typeWriter() {
+//type boroma
+var i1 = 0;
+var txt1 = "FORMOSA iGEM 2024 PRESENTS:";
+var speed = 100;
+
+const type1 = () => {
+  const type_elem_1 = document.getElementById("reflect-text-1");
+  if (type_elem_1) {
+    function typeWriter1() {
       if (i1 < txt1.length) {
-        type_elem.innerHTML += txt1.charAt(i1);
+        type_elem_1.innerHTML += txt1.charAt(i1);
         i1++;
-        setTimeout(typeWriter, speed);
+        setTimeout(typeWriter1, speed);
       }
     }
-    typeWriter();
+    typeWriter1();
   }
 };
-window.onload = type;
+window.onpageshow = type1;
+
+
+/*type formosa igem 2024*/
+var i2 = 0;
+var txt2 = "BOROHMA";
+var speed2 = 100;
+const type2 = () => {
+  const type_elem_2 = document.getElementById("reflect-text-2");
+  if (type_elem_2) {
+    function typeWriter2() {
+      if (i2 < txt2.length) {
+        type_elem_2.innerHTML += txt2.charAt(i2);
+        i2++;
+        setTimeout(typeWriter2, speed2);
+      }
+    }
+    setTimeout(typeWriter2);
+  }
+};
+
+//start typing on view
+window.addEventListener('scroll', function() {
+  let triggerHeight = window.innerHeight * 0.8;
+  if (window.scrollY > triggerHeight) {
+    type2();
+    // Optionally, remove the event listener after it has fired once.
+    window.removeEventListener('scroll', arguments.callee);
+  }
+});
+
+//third typing block
+var i3 = 0;
+var txt3 = "A BORNEOL-BASED INSECT REPELLENT AROMA";
+var speed3 = 100;
+const type3 = () => {
+  const type_elem_3 = document.getElementById("reflect-text-3");
+  if (type_elem_3) {
+    function typeWriter3() {
+      if (i3 < txt3.length) {
+        type_elem_3.innerHTML += txt3.charAt(i3);
+        i3++;
+        setTimeout(typeWriter3, speed3);
+      }
+    }
+    setTimeout(typeWriter3);
+  }
+};
+
+//start typing on view
+window.addEventListener('scroll', function() {
+  let triggerHeight3 = window.innerHeight * 1.6;
+  if (window.scrollY > triggerHeight3) {
+    type3();
+    // Optionally, remove the event listener after it has fired once.
+    window.removeEventListener('scroll', arguments.callee);
+  }
+});
+
+window.addEventListener('scroll', function() {
+  let triggerHeight4 = window.innerHeight * 2.4;
+  const type_elem_3 = document.getElementById("reflect-text-3");
+  if (window.scrollY > triggerHeight4) {
+    if (type_elem_3) {
+      type_elem_3.style.display = "none";
+    }
+  } else {
+    if (type_elem_3) {
+      type_elem_3.style.display = "block";
+    }
+  }
+});
+
+
 // Table of content and scroll to section
 
 const scrollHeight = document.documentElement.scrollHeight;
@@ -210,10 +285,10 @@ const hiddenElements4 = document.querySelectorAll('.hiddenright');
 hiddenElements4.forEach((el) => observer4.observe(el));
 
 // Number increment on homepage
-const totalTime = 3000;
-const num1 = 400;
-const num2 = 8;
-const num3 = 100;
+const totalTime = 500;
+const num1 = 60;
+const num2 = 2.8;
+const num3 = 4;
 var called1 = false;
 var called2 = false;
 var called3 = false;
@@ -288,101 +363,102 @@ const screen_h = window.innerHeight;
 const vh = screen_h / 100;
 const vw = window.innerWidth / 100;
 
-var fiftyWrapperheight = $(".curtain-panel").height();
-var leftDistance = $(".left-curtain").width();
-var rightDistance = $(".right-curtain").width();
-var numberOfpix = 15;
-//const declaration
-const introVid = document.querySelector(".intro-video");
-const video = introVid.querySelector("video");
-const videoText = introVid.querySelector("h2");
-//  const content = document.querySelector(".content");
-//const heading = content.querySelector("h1");
-const sceneDuration = 3500;
-const videoLength = video.duration; //Value in second
-//ScrollMagic
-//https://scrollmagic.io/docs/ScrollMagic.Controller.html
-const controller = new ScrollMagic.Controller();
+// // Curtain
+// var fiftyWrapperheight = $(".curtain-panel").height();
+// var leftDistance = $(".left-curtain").width();
+// var rightDistance = $(".right-curtain").width();
+// var numberOfpix = 15;
+// //const declaration
+// const introVid = document.querySelector(".intro-video");
+// const video = introVid.querySelector("video");
+// const videoText = introVid.querySelector("h2");
+// //  const content = document.querySelector(".content");
+// //const heading = content.querySelector("h1");
+// const sceneDuration = 3500;
+// const videoLength = video.duration; //Value in second
+// //ScrollMagic
+// //https://scrollmagic.io/docs/ScrollMagic.Controller.html
+// const controller = new ScrollMagic.Controller();
 
-//Scenses
-//https://scrollmagic.io/docs/ScrollMagic.Scene.html
-//https://scrollmagic.io/examples/basic/scene_manipulation.html
-const scene = new ScrollMagic.Scene({
-  offset: 0, // start scene after scrolling for 0px
-  duration: sceneDuration, // the scene should last for a scroll distance of 3000px | pin the element for a total of 3000px
-  triggerElement: introVid,
-  triggerHook: 0,
-})
-  .addIndicators()
-  .setPin(introVid)
-  .addTo(controller); // Add scene to ScrollMagic Controller
+// //Scenses
+// //https://scrollmagic.io/docs/ScrollMagic.Scene.html
+// //https://scrollmagic.io/examples/basic/scene_manipulation.html
+// const scene = new ScrollMagic.Scene({
+//   offset: 0, // start scene after scrolling for 0px
+//   duration: sceneDuration, // the scene should last for a scroll distance of 3000px | pin the element for a total of 3000px
+//   triggerElement: introVid,
+//   triggerHook: 0,
+// })
+//   .addIndicators()
+//   .setPin(introVid)
+//   .addTo(controller); // Add scene to ScrollMagic Controller
 
-//Text Animation
-const textAnimation = TweenMax.fromTo(
-  videoText, //element to Tween on
-  2, //duration of animation
-  { opacity: 0 },
-  { opacity: 1, color: "black" }
-);
-let scene2 = new ScrollMagic.Scene({
-  duration: sceneDuration,
-  triggerElement: introVid,
-  triggerHook: 0,
-})
-  .setTween(textAnimation)
-  .addTo(controller);
-//Video Animation
+// //Text Animation
+// const textAnimation = TweenMax.fromTo(
+//   videoText, //element to Tween on
+//   2, //duration of animation
+//   { opacity: 0 },
+//   { opacity: 1, color: "black" }
+// );
+// let scene2 = new ScrollMagic.Scene({
+//   duration: sceneDuration,
+//   triggerElement: introVid,
+//   triggerHook: 0,
+// })
+//   .setTween(textAnimation)
+//   .addTo(controller);
+// //Video Animation
 
-let acceleration = 0.1;
-let scrollpos = 0;
-let delay = 0;
+// let acceleration = 0.1;
+// let scrollpos = 0;
+// let delay = 0;
 
-scene.on("update", (e) => {
-  scrollpos = e.scrollPos / 333.4;
-  if (e.scrollPos > sceneDuration) {
+// scene.on("update", (e) => {
+//   scrollpos = e.scrollPos / 333.4;
+//   if (e.scrollPos > sceneDuration) {
   
-    console.log("video ended");
-  }
-  if (e.scrollPos == 0) {
-    $("body").removeClass("freeze");
-  }
-  //    var value = e.scrollPos / sceneDuration;
-  //    var videoSeekTime = video.duration * value;
+//     console.log("video ended");
+//   }
+//   if (e.scrollPos == 0) {
+//     $("body").removeClass("freeze");
+//   }
+//   //    var value = e.scrollPos / sceneDuration;
+//   //    var videoSeekTime = video.duration * value;
 
-  //    console.log(e.scrollPos + " | " + videoSeekTime);
-  //    isFinite(videoSeekTime) && (video.currentTime = videoSeekTime);
-});
+//   //    console.log(e.scrollPos + " | " + videoSeekTime);
+//   //    isFinite(videoSeekTime) && (video.currentTime = videoSeekTime);
+// });
 
-setInterval(() => {
-  delay += (scrollpos - delay) * acceleration;
+// setInterval(() => {
+//   delay += (scrollpos - delay) * acceleration;
 
-  isFinite(delay) && (video.currentTime = delay);
-}, 30);
+//   isFinite(delay) && (video.currentTime = delay);
+// }, 30);
 
-$(window).on("wheel", function (event) {
-  event.preventDefault();
-  if (event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0) {
-    //alternative options for wheelData: wheelDeltaX & wheelDeltaY
-    if (numberOfpix < leftDistance + 15) {
-      $(".left-curtain").css("left", -numberOfpix);
-      $(".right-curtain").css("right", -numberOfpix);
-      numberOfpix = numberOfpix + 15;
-    } else {
-      $("body").addClass("freeze");
-    }
-  } else {
-    if ($(".curtain-panel:visible").length == 1) {
-      if (-numberOfpix <= 0) {
-        $(".left-curtain").css("left", -numberOfpix);
-        $(".right-curtain").css("right", -numberOfpix);
-        numberOfpix = numberOfpix - 15;
-      }
-    }
-  }
+// $(window).on("wheel", function (event) {
+//   event.preventDefault();
+//   if (event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0) {
+//     //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+//     if (numberOfpix < leftDistance + 15) {
+//       $(".left-curtain").css("left", -numberOfpix);
+//       $(".right-curtain").css("right", -numberOfpix);
+//       numberOfpix = numberOfpix + 15;
+//     } else {
+//       $("body").addClass("freeze");
+//     }
+//   } else {
+//     if ($(".curtain-panel:visible").length == 1) {
+//       if (-numberOfpix <= 0) {
+//         $(".left-curtain").css("left", -numberOfpix);
+//         $(".right-curtain").css("right", -numberOfpix);
+//         numberOfpix = numberOfpix - 15;
+//       }
+//     }
+//   }
 
-  //prevent page fom scrolling
-return false;
-});
+//   //prevent page fom scrolling
+// return false;
+// });
 
 $('.curtain__scrollbar')
   .attr('data-top', 'left: 0%; transform: scale(0)')
@@ -400,3 +476,39 @@ $('.fold--interior')
 if($('.no-touch').length) {
 	var s = skrollr.init({ forceHeight: false });
 }
+
+//chemicals landing page
+
+const hiddenElements5 = document.querySelectorAll('.hiddenup');
+hiddenElements5.forEach((el) => observer5.observe(el));
+
+
+const observer7 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showchemicals');
+        }
+        else {
+            entry.target.classList.remove('showchemicals');
+        }
+    });
+});
+
+
+const hiddenElements7 = document.querySelectorAll('.hiddenchemicals');
+hiddenElements7.forEach((el) => observer7.observe(el));
+
+
+const observer8 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showright2');
+        }
+        else {
+            entry.target.classList.remove('showright2');
+        }
+    });
+});
+
