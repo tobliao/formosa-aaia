@@ -56,19 +56,6 @@
                     </div>
                 </div>
 
-                <script src="{{ url_for('static', filename = 'bio.js') }}"></script>
-                <script>
-                $(document).ready(function () {
-                    $("td").click(function () {
-                        $('.bioshere').empty();
-                        clones = $(this.querySelector('.bio')).clone();
-                        clones.appendTo('.bioshere');
-                        clones.show();
-                    }); 
-                });
-                </script>
-
-
                 <h1>Periodic Table of Members</h1>
                 
                 <!--- Periodic Table of Members --->
@@ -86,13 +73,19 @@
                                 <div class="bio">
                                     <div class="bd-callout-card">
                                         <div class="img">
-                                            <img src="https://www.usab.com/imgproxy/zhHZWpTrgXdGp5oUz9lieE2RAuXRO6utvaCJwy_w5UE/rs:fit:3000:0:0:g:ce/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjQvMDcvMDkvZGJkOTVjZWUtNDBlOS00MjBlLWEzZjAtMGI2M2Q3MDczMTk3LmpwZw.png">
+                                        <img src="https://static.igem.wiki/teams/4580/wiki/headshots/siddhanth-bhatt.jpg">
                                         </div>
                                         <div class="infos">
-                                            <text>Jocelyn Weng</text>
-                                            <h2>Software Lead</h2>
-                                        <p>
-                                        Jocelyn is the SW lead
+                                        <div class="name">
+                                            <h3><strong>Siddhanth Bhatt</strong></h3>
+                                            <h5>Team Lead</h5>
+                                            <h4><i>Biomedical Engineering, 2025</i> </h4>
+                                        </div>
+                                        <p class="text">
+                                            Ode to Sid, our office star, He leads our team, both near and far, From comedy clubs to class and flights, Sid conquers all with his dazzling sights.
+                                            In meetings, he's a stand-up king, Each punchline makes our laughter sing, Though classes challenge him, we say, "Hooray!" He's doing "pretty okay" every single day.
+                                            With travel agents, he's quite the talker, Booking trips like a seasoned walker, To Sid, we raise a cheer and shout, Our Team Lead, without a doubt!
+                            
                                         </p>
                                         </div>
                                     </div>
@@ -393,18 +386,29 @@
                             </td>
                         </tr>
                     </table>
-                    
-                <h1>LAURENT</h1>
+                    <div style="margin-top: 2rem;" class="bioshere"></div>
+                <!-- <h1>LAURENT</h1>
                 <h2>Fragrance Type: Eau d'Instructor</h2>
                 <p> Top Note: GOAT<br>
                     Mid Note: Photographer<br>
                     Base Note: Instructor
-                </p>
+                </p> -->
 
 
                 </body>  
             </div>
         </section>
+        <script src="../../static/js/bio.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("td").click(function () {
+                    $('.bioshere').empty();
+                    clones = $(this.querySelector('.bio')).clone();
+                    clones.appendTo('.bioshere');
+                    clones.show();
+                }); 
+            });
+        </script>
     </body>
 
 </html>
