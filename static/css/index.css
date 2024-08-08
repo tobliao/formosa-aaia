@@ -1,66 +1,35 @@
-.home-img-pos {
-    position: relative; 
-    top: -5vh !important;
-    width: 100vw;
-    height: 100vh;
-    left: 0vw !important;
-}
 
-.typing-words{
-    
-    font-style: normal;
-    font-weight: 800;
-    text-align: center;
-    color: #295E07;
-}
 
 #bg-green-wrap {
-    color: rgb(0, 0, 0);
-    padding-top: 7rem;
-    padding: 5rem;
-    background-color: #CCD656;
+    color: rgb(71, 107, 53);
+    padding-top: 20vh;
+    padding: 5vh;
+    background-color: #C1DB9B;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-#problem-title-wrap {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    padding: 2rem;
-    border: 0.3rem solid rgb(71, 245, 77);
-    border-radius: 1rem;
-    margin-bottom: 7rem;
-}
-
-#problem-title-wrap span {
-    color: rgb(30, 245, 88);
-}
-
 .gradbrowntogreen1 {
-    background: linear-gradient(180deg, #F6F1DA 18.19%, #dfe784 50.66%, #d4dd6e 75.66%, #CCD656 100%);
+    background: linear-gradient(180deg, #F6F1DA 18.19%, rgb(219, 252, 154) 50.66%, #D2E6B5 75.66%, #C1DB9B 100%);
 }
 .gradgreentobrown1 {
-    background: linear-gradient(180deg, #CCD656 12.19%,#d4dd6e 50.66%, #dfe784 75.66%, #F6F1DA 100%);
+    background: linear-gradient(180deg, #C1DB9B 12.19%,#D2E6B5 50.66%, rgb(230, 251, 181) 75.66%, #F6F1DA 100%);
 }
 
-.spray-text {
-    font-style: normal;
-    font-weight: 400;
-    align-items: center;
-    text-align: center;
-}
 
 /* rotating taiwan */
-.taiwan {
+.earth {
     position: absolute;
     right: 1vw;
     
 }
-
+.taiwan {
+  position: absolute;
+  left: 1vw;
+  
+}
 .taiwan-desc {
     font-style: normal;
     font-weight: 400;
@@ -75,12 +44,11 @@
     color: #3e540c;
 }
 
-.perfume-spray{
-    position: absolute;
-    left: 20vw;
-    width: 50vw;
-    height: 70vh;
- }
+.world-map{
+  width: 100%;
+  left:0vw;
+}
+
 
 .s3 {
     text-shadow: 2px 8px 6px rgba(52, 109, 213, 0.2), 0px -3px 20px rgba(255,255,255,0.4);
@@ -103,15 +71,25 @@
 }
 
 @media screen and (min-width: 1700px) {
-    .typing-words {
-        font-size: 2.5rem;
-    }
-
     .taiwan-desc {
         top: 16%;
         left: 21%;
         font-size: 2rem;
     }
+    .taiwan {
+      width: 44vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 44vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 16%;
+      left: 24vw;
+      font-size: 10vw;
+      width: 35vw;
+  }
 }
 
 @media (min-width: 1281px) and (max-width: 1699px) {
@@ -123,69 +101,121 @@
         left: 23%;
         font-size: 1.7rem;
     }
+    .taiwan {
+      width: 42vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 4vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 20%;
+      left: 24vw;
+      font-size: 3rem;
+      width: 35vw;
+  }
+
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .typing-words {
-        font-size: 1.7rem;
-    }
+    
     .taiwan-desc {
         top: 21%;
         left: 18%;
         font-size: 1.4rem;
     }
+    .taiwan {
+      width: 40vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 40vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 21%;
+      left: 24vw;
+      font-size: 2.8rem;
+      width: 35vw;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .typing-words {
-        font-size: 1.4rem;
-    }
-
     .taiwan-desc {
         top: 9%;
         left: 17%;
         font-size: 1.2rem;
     }
+    .taiwan {
+      width: 33vw;
+      margin-right: 3vw;
+    } 
+    .earth {
+      width: 35vw;
+      margin-right: 3vw;
+    } 
+    .morethan {
+      top: 9vh;
+      left: 20vw;
+      font-size: 7vh;
+      width: 38vw;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px){
-    .typing-words {
-        font-size: 1.4rem;
-    }
-
-    #problem-title-wrap {
-        font-size: 1.5rem;
-        padding: 1rem;
-        margin-bottom: 3rem;
-    }
+    
 
     .taiwan {
-        width: 40%;
-        margin-right: 3%;
+        width: 34vw;
+        margin-right: 3vw;
     }
-    .perfume-spray {
-        width: 40%;
-        margin-left: 3%;
-    }
-
-    .inasia {
-        top: 12vh;
-        left: 17vw;
-        font-size: 2.1rem;
-    }
+    .earth {
+      width: 34vw;
+      margin-right: 3vw;
+  }
+    
+  .morethan {
+    top: 6vh;
+    left: 25vw;
+    font-size: 6.3vh;
+    width: 35vw;
+}
 
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .typing-words {
-        font-size: 1.4rem;
-    }
+  .taiwan {
+    width: 32vw;
+    margin-right: 3vw;
+  } 
+  .earth {
+    width: 32vw;
+    margin-right: 3vw;
+  } 
+  .morethan {
+    top: 11vh;
+    left: 17vw;
+    font-size: 4.5vh;
+    width: 35vw;
+}
 }
 
 @media (min-device-width: 100px) and (max-device-width: 319px) {
-    .typing-words {
-        font-size: 1rem;
-    }
+  .taiwan {
+    width: 30vw;
+    margin-right: 3vw;
+  } 
+  .earth {
+    width: 30vw;
+    margin-right: 3vw;
+  } 
+  .morethan {
+    top: 11%;
+    left: 17vw;
+    font-size: 3vh;
+    width: 35vw;
+}
 }
 
 body.freeze {
@@ -327,19 +357,19 @@ body.freeze {
   }
   
   .fold:nth-of-type(2) {
-    background-image: url(https://static.igem.wiki/teams/5437/index/tmp/lih6qi6-imgur.jpg);
+    background-image: url(https://static.igem.wiki/teams/5437/igemone.jpg);
   }
   .fold:nth-of-type(3) {
-    background-image: url(https://static.igem.wiki/teams/5437/index/tmp/cszqsys.jpeg);
+    background-image: url(https://static.igem.wiki/teams/5437/igemtwo.jpg);
   }
   .fold:nth-of-type(4) {
-    background-image: url(https://static.igem.wiki/teams/5437/index/tmp/lih6qi6-imgur.jpg);
+    background-image: url(https://static.igem.wiki/teams/5437/igemthree.jpg);
   }
   .fold:nth-of-type(5) {
     background-image: url(https://static.igem.wiki/teams/5437/index/tmp/cszqsys.jpeg);
   }
   
-  h2 {
+  .fold h2 {
     position: absolute;
     top: 50%;
     left: 0;
@@ -348,3 +378,5 @@ body.freeze {
     font-weight: normal;
     transform: translate(0, -50%);
   }
+
+  
