@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+  
+{% block title %}quiz{% endblock %}
+{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+
+{% block page_content %}
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="question-container">
+          <h3 id="question">Question</h3>
+          <div id="answer-buttons">
+    <div class="quiz-container">
+        <div id="question-container">
+    <div id="quiz">
+        <div class="question">
+            <p>1. What is your preferred fragrance type?</p>
+            <div class="answers">
+                <input type="radio" id="q1a1" name="q1" value="Masculine"><label for="q1a1">Masculine</label><br>
+                <input type="radio" id="q1a2" name="q1" value="Feminine"><label for="q1a2">Feminine</label><br>
+            </div>
+        </div>
+        <div class="question">
+            <p>2. What is your preferred fragrance personality?</p>
+            <div class="answers">
+                <input type="radio" id="q2a1" name="q2" value="Sporty"><label for="q2a1">Sporty</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Clean"><label for="q2a2">Clean</label><br>
+            </div>
+        </div>
+        <div class="question">
+            <p>3. What is your preferred fragrance vibe?</p>
+            <div class="answers">
+                <input type="radio" id="q3a1" name="q3" value="Warm"><label for="q3a1">Warm</label><br>
+                <input type="radio" id="q3a2" name="q3" value="Adventurous"><label for="q3a2">Adventurous</label><br>
+            </div>
+        </div>
+    
+        <button id="next-btn" class="btn hide">Next</button>
+        <div id="result" class="hide"></div>
+        </div>
+        <button id="restart-btn" class="btn hide">Restart</button>
+        </div>
+     </div>
+     </div>
+        <button onclick="submitQuiz()">Submit</button>
+    </div>
+    <div id="result"></div>
+        </div>
+    <script src="{{ url_for('static', filename = '../../../../static/js/quizmock.js')}}"></script>
+</body>
+</html>
+
+{% endblock %}
