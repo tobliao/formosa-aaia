@@ -12,11 +12,11 @@
     <body>
         <section class="py-5">
             <div class="container py-5">
-                <div class="row mb-4 mb-lg-5">
+                <!-- <div class="row mb-4 mb-lg-5">
                     <div class="col-md-8 col-xl-6 text-center mx-auto">
                         <h2 class="fw-bold text-success mb-2">Formosa iGEM</h2>
                     </div>
-                </div>
+                </div> -->
            
                 <!--- Accordion of Subteams --->
                 <div class="accordion">
@@ -61,356 +61,361 @@
                 <h1>Periodic Table of Members</h1>
                 
                 <!--- Periodic Table of Members --->
-                <body>
-                    <table class="membertable">
-                        <!--- Row 1 --->
-                        <tr>
-                            <!--- Card 1 --->
-                            <td class="swmember">
-                                <num>1</num>
-                                <div class="card">
-                                    <initial class="init-color">Jc</initial><br>
-                                    <name>Jocelyn</name>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="col position-relative p-0 m-1">
+                                <div onclick="wetlab_member()">
+                                    <img class="image" src="https://static.igem.wiki/teams/5437/iconone.png" style="height: 80%; width: 70%; padding-bottom: 5vh; padding-top: 2vh;">
+                                    <img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/group-1286.png">
                                 </div>
-                                <div class="bio">
-                                    <div class="bd-callout-card">
-                                        <div class="img">
-                                        <img src="https://sportshub.cbsistatic.com/i/r/2023/08/28/b082d110-843c-4c30-8714-0eeaab924225/thumbnail/1200x675/1278a59444bb212ca3d5a41918fdfd1e/082723-lebronjames.jpg">
+                            </div>
+                            <div class="col position-relative p-0 m-1">
+                                <img class="image" src="https://static.igem.wiki/teams/5437/iconone.png" style="height: 80%; width: 70%; padding-bottom: 5vh;">
+                                <a href="{{ url_for('pages', page='experiment') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/group-1286.png"></a>
+                            </div>
+                            <div class="col position-relative p-0 m-1">
+                                <img class="image" src="https://static.igem.wiki/teams/5437/icon3-removebg-preview.png" style="height: 80%; width: 70%; padding-bottom: 5vh;">
+                                <a href="{{ url_for('pages', page='model') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/drylabhover2.png"></a>
+                            </div>
+                            <div class="col position-relative p-0 m-1">
+                                <img class="image" src="https://static.igem.wiki/teams/5437/icon4-removebg-preview.png" style="height: 80%; width: 70%; padding-bottom: 5vh;">
+                                <a href="{{ url_for('pages', page='human-practices') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/ihphover2.png"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="membertable">
+                                <!--- Row 1 --->
+                                <tr>
+                                    <!--- Card 1 --->
+                                    <td class="swmember">
+                                        <num>1</num>
+                                        <div class="card">
+                                            <initial class="init-color">Jc</initial><br>
+                                            <name>Jocelyn</name>
                                         </div>
-                                        <div class="infos">
-                                        <div class="name">
-                                            <h3><strong>Jocelyn Weng</strong></h3>
-                                            <h5><i>Software Lead</i></h5>
+                                        <div class="bio">
+                                            <div class="bd-callout-card">
+                                                <div class="img">
+                                                <img src="https://sportshub.cbsistatic.com/i/r/2023/08/28/b082d110-843c-4c30-8714-0eeaab924225/thumbnail/1200x675/1278a59444bb212ca3d5a41918fdfd1e/082723-lebronjames.jpg">
+                                                </div>
+                                                <div class="infos">
+                                                <div class="name">
+                                                    <h3><strong>Jocelyn Weng</strong></h3>
+                                                    <h5><i>Software Lead</i></h5>
+                                                </div>
+                                                <p class="text">
+                                                    Top Note: Jocelyn is super cool! <br>
+                                                    Middle Note: Jocelyn likes Cindy! <br>
+                                                    Base Note: Jocelyn loves Cindy! <br>
+                                                </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p class="text">
-                                            Top Note: Jocelyn is super cool! <br>
-                                            Middle Note: Jocelyn likes Cindy! <br>
-                                            Base Note: Jocelyn loves Cindy! <br>
-                                        </p>
+                                    </td>
+    
+                                    <!--- Blankspace --->
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+    
+                                    <!--- Card 2 --->
+                                    <td class="hpmember">
+                                        <num>2</num>
+                                        <div class="card">
+                                            <initial class="init-color">Da</initial><br>
+                                            <name>Daniel</name>  
                                         </div>
+                                
+                                    </td>
+                                </tr>
+    
+                                <!--- Row 2 --->
+                                <tr>
+                                    <!--- Card 3 --->
+                                    <td class="swmember">
+                                    <num>3</num>
+                                        <div class="card">
+                                        <initial class="init-color">Cd</initial><br>
+                                        <name>Cindy</name>
                                     </div>
-                                </div>
-                            </td>
-
-                            <!--- Blankspace --->
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-
-                            <!--- Card 2 --->
-                            <td class="hpmember">
-                                <num>2</num>
-                                 <div class="card">
-                                    <initial class="init-color">Da</initial><br>
-                                    <name>Daniel</name>  
-                                </div>
-                           
-                            </td>
-                        </tr>
-
-                        <!--- Row 2 --->
-                        <tr>
-                            <!--- Card 3 --->
-                            <td class="swmember">
-                            <num>3</num>
-                                <div class="card">
-                                <initial class="init-color">Cd</initial><br>
-                                <name>Cindy</name>
-                            </div>
-                           
-                            </td>
-
-                            <!--- Card 4 --->
-                            <td class="swmember">
-                                <num>4</num>
-                                <div class="card">
-                                    <initial class="init-color">Ju</initial><br>
-                                    <name>Julie</name>
-                                </div>
-                            </td>
+                                
+                                    </td>
+    
+                                    <!--- Card 4 --->
+                                    <td class="swmember">
+                                        <num>4</num>
+                                        <div class="card">
+                                            <initial class="init-color">Ju</initial><br>
+                                            <name>Julie</name>
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    
+                                    <!--- Card 5 --->
+                                    <td class="hpmember">
+                                        <num>5</num>
+                                        <div class="card">
+                                            <initial class="init-color">Ni</initial><br>
+                                            <name>Nina</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 6 --->
+                                    <td class="hpmember">
+                                        <num>6</num>
+                                        <div class="card">
+                                            <initial class="init-color">Al</initial><br>
+                                            <name>Alvin</name>
+                                        </div>
+                                    </td>
+    
+                                <!--- Card 6 --->
+                                    <td class="hpmember">
+                                        <num>6</num>
+                                        <div class="card">
+                                            <initial class="init-color">Sp</initial><br>
+                                            <name>Sophie</name>
+                                        </div>
+                                
+                                        </td>
+                                    </tr>
+    
+                                <!--- Row 3 --->
+                                <tr>
+                                    <!--- Card 7 --->
+                                    <td class="swmember">
+                                    <num>7</num>
+                                        <div class="card">
+                                        <initial class="init-color">Er</initial><br>
+                                        <name>Eric</name>
+                                    </div>
                             
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            
-                            <!--- Card 5 --->
-                            <td class="hpmember">
-                                <num>5</num>
-                                <div class="card">
-                                    <initial class="init-color">Ni</initial><br>
-                                    <name>Nina</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 6 --->
-                            <td class="hpmember">
-                                <num>6</num>
-                                <div class="card">
-                                    <initial class="init-color">Al</initial><br>
-                                    <name>Alvin</name>
-                                </div>
-                            </td>
-
-                        <!--- Card 6 --->
-                            <td class="hpmember">
-                                <num>6</num>
-                                <div class="card">
-                                    <initial class="init-color">Sp</initial><br>
-                                    <name>Sophie</name>
-                                </div>
-                         
+                                    </td>
+    
+                                    <!--- Card 8 --->
+                                    <td class="jenson">
+                                        <num>8</num>
+                                        <div class="card">
+                                            <initial class="init-color">Je</initial><br>
+                                            <name>Jenson</name>
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="blankspace"></td>
+    
+                                    <!--- Card 9 --->
+                                    <td class="drylabmember">
+                                    <num>9</num>
+                                    <div class="card">
+                                        <initial class="init-color">Ph</initial><br>
+                                        <name>Phoebe</name>
+                                    </div>
+                    
+                                    </td>
+    
+                                    <!--- Card 10 --->
+                                    <td class="drylabmember">
+                                        <num>10</num>
+                                        <div class="card">
+                                            <initial class="init-color">Em</initial><br>
+                                            <name>Emily</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 11 --->
+                                    <td class="justin">
+                                        <num>11</num>
+                                        <div class="card">
+                                            <initial class="init-color">Ju</initial><br>
+                                            <name>Justin</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 12 --->
+                                    <td class="hpmember">
+                                        <num>12</num>
+                                        <div class="card">
+                                            <initial class="init-color">At</initial><br>
+                                            <name>Athena</name>
+                                        </div>
+                                    </td>
+    
+                                <!--- Card 13 --->
+                                <td class="hpmember">
+                                    <num>13</num>
+                                    <div class="card">
+                                        <initial class="init-color">Em</initial><br>
+                                        <name>Emma</name>
+                                    </div>
                                 </td>
-                            </tr>
-
-                        <!--- Row 3 --->
-                        <tr>
-                            <!--- Card 7 --->
-                            <td class="swmember">
-                            <num>7</num>
-                                <div class="card">
-                                <initial class="init-color">Er</initial><br>
-                                <name>Eric</name>
-                            </div>
-                     
-                            </td>
-
-                            <!--- Card 8 --->
-                            <td class="jenson">
-                                <num>8</num>
-                                <div class="card">
-                                    <initial class="init-color">Je</initial><br>
-                                    <name>Jenson</name>
-                                </div>
-                            </td>
-                            
-                            <td class="blankspace"></td>
-
-                            <!--- Card 9 --->
-                            <td class="drylabmember">
-                            <num>9</num>
-                            <div class="card">
-                                <initial class="init-color">Ph</initial><br>
-                                <name>Phoebe</name>
-                            </div>
-              
-                            </td>
-
-                            <!--- Card 10 --->
-                            <td class="drylabmember">
-                                <num>10</num>
-                                <div class="card">
-                                    <initial class="init-color">Em</initial><br>
-                                    <name>Emily</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 11 --->
-                            <td class="justin">
-                                <num>11</num>
-                                <div class="card">
-                                    <initial class="init-color">Ju</initial><br>
-                                    <name>Justin</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 12 --->
-                            <td class="hpmember">
-                                <num>12</num>
-                                <div class="card">
-                                    <initial class="init-color">At</initial><br>
-                                    <name>Athena</name>
-                                </div>
-                            </td>
-
-                        <!--- Card 13 --->
-                        <td class="hpmember">
-                            <num>13</num>
-                            <div class="card">
-                                <initial class="init-color">Em</initial><br>
-                                <name>Emma</name>
-                            </div>
-                        </td>
-                        </tr>
-
-                        <!--- Row 4 --->
-                        <tr>
-                            <!--- Card 14 --->
-                            
-
-                            <!--- Card 15 --->
-                            <td class="swmember">
-                                <num>15</num>
-                                <div class="card">
-                                    <initial class="init-color">Al</initial><br>
-                                    <name>Alston</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 16 --->
-                            <td class="timothy">
-                                <num>16</num>
-                                <div class="card">
-                                    <initial class="init-color">Ti</initial><br>
-                                    <name>Timothy</name>
-                                </div>
-                            </td>
-
-                            <td class="blankspace"></td>
-
-                            <!--- Card 17 --->
-                            <td class="drylabmember">
-                                <num>17</num>
-                                <div class="card">
-                                    <initial class="init-color">En</initial><br>
-                                    <name>Enyu</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 18 --->
-                            <td class="youshin">
-                                <num>18</num>
-                                <div class="card">
-                                    <initial class="init-color">Yo</initial><br>
-                                    <name>Youshin</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 19 --->
-                            <td class="wetlabmember">
-                                <num>19</num>
-                                <div class="card">
-                                    <initial class="init-color">Co</initial><br>
-                                    <name>Cosmo</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 20 --->
-                            <td class="wetlabmember">
-                                <num>20</num>
-                                <div class="card">
-                                    <initial class="init-color">El</initial><br>
-                                    <name>Ella</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 21 --->
-                            <td class="instructor-advisor">
-                                <num>21</num>
-                                <div class="card">
-                                    <initial class="init-color"></initial><br>
-                                    <name>BLANK</name>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <!--- Row 5 (blank) --->
-                        <tr>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                            <td class="blankspace"></td>
-                        </tr>
-                        
-                        <!--- Row 5 --->
-                        <tr>
-
-                            <td class="blankspace"></td>
-
-                            <!--- Card 21 --->
-                            <td class="instructor-advisor">
-                                <num>21</num>
-                                <div class="card">
-                                    <initial class="init-color">La</initial><br>
-                                    <name>Laurent</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 22 --->
-                            <td class="instructor-advisor">
-                                <num>22</num>
-                                <div class="card">
-                                    <initial class="init-color">Ke</initial><br>
-                                    <name>Kevin</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 23 --->
-                            <td class="instructor-advisor">
-                                <num>23</num>
-                                <div class="card">
-                                    <initial class="init-color">Br</initial><br>
-                                    <name>Bryan</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 24 --->
-                            <td class="instructor-advisor">
-                                <num>24</num>
-                                <div class="card">
-                                    <initial class="init-color">La</initial><br>
-                                    <name>Laurent</name>
-                                </div>
-                            </td>
-                             <!--- Card 25 --->
-                             <td class="instructor-advisor">
-                                <num>25</num>
-                                <div class="card">
-                                    <initial class="init-color">Ke</initial><br>
-                                    <name>Kevin</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 26 --->
-                            <td class="instructor-advisor">
-                                <num>26</num>
-                                <div class="card">
-                                    <initial class="init-color">Br</initial><br>
-                                    <name>Bryan</name>
-                                </div>
-                            </td>
-
-                            <!--- Card 27 --->
-                            <td class="instructor-advisor">
-                                <num>27</num>
-                                <div class="card">
-                                    <initial class="init-color">La</initial><br>
-                                    <name>Laurent</name>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </body>  
-            </div>
-            <div class="page d-flex align-items-center justify-content-center">
-                <div class="row w-90 mx-auto cent">
-                    <div class="col text-center position-relative p-0 m-1">
-                        <img class="image project" src="https://static.igem.wiki/teams/5437/iconone.png">
-                        <a href="{{ url_for('pages', page='description') }}"><img class="imageh project" src="https://static.igem.wiki/teams/5437/iconhover1.png"></a>
-                    </div>
-                    <div class="col position-relative p-0 m-1">
-                        <img class="image" src="https://static.igem.wiki/teams/5437/iconone.png">
-                        <a href="{{ url_for('pages', page='experiment') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/group-1286.png"></a>
-                    </div>
-                    <div class="col position-relative p-0 m-1">
-                        <img class="image" src="https://static.igem.wiki/teams/5437/icon3-removebg-preview.png">
-                        <a href="{{ url_for('pages', page='model') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/drylabhover2.png"></a>
-                    </div>
-                    <div class="col position-relative p-0 m-1">
-                        <img class="image" src="https://static.igem.wiki/teams/5437/icon4-removebg-preview.png"></a>
-                        <a href="{{ url_for('pages', page='human-practices') }}"><img class="imageh" src="https://static.igem.wiki/teams/4225/wiki/ihphover2.png"></a>
+                                </tr>
+    
+                                <!--- Row 4 --->
+                                <tr>
+                                    <!--- Card 14 --->
+                                    
+    
+                                    <!--- Card 15 --->
+                                    <td class="swmember">
+                                        <num>15</num>
+                                        <div class="card">
+                                            <initial class="init-color">Al</initial><br>
+                                            <name>Alston</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 16 --->
+                                    <td class="timothy">
+                                        <num>16</num>
+                                        <div class="card">
+                                            <initial class="init-color">Ti</initial><br>
+                                            <name>Timothy</name>
+                                        </div>
+                                    </td>
+    
+                                    <td class="blankspace"></td>
+    
+                                    <!--- Card 17 --->
+                                    <td class="drylabmember">
+                                        <num>17</num>
+                                        <div class="card">
+                                            <initial class="init-color">En</initial><br>
+                                            <name>Enyu</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 18 --->
+                                    <td class="youshin">
+                                        <num>18</num>
+                                        <div class="card">
+                                            <initial class="init-color">Yo</initial><br>
+                                            <name>Youshin</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 19 --->
+                                    <td class="wetlabmember">
+                                        <num>19</num>
+                                        <div class="card">
+                                            <initial class="init-color">Co</initial><br>
+                                            <name>Cosmo</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 20 --->
+                                    <td class="wetlabmember">
+                                        <num>20</num>
+                                        <div class="card">
+                                            <initial class="init-color">El</initial><br>
+                                            <name>Ella</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 21 --->
+                                    <td class="instructor-advisor">
+                                        <num>21</num>
+                                        <div class="card">
+                                            <initial class="init-color"></initial><br>
+                                            <name>BLANK</name>
+                                        </div>
+                                    </td>
+                                </tr>
+    
+                                <!--- Row 5 (blank) --->
+                                <tr>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                    <td class="blankspace"></td>
+                                </tr>
+                                
+                                <!--- Row 5 --->
+                                <tr>
+    
+                                    <td class="blankspace"></td>
+    
+                                    <!--- Card 21 --->
+                                    <td class="instructor-advisor">
+                                        <num>21</num>
+                                        <div class="card">
+                                            <initial class="init-color">La</initial><br>
+                                            <name>Laurent</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 22 --->
+                                    <td class="instructor-advisor">
+                                        <num>22</num>
+                                        <div class="card">
+                                            <initial class="init-color">Ke</initial><br>
+                                            <name>Kevin</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 23 --->
+                                    <td class="instructor-advisor">
+                                        <num>23</num>
+                                        <div class="card">
+                                            <initial class="init-color">Br</initial><br>
+                                            <name>Bryan</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 24 --->
+                                    <td class="instructor-advisor">
+                                        <num>24</num>
+                                        <div class="card">
+                                            <initial class="init-color">La</initial><br>
+                                            <name>Laurent</name>
+                                        </div>
+                                    </td>
+                                    <!--- Card 25 --->
+                                    <td class="instructor-advisor">
+                                        <num>25</num>
+                                        <div class="card">
+                                            <initial class="init-color">Ke</initial><br>
+                                            <name>Kevin</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 26 --->
+                                    <td class="instructor-advisor">
+                                        <num>26</num>
+                                        <div class="card">
+                                            <initial class="init-color">Br</initial><br>
+                                            <name>Bryan</name>
+                                        </div>
+                                    </td>
+    
+                                    <!--- Card 27 --->
+                                    <td class="instructor-advisor">
+                                        <num>27</num>
+                                        <div class="card">
+                                            <initial class="init-color">La</initial><br>
+                                            <name>Laurent</name>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
             <div style="margin-top: 2rem;" class="bioshere"></div>
         </section>
         <script src="../../static/js/bio.js"></script>
+        <script src="../../static/js/team.js"></script>
         <script>
             $(document).ready(function () {
                 $("td").click(function () {
