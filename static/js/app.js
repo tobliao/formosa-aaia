@@ -363,6 +363,35 @@ const screen_h = window.innerHeight;
 const vh = screen_h / 100;
 const vw = window.innerWidth / 100;
 
+// Slide in observer
+
+const observerSlideIn = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((i) => {
+      if (i.isIntersecting) {
+        i.target.classList.add("slide-in");
+        // } else {
+        //   i.target.classList.remove("slide-in");
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+const toSlideLeft = document.querySelectorAll(".to-slide-left");
+const toSlideRight = document.querySelectorAll(".to-slide-right");
+if (toSlideLeft) {
+  toSlideLeft.forEach((i) => {
+    observerSlideIn.observe(i);
+  });
+}
+if (toSlideRight) {
+  toSlideRight.forEach((i) => {
+    observerSlideIn.observe(i);
+  });
+}
+
 // // Curtain
 // var fiftyWrapperheight = $(".curtain-panel").height();
 // var leftDistance = $(".left-curtain").width();
