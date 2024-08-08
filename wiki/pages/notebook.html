@@ -149,55 +149,9 @@
     </svg>
 </div>
 </div>
-
-<script>
-  
-//index-menu
-
-  var HEADER_HEIGHT = 120;
-  let sections = [document.getElementById('introduction'), document.getElementById('stakeholderidentification'), document.getElementById('value sensitive analysis'), document.getElementById('interactivetimeline')]
-
-  window.goToDiv = function(target) {
-  var scrollContainer = target;
-  do { //find scroll container
-      scrollContainer = scrollContainer.parentNode;
-      if (!scrollContainer) return;
-      scrollContainer.scrollTop += 1;
-  } while (scrollContainer.scrollTop == 0);
-
-  var targetY = 0;
-  do { //find the top of target relatively to the container
-      if (target == scrollContainer) break;
-      targetY += target.offsetTop;
-  } while (target = target.offsetParent);
-  targetY -= HEADER_HEIGHT; 
-
-  scroll = function(c, a, b) {
-      c.scrollTop = a + (b - a);
-  }
-  scroll(scrollContainer, scrollContainer.scrollTop, targetY);
-
-  }
-
-  function toggleHighlight(section, textID) {
-      if(section.getBoundingClientRect().top - HEADER_HEIGHT < 1 && section.getBoundingClientRect().bottom - HEADER_HEIGHT > 0) {
-          document.getElementById(textID).style.scale = 1;
-          document.getElementById(textID).style.opacity = 1;
-      } else {
-          document.getElementById(textID).style.scale = 0.8;
-          document.getElementById(textID).style.opacity = 0.6;
-      }
-  }
-
-  window.addEventListener("scroll", event => {
-      toggleHighlight(sections[0], 'content1Text');
-      toggleHighlight(sections[1], 'content2Text');
-      toggleHighlight(sections[2], 'content3Text');
-      toggleHighlight(sections[2], 'content4Text');
-  });
-
-
-</script>
+</div>
+</div>
+</div>
     
     <script src="{{ url_for('static', filename = '../../../../static/js/notebook.js')}}"></script>
 </body>
