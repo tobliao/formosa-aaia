@@ -1,4 +1,36 @@
+/* greek */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(../fonts/8vIH7w4qzmVxm2NL9G78HEZnMg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(../fonts/8vIH7w4qzmVxm25L9G78HEZnMg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(../fonts/8vIH7w4qzmVxm2BL9G78HEY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
+body {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 #bg-green-wrap {
     color: rgb(71, 107, 53);
@@ -37,7 +69,7 @@
 }
 
 .taiwan-title {
-    font-family: 'Quicksand';
+    /* font-family: 'Quicksand'; */
     font-style: normal;
     font-weight: 400;
     text-align: center;
@@ -219,164 +251,162 @@
 }
 
 body.freeze {
-    height: auto;
-    overflow: auto;
-  }
-  
-  #v0 {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-  }
-  
-  #set-height {
-    display: block;
-  }
-  
-  section {
-    z-index: 1;
-    position: relative;
-  }
-  
-  .content {
-    position: sticky;
-    position: -webkit-sticky;
-    width: 100%;
-    top: 33.3%;
-  }
-  .stage {
-    background: #fff;
-    width: 100vw;
-    height: 100vh;
-  
-    box-shadow: 1px 4px 11px #aaa, inset 1px 3px 6px #ccc;
-  
-    position: relative;
-  }
-  video {
-    object-fit: cover;
-    height: 100vh;
-    width: 100%;
-  }
-  .stage-content {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-  
-  
-  .intro-video {
-    height: 100vh;
-  }
-  .intro-video video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  .intro-video h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 60px;
-    color: white;
-    text-shadow: 2px 1px #000000;
-    transform: translate(-50%, -50%);
-  }
-  .content {
-    height: 100vh;
-  }
-  .content h1 {
-    padding-top: 300px;
-    text-align: center;
-    font-size: 80px;
-  }
+  height: auto;
+  overflow: auto;
+}
+
+#v0 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+#set-height {
+  display: block;
+}
+
+section {
+  z-index: 1;
+  position: relative;
+}
+
+.content {
+  position: sticky;
+  position: -webkit-sticky;
+  width: 100%;
+  top: 33.3%;
+}
+.stage {
+  background: #fff;
+  width: 100vw;
+  height: 100vh;
+
+  box-shadow: 1px 4px 11px #aaa, inset 1px 3px 6px #ccc;
+
+  position: relative;
+}
+video {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+.stage-content {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 
 
-  .curtain {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .curtain__scrollbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    height: 100%;
-    width: 25%;
-    transform-origin: center bottom;
-  }
-  .curtain__scrollbar.skrollable-between {
-    position: fixed;
-  }
-  
-  .fold {
-    position: relative;
-    height: 100vh;
-    background-position: 50%;
-    background-size: cover;
-  }
-  .no-touch .fold {
-    background-attachment: fixed;
-  }
-  
-  .skrollable-between.fold--interior {
-    position: fixed;
-  }
-  
-  .fold--interior {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .curtain {
-    font-family: "Nova Mono";
-    font-size: 8vmin;
-    letter-spacing: 0.5em;
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.015em #fff;
-  }
-  
-  .curtain__scrollbar:before {
-    position: absolute;
-    bottom: 1em;
-    left: 50%;
-    height: 1em;
-    width: 1em;
-    content: "";
-    border: 0.05em solid #fff;
-    border-radius: 100%;
-    transform: translate(-50%, 0);
-  }
-  
-  .fold:nth-of-type(2) {
-    background-image: url(https://static.igem.wiki/teams/5437/igemone.jpg);
-  }
-  .fold:nth-of-type(3) {
-    background-image: url(https://static.igem.wiki/teams/5437/igemtwo.jpg);
-  }
-  .fold:nth-of-type(4) {
-    background-image: url(https://static.igem.wiki/teams/5437/igemthree.jpg);
-  }
-  .fold:nth-of-type(5) {
-    background-image: url(https://static.igem.wiki/teams/5437/index/tmp/cszqsys.jpeg);
-  }
-  
-  .fold h2 {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    font-weight: normal;
-    transform: translate(0, -50%);
-  }
+.intro-video {
+  height: 100vh;
+}
+.intro-video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.intro-video h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 60px;
+  color: white;
+  text-shadow: 2px 1px #000000;
+  transform: translate(-50%, -50%);
+}
+.content {
+  height: 100vh;
+}
+.content h1 {
+  padding-top: 300px;
+  text-align: center;
+  font-size: 80px;
+}
 
-  
+
+.curtain {
+  position: relative;
+  overflow: hidden;
+}
+
+.curtain__scrollbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 25%;
+  transform-origin: center bottom;
+}
+.curtain__scrollbar.skrollable-between {
+  position: fixed;
+}
+
+.fold {
+  position: relative;
+  height: 100vh;
+  background-position: 50%;
+  background-size: cover;
+}
+.no-touch .fold {
+  background-attachment: fixed;
+}
+
+.skrollable-between.fold--interior {
+  position: fixed;
+}
+
+.fold--interior {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.curtain {
+  /* font-family: "Nova Mono"; */
+  font-size: 8vmin;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.015em #fff;
+}
+
+.curtain__scrollbar:before {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  height: 1em;
+  width: 1em;
+  content: "";
+  border: 0.05em solid #fff;
+  border-radius: 100%;
+  transform: translate(-50%, 0);
+}
+
+.fold:nth-of-type(2) {
+  background-image: url(https://static.igem.wiki/teams/5437/igemone.jpg);
+}
+.fold:nth-of-type(3) {
+  background-image: url(https://static.igem.wiki/teams/5437/igemtwo.jpg);
+}
+.fold:nth-of-type(4) {
+  background-image: url(https://static.igem.wiki/teams/5437/igemthree.jpg);
+}
+.fold:nth-of-type(5) {
+  background-image: url(https://static.igem.wiki/teams/5437/index/tmp/cszqsys.jpeg);
+}
+
+.fold h2 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  font-weight: normal;
+  transform: translate(0, -50%);
+}
