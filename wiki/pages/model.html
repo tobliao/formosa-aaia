@@ -31,6 +31,13 @@
 <br>
 <br>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaTeX Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
 <style>
   .custom-container {
     max-width: 75%; /* Adjust the maximum width as needed */
@@ -119,7 +126,7 @@
     <h4>Interactive Models</h4><hr>
   </body>
   </html>
-  <head>
+    <head>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
     <body>
@@ -236,7 +243,7 @@
    }]
   }, {showSendToCloud: true});
   </script>
-  <head>
+    <head>
       <!-- Plotly.js -->
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
@@ -615,7 +622,37 @@
         <li>The activities of enzymes and promoters in our project closely match those reported in the existing scientific literature.</li>
       </ol>
     <br>
-    <p>In the subsequent explanation of our model's creation, we gathered information on promoters and enzymes from the literature. Therefore, we had to assume that they maintain consistent and stable activity in our parallel culture system. Due to the limited information about the reverse reaction, we decided to focus exclusively on the forward reaction, which also helps to simplify our model. </p></div><br>
+    <p><p>\( C(t) \): Concentration of borneol inside the minicell at time \( t \).</p>
+    <p>\( R \): Rate of internal production of borneol.</p>
+    <p>\( D \): Diffusion coefficient of borneol.</p>
+    <p>\( V \): Volume of the minicell.</p>
+    
+    <p>The differential equation is:</p>
+    <p>\[
+    \frac{dC(t)}{dt} = \frac{R}{V} - D C(t)
+    \]</p>
+    
+    <p>where \( \frac{R}{V} \) is the production rate per unit volume, and \( D C(t) \) represents the rate of diffusion out of the minicell based on Fick’s first law.</p>
+    
+    <p>The solved equation for internal concentration is:</p>
+    <p>\[
+    C(t) = \frac{R}{DV}\left(1 - e^{-Dt}\right)
+    \]</p>
+    
+    <p>The rate of exit is given by Fick’s first law:</p>
+    <p>\[
+    \text{Rate of exit} = D C(t)
+    \]</p>
+    
+    <p>Integrating this rate from initial time 0 to a certain time \( t \) gives the total amount of borneol that has exited up to time \( t \):</p>
+    <p>\[
+    \int_{0}^{t} D C(t) \, dt
+    \]</p>
+    
+    <p>The solved integral for the total amount exited is:</p>
+    <p>\[
+    \frac{R}{V}\left(t - \frac{1}{D}\left(1 - e^{-Dt}\right)\right)
+    \]</p> </p></div><br>
     <div class="toc-section" id="approach">
     <h4>Approach</h4><hr>
     <p>By receiving suggestions from a biochemistry professor Dr. Dragony Fu, we chose to utilize the Michaelis-Menten equation to build our model with SimBiology, a tool offered by MathWorks. This choice was informed by SimBiology's unique capacity to interconnect multiple components, such as chemical intermediates, within the model and its ability to elucidate the rate of change of these components based on predefined equations.</p><br>
